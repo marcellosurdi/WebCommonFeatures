@@ -1,7 +1,7 @@
 {
   "name": "web-common-plugins",
-  "description": "Features commonly used in web projects",
-  "version": "0.0.1",
+  "description": "Funzionalità di uso comune nei progetti web",
+  "version": "0.0.2",
   "keywords": [],
   "main": "dist/js/web-common-plugins.min.js",
   "repository": {},

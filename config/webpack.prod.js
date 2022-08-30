@@ -11,7 +11,7 @@ module.exports = ( env, argv ) => {
       mode: 'production',
 
       entry: {
-        'web-common-plugins': paths.src + '/main.js',
+        'web-common-plugins': paths.src + '/prod.js',
       },
 
       devtool: false,

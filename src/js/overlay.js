@@ -3,20 +3,20 @@
  * @author Marcello Surdi
  *
  * @desc
- * The Overlay function shows or hides an overlay.
+ * La funzione Overlay mostra o nasconde un overlay, un velo scuro semitrasparente che si sovrappone ai contenuti di primo livello.
  */
 
  /**
   * @desc
-  * Shows or hides an overlay.
+  * Mostra o nasconde l'overlay. L'overlay è aggiunto a un elemento `<div id="body">...</div>` che racchiude tutti i contenuti.
   *
-  * @param {boolean} [show=true] true to show, false to hide the overlay
-  * @param {boolean} [spinner=false] Denotes whether or not to show the loading spinner
-  * @param {number} [zIndex=10] CSS z-index property
-  * @returns {HTMLDivElement|undefined} Returns the overlay object (undefined if the overlay is closed)
+  * @param {boolean} [show=true] true per mostrare l'overlay, false per nasconderlo
+  * @param {boolean} [spinner=false] Indica se mostrare o meno uno spinner di caricamento
+  * @param {number} [zIndex=10] Il valore della proprietà CSS z-index
+  * @returns {HTMLDivElement|undefined} Restituisce un riferimento all'overlay (undefined se l'overlay viene chiuso)
   *
   * @example
-  * const overlay = Overlay();
+  * const overlay = Overlay( true );
   */
 export function Overlay( show = true, spinner = false, zIndex = 10 ) {
   let overlay = document.getElementById( 'overlay' );
@@ -36,7 +36,9 @@ export function Overlay( show = true, spinner = false, zIndex = 10 ) {
     overlay.style.zIndex = zIndex;
 
     return overlay;
-  } else {
+  }
+
+  else {
     overlay.style.display = 'none';
     overlay.classList.remove( 'preload' );
   }

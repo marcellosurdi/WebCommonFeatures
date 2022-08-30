@@ -8,7 +8,7 @@ module.exports = ( env, argv ) => {
       mode: 'development',
 
       entry: {
-        main: paths.src + '/main.js',
+        main: paths.src + '/dev.js',
       },
 
       devtool: 'inline-source-map',
