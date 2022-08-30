@@ -13,7 +13,7 @@
   * @param {boolean} [show=true] true per mostrare l'overlay, false per nasconderlo
   * @param {boolean} [spinner=false] Indica se mostrare o meno uno spinner di caricamento
   * @param {number} [zIndex=10] Il valore della proprietà CSS z-index
-  * @returns {HTMLDivElement|undefined} Restituisce un riferimento all'overlay (undefined se l'overlay viene chiuso)
+  * @returns {HTMLDivElement|undefined} Un riferimento all'overlay (undefined se l'overlay viene chiuso)
   *
   * @example
   * const overlay = Overlay( true );

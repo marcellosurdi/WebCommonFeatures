@@ -1,7 +1,9 @@
+const version = JSON.stringify( require( '../package.json' ).version ).replace( /"/g, '' );
 const paths = require( './project-paths' );
 const common = require( './webpack.common' );
 const webpack = require( 'webpack' );
 const { merge } = require( 'webpack-merge' );
+const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
 module.exports = ( env, argv ) => {
   return merge( common, {
@@ -41,7 +43,13 @@ module.exports = ( env, argv ) => {
         port: 3001,
       },
 
-      plugins: [],
+      plugins: [
+        new HtmlWebpackPlugin({
+          filename: 'index.html',
+          title: 'index@' + version,
+          template: paths.static + '/tpl/dev.html',
+        }),
+      ],
     }
   );
 };

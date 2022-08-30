@@ -1,10 +1,7 @@
 const path = require( 'path' );
-const version = JSON.stringify( require( '../package.json' ).version ).replace( /"/g, '' );
 const paths = require( './project-paths' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
-const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
-
 
 const config = {
   module: {
@@ -56,12 +53,6 @@ const config = {
 
   plugins: [
     new CleanWebpackPlugin( { }),
-
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      title: 'index@' + version,
-      template: paths.static + '/tpl/index.html',
-    }),
   ],
 };
 

@@ -1,7 +1,7 @@
 {
   "name": "web-common-plugins",
   "description": "Funzionalità di uso comune nei progetti web",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [],
   "main": "dist/js/web-common-plugins.min.js",
   "repository": {},
@@ -11,6 +11,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --config config/webpack.dev.js --open",
+    "build-local": "webpack --config config/webpack.prod.js --output-public-path /www/WebCommonPlugins/dist/",
     "build": "webpack --config config/webpack.prod.js --env BUILD",
     "jsdoc": "jsdoc -r src -d docs -R README.md -c jsdoc.json"
   },

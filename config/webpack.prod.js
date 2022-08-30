@@ -1,3 +1,4 @@
+const version = JSON.stringify( require( '../package.json' ).version ).replace( /"/g, '' );
 const paths = require( './project-paths' );
 const common = require( './webpack.common' );
 const webpack = require( 'webpack' );
@@ -5,6 +6,7 @@ const { merge } = require( 'webpack-merge' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const TerserWebpackPlugin = require( 'terser-webpack-plugin' );
 const CssMinimizerWebpackPlugin = require( 'css-minimizer-webpack-plugin' );
+const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
 module.exports = ( env, argv ) => {
    return merge( common, {
@@ -43,6 +45,14 @@ module.exports = ( env, argv ) => {
       plugins: [
         new MiniCssExtractPlugin({
           filename: 'css/[name].min.css',
+        }),
+
+        new HtmlWebpackPlugin({
+          filename: 'index.html',
+          title: 'index@' + version,
+          template: paths.static + '/tpl/prod.html',
+          inject: false,
+          minify: false,
         }),
       ],
 
