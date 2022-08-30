@@ -1,0 +1,167 @@
+.font-a { @include font-a; }
+.font-b { @include font-b; }
+
+.align-left { text-align: left; }
+.align-right { text-align: right; }
+.align-center { text-align: center; }
+.align-justify { text-align: justify; }
+
+.text-faded-dark { color: $text_faded_dark; }
+.text-faded-light { color: $text_faded_light; }
+
+.text-weight-bold { font-weight: bold; }
+.text-weight-normal { font-weight: normal; }
+
+.decoration-none { text-decoration: none; }
+
+.small-caps { text-transform: lowercase; font-variant: small-caps; }
+.capitalize { text-transform: capitalize; }
+.uppercase { text-transform: uppercase; }
+
+.text-spaced { letter-spacing: 1px; }
+.text-line-small { line-height: 1.1; }
+.no-selectable { @include user-select; }
+
+.responsive-img { max-width: 100%; }
+.responsive-img-75 { max-width: 75%; }
+
+.text-small { font-size: $text_small; }
+.text-medium { font-size: $text_medium; }
+.text-big { font-size: $text_big; }
+.text-xl { font-size: $text_xl; }
+.text-xxl { font-size: $text_xxl; }
+.text-3xl { font-size: $text_3xl; }
+.text-4xl { font-size: $text_4xl; }
+.text-5xl { font-size: $text_5xl; }
+
+@media screen and (max-width: 1536px) {
+  .text-1536-small { font-size: $text_small; }
+  .text-1536-medium { font-size: $text_medium; }
+  .text-1536-big { font-size: $text_big; }
+  .text-1536-xl { font-size: $text_xl; }
+  .text-1536-xxl { font-size: $text_xxl; }
+  .text-1536-3xl { font-size: $text_3xl; }
+  .text-1536-4xl { font-size: $text_4xl; }
+  .text-1536-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 1366px) {
+  .text-1366-small { font-size: $text_small; }
+  .text-1366-medium { font-size: $text_medium; }
+  .text-1366-big { font-size: $text_big; }
+  .text-1366-xl { font-size: $text_xl; }
+  .text-1366-xxl { font-size: $text_xxl; }
+  .text-1366-3xl { font-size: $text_3xl; }
+  .text-1366-4xl { font-size: $text_4xl; }
+  .text-1366-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 1152px) {
+  .text-1152-small { font-size: $text_small; }
+  .text-1152-medium { font-size: $text_medium; }
+  .text-1152-big { font-size: $text_big; }
+  .text-1152-xl { font-size: $text_xl; }
+  .text-1152-xxl { font-size: $text_xxl; }
+  .text-1152-3xl { font-size: $text_3xl; }
+  .text-1152-4xl { font-size: $text_4xl; }
+  .text-1152-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 1024px) {
+  .text-1024-small { font-size: $text_small; }
+  .text-1024-medium { font-size: $text_medium; }
+  .text-1024-big { font-size: $text_big; }
+  .text-1024-xl { font-size: $text_xl; }
+  .text-1024-xxl { font-size: $text_xxl; }
+  .text-1024-3xl { font-size: $text_3xl; }
+  .text-1024-4xl { font-size: $text_4xl; }
+  .text-1024-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 962px) {
+  .text-962-small { font-size: $text_small; }
+  .text-962-medium { font-size: $text_medium; }
+  .text-962-big { font-size: $text_big; }
+  .text-962-xl { font-size: $text_xl; }
+  .text-962-xxl { font-size: $text_xxl; }
+  .text-962-3xl { font-size: $text_3xl; }
+  .text-962-4xl { font-size: $text_4xl; }
+  .text-962-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 864px) {
+  .text-864-small { font-size: $text_small; }
+  .text-864-medium { font-size: $text_medium; }
+  .text-864-big { font-size: $text_big; }
+  .text-864-xl { font-size: $text_xl; }
+  .text-864-xxl { font-size: $text_xxl; }
+  .text-864-3xl { font-size: $text_3xl; }
+  .text-864-4xl { font-size: $text_4xl; }
+  .text-864-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 768px) {
+  .text-768-small { font-size: $text_small; }
+  .text-768-medium { font-size: $text_medium; }
+  .text-768-big { font-size: $text_big; }
+  .text-768-xl { font-size: $text_xl; }
+  .text-768-xxl { font-size: $text_xxl; }
+  .text-768-3xl { font-size: $text_3xl; }
+  .text-768-4xl { font-size: $text_4xl; }
+  .text-768-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 680px) {
+  .text-680-small { font-size: $text_small; }
+  .text-680-medium { font-size: $text_medium; }
+  .text-680-big { font-size: $text_big; }
+  .text-680-xl { font-size: $text_xl; }
+  .text-680-xxl { font-size: $text_xxl; }
+  .text-680-3xl { font-size: $text_3xl; }
+  .text-680-4xl { font-size: $text_4xl; }
+  .text-680-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 640px) {
+  .text-640-small { font-size: $text_small; }
+  .text-640-medium { font-size: $text_medium; }
+  .text-640-big { font-size: $text_big; }
+  .text-640-xl { font-size: $text_xl; }
+  .text-640-xxl { font-size: $text_xxl; }
+  .text-640-3xl { font-size: $text_3xl; }
+  .text-640-4xl { font-size: $text_4xl; }
+  .text-640-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 582px) {
+  .text-582-small { font-size: $text_small; }
+  .text-582-medium { font-size: $text_medium; }
+  .text-582-big { font-size: $text_big; }
+  .text-582-xl { font-size: $text_xl; }
+  .text-582-xxl { font-size: $text_xxl; }
+  .text-582-3xl { font-size: $text_3xl; }
+  .text-582-4xl { font-size: $text_4xl; }
+  .text-582-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 480px) {
+  .text-480-small { font-size: $text_small; }
+  .text-480-medium { font-size: $text_medium; }
+  .text-480-big { font-size: $text_big; }
+  .text-480-xl { font-size: $text_xl; }
+  .text-480-xxl { font-size: $text_xxl; }
+  .text-480-3xl { font-size: $text_3xl; }
+  .text-480-4xl { font-size: $text_4xl; }
+  .text-480-5xl { font-size: $text_5xl; }
+}
+
+@media screen and (max-width: 424px) {
+  .text-424-small { font-size: $text_small; }
+  .text-424-medium { font-size: $text_medium; }
+  .text-424-big { font-size: $text_big; }
+  .text-424-xl { font-size: $text_xl; }
+  .text-424-xxl { font-size: $text_xxl; }
+  .text-424-3xl { font-size: $text_3xl; }
+  .text-424-4xl { font-size: $text_4xl; }
+  .text-424-5xl { font-size: $text_5xl; }
+}

@@ -1,0 +1,84 @@
+.radius-0 { border-radius: 0; }
+.radius-5 { border-radius: 5px; }
+.radius-5-top { border-top-right-radius: 5px; border-top-left-radius: 5px; }
+.radius-5-right { border-top-right-radius: 5px; border-bottom-right-radius: 5px; }
+.radius-5-bottom { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
+.radius-5-left { border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+.radius-circle { border-radius: 50%; }
+
+.margin-0 { margin: 0; }
+
+.margin-small { margin: $margin_small_size 0; }
+.margin-medium { margin: $margin_medium_size 0; }
+.margin-big { margin: $margin_big_size 0; }
+.margin-xl { margin: $margin_xl_size 0; }
+.margin-xxl { margin: $margin_xxl_size 0; }
+
+.margin-top-small { margin-top: $margin_small_size; }
+.margin-top-medium { margin-top: $margin_medium_size; }
+.margin-top-big { margin-top: $margin_big_size; }
+.margin-top-xl { margin-top: $margin_xl_size; }
+.margin-top-xxl { margin-top: $margin_xxl_size; }
+
+.margin-right-small { margin-right: $margin_small_size; }
+.margin-right-medium { margin-right: $margin_medium_size; }
+.margin-right-big { margin-right: $margin_big_size; }
+.margin-right-xl { margin-right: $margin_xl_size; }
+.margin-right-xxl { margin-right: $margin_xxl_size; }
+
+.margin-bottom-small { margin-bottom: $margin_small_size; }
+.margin-bottom-medium { margin-bottom: $margin_medium_size; }
+.margin-bottom-big { margin-bottom: $margin_big_size; }
+.margin-bottom-xl { margin-bottom: $margin_xl_size; }
+.margin-bottom-xxl { margin-bottom: $margin_xxl_size; }
+
+.margin-left-small { margin-left: $margin_small_size; }
+.margin-left-medium { margin-left: $margin_medium_size; }
+.margin-left-big { margin-left: $margin_big_size; }
+.margin-left-xl { margin-left: $margin_xl_size; }
+.margin-left-xxl { margin-left: $margin_xxl_size; }
+
+
+.padding-0 { padding: 0; }
+
+.padding-small { padding: $margin_small_size; }
+.padding-medium { padding: $margin_medium_size; }
+.padding-big { padding: $margin_big_size; }
+.padding-xl { padding: $margin_xl_size; }
+.padding-xxl { padding: $margin_xxl_size; }
+
+.padding-rl-small { padding-left: $margin_small_size; padding-right: $margin_small_size; }
+.padding-rl-medium { padding-left: $margin_medium_size; padding-right: $margin_medium_size; }
+.padding-rl-big { padding-left: $margin_big_size; padding-right: $margin_big_size; }
+.padding-rl-xl { padding-left: $margin_xl_size; padding-right: $margin_xl_size; }
+.padding-rl-xxl { padding-left: $margin_xxl_size; padding-right: $margin_xxl_size; }
+
+.padding-tb-small { padding-top: $margin_small_size; padding-bottom: $margin_small_size; }
+.padding-tb-medium { padding-top: $margin_medium_size; padding-bottom: $margin_medium_size; }
+.padding-tb-big { padding-top: $margin_big_size; padding-bottom: $margin_big_size; }
+.padding-tb-xl { padding-top: $margin_xl_size; padding-bottom: $margin_xl_size; }
+.padding-tb-xxl { padding-top: $margin_xxl_size; padding-bottom: $margin_xxl_size; }
+
+.padding-top-small { padding-top: $margin_small_size; }
+.padding-top-medium { padding-top: $margin_medium_size; }
+.padding-top-big { padding-top: $margin_big_size; }
+.padding-top-xl { padding-top: $margin_xl_size; }
+.padding-top-xxl { padding-top: $margin_xxl_size; }
+
+.padding-right-small { padding-right: $margin_small_size; }
+.padding-right-medium { padding-right: $margin_medium_size; }
+.padding-right-big { padding-right: $margin_big_size; }
+.padding-right-xl { padding-right: $margin_xl_size; }
+.padding-right-xxl { padding-right: $margin_xxl_size; }
+
+.padding-bottom-small { padding-bottom: $margin_small_size; }
+.padding-bottom-medium { padding-bottom: $margin_medium_size; }
+.padding-bottom-big { padding-bottom: $margin_big_size; }
+.padding-bottom-xl { padding-bottom: $margin_xl_size; }
+.padding-bottom-xxl { padding-bottom: $margin_xxl_size; }
+
+.padding-left-small { padding-left: $margin_small_size; }
+.padding-left-medium { padding-left: $margin_medium_size; }
+.padding-left-big { padding-left: $margin_big_size; }
+.padding-left-xl { padding-left: $margin_xl_size; }
+.padding-left-xxl { padding-left: $margin_xxl_size; }

@@ -1,0 +1,261 @@
+.centered-content { margin: 0 auto; }
+.container-max-width { max-width: $container_max_width; }
+.max-width-768 { max-width: 768px; }
+
+.float-container, .overflow-hidden { overflow: hidden; }
+.fix-float { position: relative; }
+.fix-float::after { content: ''; display: table; clear: both; }
+.float-item { float: left; }
+.float-item-right { float: right; }
+
+.display-block { display: block; }
+.display-relative { position: relative; }
+.display-inline-block { display: inline-block; }
+.display-none { display: none; }
+
+.display-table { display: table; }
+.border-separate { border-collapse: separate; border-spacing: 5px; }
+.border-collapse { border-collapse: collapse; }
+.table-row { display: table-row; }
+.table-cell { display: table-cell; vertical-align: middle; }
+.align-top { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+.align-middle-absolute { position: absolute; top: 50%; left: 50%; @include transform(translate(-50%,-50%)); }
+
+.h-12 { height: 100%; }
+.w-12 { width: 100%; }
+.w-11 { width: 91.666%; }
+.w-10 { width: 83.333%; }
+.w-9 { width: 75%; }
+.w-8 { width: 66.666%; }
+.w-7 { width: 58.333%; }
+.w-6 { width: 50%; }
+.w-5 { width: 41.666%; }
+.w-4 { width: 33.333%; }
+.w-3 { width: 25%; }
+.w-2 { width: 16.666%; }
+.w-1 { width: 8.333%; }
+
+@media screen and (max-width: 1536px) {
+  .to-1536 { display: none !important; }
+  .from-1536 { display: block !important; }
+  .w-1536-12 { width: 100%; }
+  .w-1536-11 { width: 91.666%; }
+  .w-1536-10 { width: 83.333%; }
+  .w-1536-9 { width: 75%; }
+  .w-1536-8 { width: 66.666%; }
+  .w-1536-7 { width: 58.333%; }
+  .w-1536-6 { width: 50%; }
+  .w-1536-5 { width: 41.666%; }
+  .w-1536-4 { width: 33.333%; }
+  .w-1536-3 { width: 25%; }
+  .w-1536-2 { width: 16.666%; }
+  .w-1536-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 1366px) {
+  .to-1366 { display: none !important; }
+  .from-1366 { display: block !important; }
+  .w-1366-12 { width: 100%; }
+  .w-1366-11 { width: 91.666%; }
+  .w-1366-10 { width: 83.333%; }
+  .w-1366-9 { width: 75%; }
+  .w-1366-8 { width: 66.666%; }
+  .w-1366-7 { width: 58.333%; }
+  .w-1366-6 { width: 50%; }
+  .w-1366-5 { width: 41.666%; }
+  .w-1366-4 { width: 33.333%; }
+  .w-1366-3 { width: 25%; }
+  .w-1366-2 { width: 16.666%; }
+  .w-1366-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 1152px) {
+  .to-1152 { display: none !important; }
+  .from-1152 { display: block !important; }
+  .w-1152-12 { width: 100%; }
+  .w-1152-11 { width: 91.666%; }
+  .w-1152-10 { width: 83.333%; }
+  .w-1152-9 { width: 75%; }
+  .w-1152-8 { width: 66.666%; }
+  .w-1152-7 { width: 58.333%; }
+  .w-1152-6 { width: 50%; }
+  .w-1152-5 { width: 41.666%; }
+  .w-1152-4 { width: 33.333%; }
+  .w-1152-3 { width: 25%; }
+  .w-1152-2 { width: 16.666%; }
+  .w-1152-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 1024px) {
+  .to-1024 { display: none !important; }
+  .from-1024, .table-to-1024 { display: block !important; }
+  .inline-block-from-1024 { display: inline-block !important; }
+  .inline-from-1024 { display: inline !important; }
+  .w-1024-12 { width: 100%; }
+  .w-1024-11 { width: 91.666%; }
+  .w-1024-10 { width: 83.333%; }
+  .w-1024-9 { width: 75%; }
+  .w-1024-8 { width: 66.666%; }
+  .w-1024-7 { width: 58.333%; }
+  .w-1024-6 { width: 50%; }
+  .w-1024-5 { width: 41.666%; }
+  .w-1024-4 { width: 33.333%; }
+  .w-1024-3 { width: 25%; }
+  .w-1024-2 { width: 16.666%; }
+  .w-1024-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 962px) {
+  .to-962 { display: none !important; }
+  .from-962, .table-to-962 { display: block !important; }
+  .inline-block-from-962 { display: inline-block !important; }
+  .inline-from-962 { display: inline !important; }
+  .w-962-12 { width: 100%; }
+  .w-962-11 { width: 91.666%; }
+  .w-962-10 { width: 83.333%; }
+  .w-962-9 { width: 75%; }
+  .w-962-8 { width: 66.666%; }
+  .w-962-7 { width: 58.333%; }
+  .w-962-6 { width: 50%; }
+  .w-962-5 { width: 41.666%; }
+  .w-962-4 { width: 33.333%; }
+  .w-962-3 { width: 25%; }
+  .w-962-2 { width: 16.666%; }
+  .w-962-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 864px) {
+  .to-864 { display: none !important; }
+  .from-864, .table-to-864 { display: block !important; }
+  .inline-block-from-864 { display: inline-block !important; }
+  .inline-from-864 { display: inline !important; }
+  .w-864-12 { width: 100%; }
+  .w-864-11 { width: 91.666%; }
+  .w-864-10 { width: 83.333%; }
+  .w-864-9 { width: 75%; }
+  .w-864-8 { width: 66.666%; }
+  .w-864-7 { width: 58.333%; }
+  .w-864-6 { width: 50%; }
+  .w-864-5 { width: 41.666%; }
+  .w-864-4 { width: 33.333%; }
+  .w-864-3 { width: 25%; }
+  .w-864-2 { width: 16.666%; }
+  .w-864-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 768px) {
+  .to-768 { display: none !important; }
+  .from-768, .table-to-768 { display: block !important; }
+  .inline-block-from-768 { display: inline-block !important; }
+  .inline-from-768 { display: inline !important; }
+  .w-768-12 { width: 100%; }
+  .w-768-11 { width: 91.666%; }
+  .w-768-10 { width: 83.333%; }
+  .w-768-9 { width: 75%; }
+  .w-768-8 { width: 66.666%; }
+  .w-768-7 { width: 58.333%; }
+  .w-768-6 { width: 50%; }
+  .w-768-5 { width: 41.666%; }
+  .w-768-4 { width: 33.333%; }
+  .w-768-3 { width: 25%; }
+  .w-768-2 { width: 16.666%; }
+  .w-768-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 680px) {
+  .to-680 { display: none !important; }
+  .from-680, .table-to-680 { display: block !important; }
+  .inline-block-from-680 { display: inline-block !important; }
+  .inline-from-680 { display: inline !important; }
+  .w-680-12 { width: 100%; }
+  .w-680-11 { width: 91.666%; }
+  .w-680-10 { width: 83.333%; }
+  .w-680-9 { width: 75%; }
+  .w-680-8 { width: 66.666%; }
+  .w-680-7 { width: 58.333%; }
+  .w-680-6 { width: 50%; }
+  .w-680-5 { width: 41.666%; }
+  .w-680-4 { width: 33.333%; }
+  .w-680-3 { width: 25%; }
+  .w-680-2 { width: 16.666%; }
+  .w-680-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 640px) {
+  .to-640 { display: none !important; }
+  .from-640, .table-to-640 { display: block !important; }
+  .inline-block-from-640 { display: inline-block !important; }
+  .inline-from-640 { display: inline !important; }
+  .w-640-12 { width: 100%; }
+  .w-640-11 { width: 91.666%; }
+  .w-640-10 { width: 83.333%; }
+  .w-640-9 { width: 75%; }
+  .w-640-8 { width: 66.666%; }
+  .w-640-7 { width: 58.333%; }
+  .w-640-6 { width: 50%; }
+  .w-640-5 { width: 41.666%; }
+  .w-640-4 { width: 33.333%; }
+  .w-640-3 { width: 25%; }
+  .w-640-2 { width: 16.666%; }
+  .w-640-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 582px) {
+  .to-582 { display: none !important; }
+  .from-582, .table-to-582 { display: block !important; }
+  .inline-block-from-582 { display: inline-block !important; }
+  .inline-from-582 { display: inline !important; }
+  .w-582-12 { width: 100%; }
+  .w-582-11 { width: 91.666%; }
+  .w-582-10 { width: 83.333%; }
+  .w-582-9 { width: 75%; }
+  .w-582-8 { width: 66.666%; }
+  .w-582-7 { width: 58.333%; }
+  .w-582-6 { width: 50%; }
+  .w-582-5 { width: 41.666%; }
+  .w-582-4 { width: 33.333%; }
+  .w-582-3 { width: 25%; }
+  .w-582-2 { width: 16.666%; }
+  .w-582-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 480px) {
+  .to-480 { display: none !important; }
+  .from-480, .table-to-480 { display: block !important; }
+  .inline-block-from-480 { display: inline-block !important; }
+  .inline-from-480 { display: inline !important; }
+  .w-480-12 { width: 100%; }
+  .w-480-11 { width: 91.666%; }
+  .w-480-10 { width: 83.333%; }
+  .w-480-9 { width: 75%; }
+  .w-480-8 { width: 66.666%; }
+  .w-480-7 { width: 58.333%; }
+  .w-480-6 { width: 50%; }
+  .w-480-5 { width: 41.666%; }
+  .w-480-4 { width: 33.333%; }
+  .w-480-3 { width: 25%; }
+  .w-480-2 { width: 16.666%; }
+  .w-480-1 { width: 8.333%; }
+}
+
+@media screen and (max-width: 424px) {
+  .to-424 { display: none !important; }
+  .from-424, .table-to-424 { display: block !important; }
+  .inline-block-from-424 { display: inline-block !important; }
+  .inline-from-424 { display: inline !important; }
+  .w-424-12 { width: 100%; }
+  .w-424-11 { width: 91.666%; }
+  .w-424-10 { width: 83.333%; }
+  .w-424-9 { width: 75%; }
+  .w-424-8 { width: 66.666%; }
+  .w-424-7 { width: 58.333%; }
+  .w-424-6 { width: 50%; }
+  .w-424-5 { width: 41.666%; }
+  .w-424-4 { width: 33.333%; }
+  .w-424-3 { width: 25%; }
+  .w-424-2 { width: 16.666%; }
+  .w-424-1 { width: 8.333%; }
+}

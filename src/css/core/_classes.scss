@@ -1,0 +1,136 @@
+.rotate-bottom { @include transform( rotate(90deg) ); }
+.rotate-right { @include transform( rotate(180deg) ); }
+.rotate-up { @include transform( rotate(270deg) ); }
+
+// Skeleton effect
+.skeleton-loader {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  background: $xlight_grey_color;
+}
+
+.skeleton-loader.text-small { height: $text_small; }
+.skeleton-loader.text-medium { height: $text_medium; }
+.skeleton-loader.text-big { height: $text_big; }
+.skeleton-loader.text-xl { height: $text_xl; }
+.skeleton-loader.text-xxl { height: $text_xxl; }
+.skeleton-loader.text-3xl { height: $text_3xl; }
+.skeleton-loader.text-4xl { height: $text_4xl; }
+.skeleton-loader.text-5xl { height: $text_5xl; }
+
+.skeleton-loader::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: skeleton-effect .8s infinite;
+}
+
+@keyframes skeleton-effect {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+// Lazy loading
+.lazy { background-color: $xlight_grey_color; }
+
+.preload:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 5px solid $dark_grey_color;
+  border-color: $dark_grey_color transparent $dark_grey_color transparent;
+  border-radius: 50%;
+  margin: -28px 0 0 -28px;
+  width: 46px;
+  height: 46px;
+  @include rotate-animation( 1s, ease-out );
+}
+
+.complete { animation: fadein 1s linear forwards; }
+
+
+// .list-view
+.list-view li {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-view li > a {
+  display: block;
+  position: relative;
+  padding: 10px;
+  text-decoration: none;
+}
+
+a span.arrow {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 42px;
+  border-left: 1px solid #ccc;
+  text-align: center;
+}
+
+a.rotate-arrow span.arrow span {
+  @include transform( rotate(90deg) );
+  transition: transform .25s;
+}
+
+a.rotate-arrow.active span.arrow span {
+  @include transform( rotate(-90deg) );
+}
+
+
+// a.right-arrow-btn, a.left-arrow-btn
+a.right-arrow-btn, a.left-arrow-btn {
+  background-color: $light_btn_color;
+  height: 32px;
+  line-height: 32px;
+  text-decoration: none;
+  color: $white_color;
+}
+a.right-arrow-btn:hover, a.left-arrow-btn:hover {
+  background-color: $dark_btn_color;
+}
+a.right-arrow-btn::after, a.left-arrow-btn::before {
+  content: '';
+  position: absolute;
+  border: solid;
+}
+
+a.right-arrow-btn {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+a.right-arrow-btn::after {
+  border-width: 16px 10px 16px 10px;
+  border-color: transparent transparent transparent $light_btn_color;
+}
+a.right-arrow-btn:hover:after {
+  border-color: transparent transparent transparent $dark_btn_color;
+}
+
+a.left-arrow-btn {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: 10px;
+  padding-right: 5px;
+}
+a.left-arrow-btn::before {
+  left: -20px;
+  border-width: 16px 10px 16px 10px;
+  border-color: transparent $light_btn_color transparent transparent;
+}
+a.left-arrow-btn:hover::before {
+  border-color: transparent $dark_btn_color transparent transparent;
+}

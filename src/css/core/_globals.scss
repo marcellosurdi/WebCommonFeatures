@@ -1,0 +1,81 @@
+$container_max_width: 1024px;
+
+$text_color: #444;
+$text_faded_dark: #888;
+$text_faded_light: #bbb;
+$text_small: 14px;
+$text_medium: 16px;
+$text_big: 18px;
+$text_xl: 24px;
+$text_xxl: 30px;
+$text_3xl: 36px;
+$text_4xl: 48px;
+$text_5xl: 60px;
+
+$white_color: #fff;
+$black_color: #000;
+$light_black_color: #222;
+$xxdark_grey_color: #444;
+$xdark_grey_color: #666;
+$dark_grey_color: #bbb;
+$light_grey_color: #ddd;
+$xlight_grey_color: #eee;
+$xxlight_grey_color: #f9f9f9;
+$dark_a_color: #0984c6;
+$light_a_color: #109adc;
+$light_btn_color: #20c0b3;
+$dark_btn_color: #19b0a4;
+$active_color: #006cff;
+$focus_color: #f9f9ce;
+$light_success_color: #def2d5;
+$dark_success_color: #596d50;
+$light_alert_color: #ebc8c4;
+$dark_alert_color: #ac302e;
+$light_warning_color: #fcd450;
+$dark_warning_color: #ae8711;
+$light_notice_color: #f0f9fe;
+$dark_notice_color: #285479;
+
+$margin_small_size: 5px;
+$margin_medium_size: 10px;
+$margin_big_size: 20px;
+$margin_xl_size: 30px;
+$margin_xxl_size: 50px;
+
+
+@mixin font-a {
+  font-family: arial, sans-serif;
+}
+
+@mixin font-b {
+  font-family: georgia, serif;
+}
+
+
+@mixin rotate-animation( $time, $animation_type ) {
+  animation: rotate $time infinite $animation_type;
+}
+
+@mixin pulsate-animation( $time, $animation_type ) {
+  animation: pulsate $time infinite $animation_type;
+}
+
+
+@mixin transform( $property ) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+@mixin user-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin appearance {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
