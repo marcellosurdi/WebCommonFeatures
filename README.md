@@ -1,10 +1,12 @@
 # Web Common Plugins
 
-Funzionalità di uso comune nei progetti web:
-- Lightbox (incompleto);
+Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web:
+- Lightbox;
 - Modalbox;
 - Notification;
-- Overlay.
+- Overlay;
+- sfondi;
+- icone.
 
 ## Installazione
 

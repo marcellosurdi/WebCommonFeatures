@@ -27,16 +27,64 @@ export function getCurrentLang() {
   return lang;
 }
 
- /**
-  * @desc
-  * Imposta un cookie con il nome, il valore ed i giorni di validità passati come parametro.
-  *
-  * @param {string} cname Nome
-  * @param {string} cvalue Valore
-  * @param {number} exdays Giorni di validità
-  *
-  * @see {@link https://www.w3schools.com/js/js_cookies.asp|JavaScript cookies}
-  */
+/**
+ * @desc
+ * Imposta lo scorrimento fluido di pagina verso un'ancora se lo smooth scroll è supportato dal browser.
+ *
+ * @example
+ * <a href="#anchor-name" data-smooth="">...</a>
+ */
+export function smoothBehavior() {
+  document.querySelectorAll( 'a[data-smooth]' ).forEach( ( item ) => {
+    item.addEventListener( 'click', ( e ) => {
+      e.preventDefault();
+
+      const id = e.currentTarget.getAttribute( 'href' ).slice( 1 );
+      const el = document.getElementById( id );
+      if( el ) {
+        const box = getCoords( el );
+
+        if( 'scrollBehavior' in document.documentElement.style ) {
+          window.scrollTo( {
+            top: box.top,
+            left: 0,
+            behavior: 'smooth'
+          } );
+        }
+
+        else {
+          window.scrollTo( 0, box.top );
+        }
+      }
+    } );
+  } );
+}
+
+/**
+ * Ricava le coordinate dell'elemento passato come parametro tenendo conto dello scorrimento di pagina
+ *
+ * @param {HTMLElement} el
+ * @returns {object}
+ */
+export function getCoords( el ) {
+  let box = el.getBoundingClientRect();
+
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset
+  };
+}
+
+/**
+ * @desc
+ * Imposta un cookie con il nome, il valore ed i giorni di validità passati come parametro.
+ *
+ * @param {string} cname Nome
+ * @param {string} cvalue Valore
+ * @param {number} exdays Giorni di validità
+ *
+ * @see {@link https://www.w3schools.com/js/js_cookies.asp|JavaScript cookies}
+ */
 export function setCookie( cname, cvalue, exdays ) {
   const d = new Date();
   d.setTime( d.getTime() + ( exdays * 24 * 60 * 60 * 1000 ) );

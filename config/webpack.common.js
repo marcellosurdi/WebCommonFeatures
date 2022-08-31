@@ -19,18 +19,12 @@ const config = {
 
       {
         test: /\.(png|svg|jpg|gif)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'img/[name][ext]'
-        },
+        type: 'asset/inline',
       },
 
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: 'fonts/[name][ext]'
-        },
+        type: 'asset/inline',
       }
     ],
   },
