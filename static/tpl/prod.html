@@ -8,12 +8,52 @@
     <link href="./css/web-common-plugins.min.css" rel="stylesheet">
   </head>
 
-  <body class="index light-grey-background" data-lang="en">
+  <body class="index light-grey-background" data-lang="en" data-output-path="<%= webpackConfig.output.publicPath %>">
     <%= require('html-loader!./inc/body.html').default %>
-    
+
     <script src="./js/web-common-plugins.min.js"></script>
     <script>
+      // Gestione stringhe di traduzione
+      var obj = {
+        'it': {
+          'home': 'Pagina home',
+          'back': 'Torna indietro',
+        },
+        'en': {
+          'home': 'Home page',
+          'back': 'Back',
+        }
+      }
+
+      WebCommonPlugins.l10n.add( obj );
+      console.log( WebCommonPlugins.l10n );
+
+      // LightBox
+      WebCommonPlugins.Lightbox();
+
+      // Modalbox
+      document.querySelector( 'button#modalbox-btn' ).addEventListener( 'click', ( e ) => {
+        WebCommonPlugins.Modalbox(
+          'Titolo',
+          'Testo di prova',
+          () => { console.log( "L'utente ha confermato!" ); return true; },
+          () => { console.log( "L'utente ha annullato!" ); }
+        );
+      } );
+
       // Notification
+      document.querySelector( 'button#notification-btn-success' ).addEventListener( 'click', ( e ) => {
+        WebCommonPlugins.Notification( 'success', 'Testo di prova' );
+      } );
+
+      document.querySelector( 'button#notification-btn-warning' ).addEventListener( 'click', ( e ) => {
+        WebCommonPlugins.Notification( 'warning', 'Testo di prova' );
+      } );
+
+      document.querySelector( 'button#notification-btn-notice' ).addEventListener( 'click', ( e ) => {
+        WebCommonPlugins.Notification( 'notice', 'Testo di prova', 0, () => { console.log( "L'utente ha confermato!" ) } );
+      } );
+
       document.querySelector( 'button#notification-btn-alert' ).addEventListener( 'click', ( e ) => {
         WebCommonPlugins.Notification( 'alert', 'Testo di prova' );
       } );

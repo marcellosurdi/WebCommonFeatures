@@ -7,12 +7,18 @@
  */
 
 export const l10n = {
-  'it': {
+  it: {
     'cancel': 'Annulla',
     'confirm': 'Conferma',
   },
-  'en': {
+
+  en: {
     'cancel': 'Cancel',
     'confirm': 'Confirm',
+  },
+
+  add: function( obj ) {
+    Object.assign( this.it, obj.it );
+    Object.assign( this.en, obj.en );
   }
 }

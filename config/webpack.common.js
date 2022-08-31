@@ -53,6 +53,15 @@ const config = {
 
   plugins: [
     new CleanWebpackPlugin( { }),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: paths.static + '/img',
+          to: paths.build + '/img'
+        },
+      ],
+    }),
   ],
 };
 

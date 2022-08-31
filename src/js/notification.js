@@ -3,7 +3,7 @@
  * @author Marcello Surdi
  *
  * @desc
- * La funzione Notification mostra o nasconde una notifica nella parte alta del display.
+ * La funzione Notification mostra o nasconde un riquadro di notifica nella parte alta del display.
  */
 
 import { l10n } from './l10n';
@@ -15,10 +15,10 @@ let timeout_id = 0;
  * @desc
  * Mostra o nasconde una notifica. La notifica è aggiunta a un elemento `<div id="body">...</div>` che racchiude tutti i contenuti.
  *
- * @param {boolean|string} type false hides the message, 'warning'|'alert'|'notice'|'success' shows it
- * @param {string} text Text to display (can contain HTML)
- * @param {number} [timeout=7000] Number of milliseconds after wich the notification must disappear, 0 to get a persistent notification
- * @param {function} [onConfirm] A function to be invoked if the user confirms the current operation
+ * @param {string} type 'warning'|'alert'|'notice'|'success'
+ * @param {string} text Testo da mostrare come contenuto della notifica, può contenere HTML o essere una stringa dell'oggetto `l10n`
+ * @param {number} [timeout=7000] Tempo espresso in millisecondi dopo il quale la notifica sparisce, 0 indica una notifica persistente
+ * @param {function} [onConfirm] Funzione callback invocata quando l'utente conferma l'operazione corrente
  *
  * @example
  * Notification( 'alert', 'text', 0, () => {} );
@@ -48,7 +48,7 @@ export function Notification( type, text, timeout = 7000, onConfirm ) {
     document.getElementById( 'body' ).appendChild( notification );
   }
 
-  if( !type ) {
+  if( ![ 'warning', 'alert', 'notice', 'success' ].includes( type ) ) {
     close();
     return;
   }
@@ -61,8 +61,8 @@ export function Notification( type, text, timeout = 7000, onConfirm ) {
   }
 
   notification.classList.remove( 'show', 'alert-background', 'notice-background', 'success-background', 'warning-background' );
-
   notification.classList.add( type + '-background' );
+
   const translated_text = l10n[ getCurrentLang() ][ text ];
   notification.querySelector( 'p.text' ).innerHTML = ( translated_text ) ? translated_text : text;
 

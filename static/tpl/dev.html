@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no">
   </head>
 
-  <body class="index light-grey-background" data-lang="en">
+  <body class="index light-grey-background" data-lang="en" data-output-path="<%= webpackConfig.output.publicPath %>">
     <%= require('html-loader!./inc/body.html').default %>
   </body>
 </html>

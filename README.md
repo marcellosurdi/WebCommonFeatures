@@ -1,6 +1,9 @@
 # Web Common Plugins
 
 Funzionalità di uso comune nei progetti web:
+- Lightbox (incompleto);
+- Modalbox;
+- Notification;
 - Overlay.
 
 ## Installazione
