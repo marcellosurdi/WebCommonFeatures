@@ -20,11 +20,13 @@ import { Overlay } from './overlay';
 /**
  * @desc
  * Gestisce una gallery in stile lightbox
+ *
+ * @param {HTMLElement} el Elemento contenitore della gallery
  */
-export function Lightbox() {
+export function Lightbox( el ) {
   let lightbox, close_btn, overlay;
 
-  const coll = document.querySelectorAll( 'a[data-lightbox]' );
+  const coll = el.querySelectorAll( 'a[data-lightbox]' );
   coll.forEach( ( item ) => {
     item.addEventListener( 'click', open );
   } );

@@ -1,14 +1,14 @@
 <div id="body" class="padding-medium">
   <h1>Web Common Plugins</h1>
   <p>Questo pacchetto rende disponibili funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web.</p>
-  <ul class="disc">
-    <li><a href="#icons-section" data-smooth="true">Icone</a></li>
-    <li><a href="#lightbox-section" data-smooth="true">Lightbox</a></li>
-    <li><a href="#modalbox-section" data-smooth="true">Modalbox</a></li>
-    <li><a href="#notification-section" data-smooth="true">Notification</a></li>
-    <li><a href="#overlay-section" data-smooth="true">Overlay</a></li>
-    <li><a href="#backgrounds-section" data-smooth="true">Sfondi</a></li>
-    <li><a href="#validation-section" data-smooth="true">Validation</a></li>
+  <ul id="toc" class="disc">
+    <li><a href="#icons-section" data-smooth>Icone</a></li>
+    <li><a href="#lightbox-section" data-smooth>Lightbox</a></li>
+    <li><a href="#modalbox-section" data-smooth>Modalbox</a></li>
+    <li><a href="#notification-section" data-smooth>Notification</a></li>
+    <li><a href="#overlay-section" data-smooth>Overlay</a></li>
+    <li><a href="#backgrounds-section" data-smooth>Sfondi</a></li>
+    <li><a href="#validation-section" data-smooth>Validation</a></li>
   </ul>
 
   <div id="icons-section" class="white-background margin-top-xxl padding-medium">
@@ -57,6 +57,14 @@
       id="modalbox-btn"
       class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
       Modalbox
+    </button>
+
+    <p class="margin-top-medium">Mostra una finestra modale con un form</p>
+    <button
+      type="button"
+      id="modalbox-btn-2"
+      class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
+      Modalbox con form
     </button>
   </div>
 
@@ -137,39 +145,64 @@
 
   <div id="validation-section" class="white-background margin-top-xxl padding-medium">
     <h2>Validazione e stili form</h2>
-    <form>
+    <form id="test-form">
       <fieldset>
         <legend>Legend1</legend>
-        <div class="float-container form-section error">
-          <label for="text1">Label 1</label>
-          <input id="text1" type="text" placeholder="#text1">
+        <div class="float-container form-section">
+          <label for="text1">minChar(2)</label>
+          <input type="text" id="text1" placeholder="minChar(2)" data-require='minChar' data-params='2' data-msg='mandatory-field'>
+        </div>
+
+        <div class="float-container form-section">
+          <label for="email">checkMail</label>
+          <input type="text" id="email" placeholder="checkMail" data-require="checkMail" data-msg="mandatory-field">
         </div>
 
         <div class="float-container form-section">
           <div class="float-item w-6 padding-right-medium">
-            <label for="text2">Label 2</label>
-            <input id="text2" type="text" placeholder="#text2">
+            <label for="password">checkPassword</label>
+            <input type="password" id="password" placeholder="checkPassword" data-require="checkPassword" data-msg="invalid-password">
           </div>
           <div class="float-item w-6">
-            <label for="text3">Label 3</label>
-            <input id="text3" type="text" placeholder="#text3">
+            <label for="password2">compareWith</label>
+            <input type="password" id="password2" placeholder="compareWith" data-require="compareWith" data-params="password" data-msg="invalid-password">
           </div>
         </div>
 
+        <div class="float-container form-section">
+          <label for="text2">checkTelephone</label>
+          <input type="text" id="text2" placeholder="checkTelephone" data-require='checkTelephone' data-msg='mandatory-field'>
+        </div>
+
+        <div class="float-container form-section">
+          <label for="text3">checkITFiscalCode</label>
+          <input type="text" id="text3" placeholder="checkITFiscalCode" data-require='checkITFiscalCode' data-msg='mandatory-field'>
+        </div>
+
+        <div class="float-container form-section">
+          <label for="text4">checkITVAT</label>
+          <input type="text" id="text4" placeholder="checkITVAT" data-require='checkITVAT' data-msg='mandatory-field'>
+        </div>
+
         <div class="form-section">
-          <label for="select1">Label 4</label>
-          <select>
-            <option>Choose</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
+          <label for="select">isValidDate</label>
+          <select id="select" data-require='isValidDate' data-params="1980,2030" data-msg='mandatory-field'>
+            <option value="20/12/1979">20/12/1979</option>
+            <option value="29/02/2023">29/02/2023</option>
+            <option value="31/09/2022">31/09/2022</option>
+            <option value="06/01/1980">06/01/1980</option>
           </select>
+        </div>
+
+        <div class="float-container form-section">
+          <label for="text5">minChar(10)</label>
+          <textarea id="text5" placeholder="minChar(10)" data-require='minChar' data-params='10' data-msg='mandatory-field'></textarea>
         </div>
 
         <div class="float-item form-section w-12">
           <label class="checkboxradio">
-            Label 5
-            <input type="checkbox" id="checkbox1" checked="">
+            isChecked
+            <input type="checkbox" id="checkbox" data-require="isChecked" data-msg="mandatory-field">
             <span class="checkbox"></span>
           </label>
         </div>
@@ -177,14 +210,14 @@
         <div class="float-item form-section w-12">
           <div class="float-item w-6">
             <label class="checkboxradio">
-              Label 6
+              Radio 1
               <input type="radio" id="radio1" name="radio-example" checked="">
               <span class="radio"></span>
             </label>
           </div>
           <div class="float-item w-6">
             <label class="checkboxradio">
-              Label 7
+              Radio 2
               <input type="radio" id="radio2" name="radio-example">
               <span class="radio"></span>
             </label>

@@ -13,28 +13,31 @@
 
     <script src="./js/web-common-plugins.min.js"></script>
     <script>
-    // Gestione stringhe di traduzione
-    let obj = {
-      'it': {
-        'notification-text': 'Le tariffe variano di continuo, a volte anche nel corso della stessa giornata',
-        'modalbox-title': 'Titolo modalbox',
-        'modalbox-text': "Il noleggio auto è uno dei servizi più richiesti in ambito turistico, ma, specie per chi si ritrova a noleggiare un'auto per la prima volta, <strong>non è sempre facile intuire quali decisioni prendere per contenere i costi</strong> o, semplicemente, per evitare sgradite sorprese.",
-      },
-      'en': {
-        'notification-text': 'Rates vary continuously, sometimes even within the same day',
-        'modalbox-title': 'Modalbox title',
-        'modalbox-text': "Car rental is one of the most requested services in the tourism sector, but, especially for first-time car renters, <strong>it can be difficult to guess which decisions will contain costs</strong> or simply how to avoid unpleasant surprises.",
+      const translation_strings = {
+        'it': {
+          'notification-text': 'Le tariffe variano di continuo, a volte anche nel corso della stessa giornata',
+          'modalbox-title': 'Titolo modalbox',
+          'modalbox-text': "Il noleggio auto è uno dei servizi più richiesti in ambito turistico, ma, specie per chi si ritrova a noleggiare un'auto per la prima volta, <strong>non è sempre facile intuire quali decisioni prendere per contenere i costi</strong> o, semplicemente, per evitare sgradite sorprese.",
+          'mandatory-field': 'Compila tutti i campi obbligatori',
+          'invalid-password': 'Password non valida',
+        },
+        'en': {
+          'notification-text': 'Rates vary continuously, sometimes even within the same day',
+          'modalbox-title': 'Modalbox title',
+          'modalbox-text': "Car rental is one of the most requested services in the tourism sector, but, especially for first-time car renters, <strong>it can be difficult to guess which decisions will contain costs</strong> or simply how to avoid unpleasant surprises.",
+          'mandatory-field': 'Fill in all required fields',
+          'invalid-password': 'Invalid password',
+        }
       }
-    }
 
-      WebCommonPlugins.l10n.add( obj );
+      WebCommonPlugins.l10n.add( translation_strings );
       console.log( WebCommonPlugins.l10n );
 
       // Smooth behavior
-      WebCommonPlugins.Utils.smoothBehavior();
+      WebCommonPlugins.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );
 
       // LightBox
-      WebCommonPlugins.Lightbox();
+      WebCommonPlugins.Lightbox( document.getElementById( 'lightbox-section' ) );
 
       // Modalbox
       document.querySelector( 'button#modalbox-btn' ).addEventListener( 'click', ( e ) => {
@@ -45,6 +48,29 @@
           () => { console.log( "L'utente ha annullato!" ); }
         );
       } );
+
+      document.querySelector( 'button#modalbox-btn-2' ).addEventListener( 'click', ( e ) => {
+        WebCommonPlugins.Modalbox(
+          'Lorem ipsum',
+          `
+            <div class="float-container form-section">
+              <label for="modal-box-email">Email</label>
+              <input type="text" id="modal-box-email" data-require="checkMail" data-msg="mandatory-field">
+            </div>
+          `,
+          ( form ) => {
+            if( WebCommonPlugins.Validation( form, [ 'modal-box-email' ] ) ) {
+              console.log( 'Invio dati!' );
+              return true;
+            }
+            else {
+              console.log( 'Si è verificato un errore!' );
+            }
+          },
+          () => { console.log( "L'utente ha annullato!" ); }
+        );
+      } );
+
 
       // Notification
       document.querySelector( 'button#notification-btn-success' ).addEventListener( 'click', ( e ) => {
@@ -73,6 +99,18 @@
         // Mostra un overlay con spinner di caricamento
         WebCommonPlugins.Overlay( true, true );
         setTimeout( () => { WebCommonPlugins.Overlay( false ) }, 2000 );
+      } );
+
+      // Validation
+      document.getElementById( 'test-form' ).addEventListener( 'submit', function( e ) {
+        e.preventDefault();
+
+        if( WebCommonPlugins.Validation( this, [ 'text1', 'email', 'password', 'password2', 'text2', 'text3', 'text4', 'select', 'text5', 'checkbox' ] ) ) {
+          console.log( 'Invio dati!' );
+        }
+        else {
+          console.log( 'Si è verificato un errore!' );
+        }
       } );
     </script>
   </body>

@@ -16,7 +16,7 @@ import { Overlay } from './overlay';
  *
  * @param {string} title Testo da mostrare come titolo della finestra
  * @param {string} text Testo da mostrare come contenuto della finestra, può contenere HTML, moduli o essere una stringa dell'oggetto `l10n`
- * @param {function} onConfirm Funzione callback invocata quando l'utente conferma l'operazione corrente. Deve restituire true per chiudere la finestra
+ * @param {function} onConfirm Funzione callback invocata quando l'utente conferma l'operazione corrente. Riceve come parametro un riferimento al form della finestra modale, deve restituire true per chiudere la finestra.
  * @param {function} [onCancel = () => {}] Funzione callback invocata se l'utente annulla l'operazione corrente
  *
  * @example
@@ -67,7 +67,7 @@ export function Modalbox( title, text, onConfirm, onCancel = () => {} ) {
   modalbox.querySelector( 'form' ).onsubmit = function( e ) {
     e.preventDefault();
 
-    if( onConfirm() ) {
+    if( onConfirm( this ) ) {
       // Chiude la soft keyboard
       modalbox.querySelector( '.confirm-btn' ).focus();
       close();

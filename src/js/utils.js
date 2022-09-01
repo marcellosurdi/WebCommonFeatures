@@ -29,35 +29,45 @@ export function getCurrentLang() {
 
 /**
  * @desc
- * Imposta lo scorrimento fluido di pagina verso un'ancora se lo smooth scroll è supportato dal browser.
+ * Imposta lo scorrimento fluido di pagina per tutti gli elementi `<a data-smooth>` che puntano a un'ancora dell'elemento contenitore passato come parametro.
+ *
+ * @param {HTMLElement} el Elemento contenitore
  *
  * @example
- * <a href="#anchor-name" data-smooth="">...</a>
+ * <a href="#anchor-name" data-smooth>...</a>
  */
-export function smoothBehavior() {
-  document.querySelectorAll( 'a[data-smooth]' ).forEach( ( item ) => {
+export function setSmoothBehavior( el ) {
+  el.querySelectorAll( 'a[data-smooth]' ).forEach( ( item ) => {
     item.addEventListener( 'click', ( e ) => {
       e.preventDefault();
 
       const id = e.currentTarget.getAttribute( 'href' ).slice( 1 );
-      const el = document.getElementById( id );
-      if( el ) {
-        const box = getCoords( el );
-
-        if( 'scrollBehavior' in document.documentElement.style ) {
-          window.scrollTo( {
-            top: box.top,
-            left: 0,
-            behavior: 'smooth'
-          } );
-        }
-
-        else {
-          window.scrollTo( 0, box.top );
-        }
+      const target = document.getElementById( id );
+      if( target ) {
+        const box = getCoords( target );
+        smoothScrollTo( box.top )
       }
     } );
   } );
+}
+
+/**
+ * @desc
+ * Modifica la chiamata al metodo `window.scrollTo` in base al supporto del browser per lo scorrimento fluido.
+ *
+ * @param {number} ycoord Coordinata y
+ */
+export function smoothScrollTo( ycoord ) {
+  if( 'scrollBehavior' in document.documentElement.style ) {
+    window.scrollTo( {
+      left: 0,
+      top: ycoord,
+      behavior: 'smooth'
+    } );
+  }
+  else {
+    window.scrollTo( 0, ycoord );
+  }
 }
 
 /**
