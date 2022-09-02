@@ -37,7 +37,7 @@ l10n.add( translation_strings );
 
 // Smooth behavior
 setSmoothBehavior( document.getElementById( 'toc' ) );
-document.querySelector( 'button#_open-menu' ).addEventListener( 'click', () => {
+document.querySelector( 'a#_open-menu' ).addEventListener( 'click', () => {
   document.getElementById( 'sidenav' ).open();
 });
 

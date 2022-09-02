@@ -1,12 +1,14 @@
 # Web Common Plugins
 
 Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web:
-- icone;
+- Icone;
 - Lightbox;
 - Modalbox;
 - Notification;
 - Overlay;
-- sfondi;
+- Sfondi;
+- Skeleton;
+- Sidenav;
 - Validation.
 
 ## Installazione

@@ -1,7 +1,7 @@
 {
   "name": "web-common-plugins",
   "description": "Common features and default CSS classes for web projects",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "keywords": [],
   "main": "dist/js/web-common-plugins.min.js",
   "repository": {},
