@@ -1,6 +1,6 @@
 {
   "name": "web-common-plugins",
-  "description": "Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web",
+  "description": "Common features and default CSS classes for web projects",
   "version": "0.0.6",
   "keywords": [],
   "main": "dist/js/web-common-plugins.min.js",
