@@ -5,6 +5,7 @@
  * Entry point per la modalità development
  */
  import './css/style.scss';
+ import './js/sidenav';
  import { l10n } from './js/l10n';
  import { Lightbox } from './js/lightbox';
  import { Modalbox } from './js/modalbox';
@@ -33,10 +34,12 @@ const translation_strings = {
 }
 
 l10n.add( translation_strings );
-console.log( l10n );
 
 // Smooth behavior
 setSmoothBehavior( document.getElementById( 'toc' ) );
+document.querySelector( 'button#_open-menu' ).addEventListener( 'click', () => {
+  document.getElementById( 'sidenav' ).open();
+});
 
 // LightBox
 Lightbox( document.getElementById( 'lightbox-section' ) );

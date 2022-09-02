@@ -58,15 +58,17 @@ export function setSmoothBehavior( el ) {
  * @param {number} ycoord Coordinata y
  */
 export function smoothScrollTo( ycoord ) {
+  let context = document.querySelector( '#body .page' );
+
   if( 'scrollBehavior' in document.documentElement.style ) {
-    window.scrollTo( {
+    context.scrollTo( {
       left: 0,
       top: ycoord,
       behavior: 'smooth'
     } );
   }
   else {
-    window.scrollTo( 0, ycoord );
+    context.scrollTo( 0, ycoord );
   }
 }
 
@@ -77,11 +79,12 @@ export function smoothScrollTo( ycoord ) {
  * @returns {object}
  */
 export function getCoords( el ) {
+  let context = document.querySelector( '#body .page' );
   let box = el.getBoundingClientRect();
 
   return {
-    top: box.top + pageYOffset,
-    left: box.left + pageXOffset
+    top: box.top + context.scrollTop,
+    left: box.left + context.scrollTop
   };
 }
 

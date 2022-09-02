@@ -16,7 +16,6 @@
 
 import { Overlay } from './overlay';
 
-
 /**
  * @desc
  * Gestisce una gallery in stile lightbox

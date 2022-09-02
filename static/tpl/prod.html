@@ -31,10 +31,12 @@
       }
 
       WebCommonPlugins.l10n.add( translation_strings );
-      console.log( WebCommonPlugins.l10n );
 
       // Smooth behavior
       WebCommonPlugins.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );
+      document.querySelector( 'button#_open-menu' ).addEventListener( 'click', () => {
+        document.getElementById( 'sidenav' ).open();
+      });
 
       // LightBox
       WebCommonPlugins.Lightbox( document.getElementById( 'lightbox-section' ) );

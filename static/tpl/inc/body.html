@@ -1,236 +1,276 @@
-<div id="body" class="padding-medium">
-  <h1>Web Common Plugins</h1>
-  <p>Questo pacchetto rende disponibili funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web.</p>
-  <ul id="toc" class="disc">
-    <li><a href="#icons-section" data-smooth>Icone</a></li>
-    <li><a href="#lightbox-section" data-smooth>Lightbox</a></li>
-    <li><a href="#modalbox-section" data-smooth>Modalbox</a></li>
-    <li><a href="#notification-section" data-smooth>Notification</a></li>
-    <li><a href="#overlay-section" data-smooth>Overlay</a></li>
-    <li><a href="#backgrounds-section" data-smooth>Sfondi</a></li>
-    <li><a href="#validation-section" data-smooth>Validation</a></li>
-  </ul>
+<div id="body">
+  <div class="page padding-medium">
+    <h1>Web Common Plugins</h1>
+    <p>Questo pacchetto rende disponibili funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web.</p>
 
-  <div id="icons-section" class="white-background margin-top-xxl padding-medium">
-    <h2>Icone</h2>
-    <p class="margin-top-medium">Icone disponibili e classi CSS corrispondenti.</p>
-    <div class="float-container">
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-login icon-medium text-medium"></span> .icon-login</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-logout icon-medium text-medium"></span> .icon-logout</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-dollar icon-medium text-medium"></span> .icon-dollar</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-lifebuoy icon-medium text-medium"></span> .icon-lifebuoy</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-signup icon-medium text-medium"></span> .icon-signup</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-company icon-medium text-medium"></span> .icon-company</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-mail icon-medium text-medium"></span> .icon-mail</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-user icon-medium text-medium"></span> .icon-user</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-home icon-medium text-medium"></span> .icon-home</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-phone icon-medium text-medium"></span> .icon-phone</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-faq icon-medium text-medium"></span> .icon-faq</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-info icon-medium text-medium"></span> .icon-info</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-marker icon-medium text-medium"></span> .icon-marker</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-padlock icon-medium text-medium"></span> .icon-padlock</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-arrow icon-medium text-medium"></span> .icon-arrow</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-close icon-medium text-medium"></span> .icon-close</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-unlink icon-medium text-medium"></span> .icon-unlink</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-menu icon-medium text-medium"></span> .icon-menu</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-checkmark icon-medium text-medium"></span> .icon-checkmark</div>
-      <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-spinner rotate icon-medium text-medium"></span> .icon-spinner</div>
+    <button type="button" id="open-menu" class="icon-menu icon-medium text-medium" style="position: absolute; top: 14px; right: 10px;"></button>
+
+    <ul id="toc" class="disc">
+      <li><a href="#icons-section" data-smooth>Icone</a></li>
+      <li><a href="#lightbox-section" data-smooth>Lightbox</a></li>
+      <li><a href="#modalbox-section" data-smooth>Modalbox</a></li>
+      <li><a href="#notification-section" data-smooth>Notification</a></li>
+      <li><a href="#overlay-section" data-smooth>Overlay</a></li>
+      <li><a href="#backgrounds-section" data-smooth>Sfondi</a></li>
+      <li><button id="_open-menu" class="text-big" style="text-decoration: underline; color: #444;">Sidenav</button></li>
+      <li><a href="#validation-section" data-smooth>Validation</a></li>
+    </ul>
+
+    <div id="icons-section" class="white-background margin-top-xxl padding-medium">
+      <h2>Icone</h2>
+      <p class="margin-top-medium">Icone disponibili e classi CSS corrispondenti.</p>
+      <div class="float-container">
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-login icon-medium text-medium"></span> .icon-login</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-logout icon-medium text-medium"></span> .icon-logout</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-dollar icon-medium text-medium"></span> .icon-dollar</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-lifebuoy icon-medium text-medium"></span> .icon-lifebuoy</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-signup icon-medium text-medium"></span> .icon-signup</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-company icon-medium text-medium"></span> .icon-company</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-mail icon-medium text-medium"></span> .icon-mail</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-user icon-medium text-medium"></span> .icon-user</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-home icon-medium text-medium"></span> .icon-home</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-phone icon-medium text-medium"></span> .icon-phone</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-faq icon-medium text-medium"></span> .icon-faq</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-info icon-medium text-medium"></span> .icon-info</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-marker icon-medium text-medium"></span> .icon-marker</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-padlock icon-medium text-medium"></span> .icon-padlock</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-arrow icon-medium text-medium"></span> .icon-arrow</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-close icon-medium text-medium"></span> .icon-close</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-unlink icon-medium text-medium"></span> .icon-unlink</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-menu icon-medium text-medium"></span> .icon-menu</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-checkmark icon-medium text-medium"></span> .icon-checkmark</div>
+        <div class="float-item margin-medium w-2 w-1152-3 w-864-4 w-582-6 w-424-12"><span class="xlight-grey-background icon-spinner rotate icon-medium text-medium"></span> .icon-spinner</div>
+      </div>
     </div>
-  </div>
 
-  <div id="lightbox-section" class="white-background margin-top-xxl padding-medium">
-    <h2>Lightbox</h2>
-    <p>Visualizza l'ingrandimento per una singola immagine</p>
-    <a
-      href="img/img-1.jpg"
-      class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase decoration-none"
-      data-lightbox="img-1">
-      Immagine 1
-    </a>
-  </div>
-
-  <div id="modalbox-section" class="white-background margin-top-xxl padding-medium">
-    <h2>Modalbox</h2>
-    <p class="margin-top-medium">Mostra una finestra modale</p>
-    <button
-      type="button"
-      id="modalbox-btn"
-      class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
-      Modalbox
-    </button>
-
-    <p class="margin-top-medium">Mostra una finestra modale con un form</p>
-    <button
-      type="button"
-      id="modalbox-btn-2"
-      class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
-      Modalbox con form
-    </button>
-  </div>
-
-  <div id="notification-section" class="white-background margin-top-xxl padding-medium">
-    <h2>Notification</h2>
-    <p class="margin-top-medium">Mostra una notifica di tipo <code>success</code></p>
-    <button
-      type="button"
-      id="notification-btn-success"
-      class="display-inline-block radius-5 success-background padding-medium align-center text-medium uppercase">
-      Notifica
-    </button>
-
-    <p class="margin-top-medium">Mostra una notifica di tipo <code>warning</code></p>
-    <button
-      type="button"
-      id="notification-btn-warning"
-      class="display-inline-block radius-5 warning-background padding-medium align-center text-medium uppercase">
-      Notifica
-    </button>
-
-    <p class="margin-top-medium">Mostra una notifica di tipo <code>notice</code> persistente con conferma</p>
-    <button
-      type="button"
-      id="notification-btn-notice"
-      class="display-inline-block radius-5 notice-background padding-medium align-center text-medium uppercase">
-      Notifica
-    </button>
-
-    <p class="margin-top-medium">Mostra una notifica di tipo <code>alert</code></p>
-    <button
-      type="button"
-      id="notification-btn-alert"
-      class="display-inline-block radius-5 alert-background padding-medium align-center text-medium uppercase">
-      Notifica
-    </button>
-  </div>
-
-  <div id="overlay-section" class="white-background margin-top-xxl padding-medium">
-    <h2>Overlay</h2>
-    <p class="margin-top-medium">Mostra un overlay che scompare dopo due secondi</p>
-    <button
-      type="button"
-      id="overlay-btn"
-      class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
-      Overlay
-    </button>
-
-    <p class="margin-top-medium">Mostra un overlay con spinner di caricamento che scompare dopo due secondi</p>
-    <button
-      type="button"
-      id="overlay-btn-2"
-      class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
-      Overlay con spinner
-    </button>
-  </div>
-
-  <div id="backgrounds-section" class="white-background margin-top-xxl padding-medium">
-    <h2>Sfondi</h2>
-    <p class="margin-top-medium">Classi CSS predefinite per assegnare sfondi e posizionamenti adattivi.</p>
-    <div class="float-container">
-      <div class="float-item dark-a-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.dark-a-background</div>
-      <div class="float-item light-a-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.light-a-background</div>
-      <div class="float-item dark-btn-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.dark-btn-background</div>
-      <div class="float-item light-btn-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.light-btn-background</div>
-      <div class="float-item xxdark-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xxdark-grey-background</div>
-      <div class="float-item xdark-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xdark-grey-background</div>
-      <div class="float-item dark-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.dark-grey-background</div>
-      <div class="float-item light-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.light-grey-background</div>
-      <div class="float-item xlight-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xlight-grey-background</div>
-      <div class="float-item xxlight-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xxlight-grey-background</div>
-      <div class="float-item success-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.success-background</div>
-      <div class="float-item alert-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.alert-background</div>
-      <div class="float-item warning-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.warning-background</div>
-      <div class="float-item notice-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.notice-background</div>
+    <div id="lightbox-section" class="white-background margin-top-xxl padding-medium">
+      <h2>Lightbox</h2>
+      <p>Visualizza l'ingrandimento per una singola immagine</p>
+      <a
+        href="img/img-1.jpg"
+        class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase decoration-none"
+        data-lightbox="img-1">
+        Immagine 1
+      </a>
     </div>
-  </div>
 
-  <div id="validation-section" class="white-background margin-top-xxl padding-medium">
-    <h2>Validazione e stili form</h2>
-    <form id="test-form">
-      <fieldset>
-        <legend>Legend1</legend>
-        <div class="float-container form-section">
-          <label for="text1">minChar(2)</label>
-          <input type="text" id="text1" placeholder="minChar(2)" data-require='minChar' data-params='2' data-msg='mandatory-field'>
-        </div>
+    <div id="modalbox-section" class="white-background margin-top-xxl padding-medium">
+      <h2>Modalbox</h2>
+      <p class="margin-top-medium">Mostra una finestra modale</p>
+      <button
+        type="button"
+        id="modalbox-btn"
+        class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
+        Modalbox
+      </button>
 
-        <div class="float-container form-section">
-          <label for="email">checkMail</label>
-          <input type="text" id="email" placeholder="checkMail" data-require="checkMail" data-msg="mandatory-field">
-        </div>
+      <p class="margin-top-medium">Mostra una finestra modale con un form</p>
+      <button
+        type="button"
+        id="modalbox-btn-2"
+        class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
+        Modalbox con form
+      </button>
+    </div>
 
-        <div class="float-container form-section">
-          <div class="float-item w-6 padding-right-medium">
-            <label for="password">checkPassword</label>
-            <input type="password" id="password" placeholder="checkPassword" data-require="checkPassword" data-msg="invalid-password">
+    <div id="notification-section" class="white-background margin-top-xxl padding-medium">
+      <h2>Notification</h2>
+      <p class="margin-top-medium">Mostra una notifica di tipo <code>success</code></p>
+      <button
+        type="button"
+        id="notification-btn-success"
+        class="display-inline-block radius-5 success-background padding-medium align-center text-medium uppercase">
+        Notifica
+      </button>
+
+      <p class="margin-top-medium">Mostra una notifica di tipo <code>warning</code></p>
+      <button
+        type="button"
+        id="notification-btn-warning"
+        class="display-inline-block radius-5 warning-background padding-medium align-center text-medium uppercase">
+        Notifica
+      </button>
+
+      <p class="margin-top-medium">Mostra una notifica di tipo <code>notice</code> persistente con conferma</p>
+      <button
+        type="button"
+        id="notification-btn-notice"
+        class="display-inline-block radius-5 notice-background padding-medium align-center text-medium uppercase">
+        Notifica
+      </button>
+
+      <p class="margin-top-medium">Mostra una notifica di tipo <code>alert</code></p>
+      <button
+        type="button"
+        id="notification-btn-alert"
+        class="display-inline-block radius-5 alert-background padding-medium align-center text-medium uppercase">
+        Notifica
+      </button>
+    </div>
+
+    <div id="overlay-section" class="white-background margin-top-xxl padding-medium">
+      <h2>Overlay</h2>
+      <p class="margin-top-medium">Mostra un overlay che scompare dopo due secondi</p>
+      <button
+        type="button"
+        id="overlay-btn"
+        class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
+        Overlay
+      </button>
+
+      <p class="margin-top-medium">Mostra un overlay con spinner di caricamento che scompare dopo due secondi</p>
+      <button
+        type="button"
+        id="overlay-btn-2"
+        class="display-inline-block radius-5 xlight-grey-background padding-medium align-center text-medium uppercase">
+        Overlay con spinner
+      </button>
+    </div>
+
+    <div id="backgrounds-section" class="white-background margin-top-xxl padding-medium">
+      <h2>Sfondi</h2>
+      <p class="margin-top-medium">Classi CSS predefinite per assegnare sfondi e posizionamenti adattivi.</p>
+      <div class="float-container">
+        <div class="float-item dark-a-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.dark-a-background</div>
+        <div class="float-item light-a-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.light-a-background</div>
+        <div class="float-item dark-btn-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.dark-btn-background</div>
+        <div class="float-item light-btn-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.light-btn-background</div>
+        <div class="float-item xxdark-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xxdark-grey-background</div>
+        <div class="float-item xdark-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xdark-grey-background</div>
+        <div class="float-item dark-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.dark-grey-background</div>
+        <div class="float-item light-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.light-grey-background</div>
+        <div class="float-item xlight-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xlight-grey-background</div>
+        <div class="float-item xxlight-grey-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.xxlight-grey-background</div>
+        <div class="float-item success-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.success-background</div>
+        <div class="float-item alert-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.alert-background</div>
+        <div class="float-item warning-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.warning-background</div>
+        <div class="float-item notice-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.notice-background</div>
+      </div>
+    </div>
+
+    <div id="validation-section" class="white-background margin-top-xxl padding-medium">
+      <h2>Validazione e stili form</h2>
+      <form id="test-form">
+        <fieldset>
+          <legend>Legend1</legend>
+          <div class="float-container form-section">
+            <label for="text1">minChar(2)</label>
+            <input type="text" id="text1" placeholder="minChar(2)" data-require='minChar' data-params='2' data-msg='mandatory-field'>
           </div>
-          <div class="float-item w-6">
-            <label for="password2">compareWith</label>
-            <input type="password" id="password2" placeholder="compareWith" data-require="compareWith" data-params="password" data-msg="invalid-password">
+
+          <div class="float-container form-section">
+            <label for="email">checkMail</label>
+            <input type="text" id="email" placeholder="checkMail" data-require="checkMail" data-msg="mandatory-field">
           </div>
-        </div>
 
-        <div class="float-container form-section">
-          <label for="text2">checkTelephone</label>
-          <input type="text" id="text2" placeholder="checkTelephone" data-require='checkTelephone' data-msg='mandatory-field'>
-        </div>
+          <div class="float-container form-section">
+            <div class="float-item w-6 padding-right-medium">
+              <label for="password">checkPassword</label>
+              <input type="password" id="password" placeholder="checkPassword" data-require="checkPassword" data-msg="invalid-password">
+            </div>
+            <div class="float-item w-6">
+              <label for="password2">compareWith</label>
+              <input type="password" id="password2" placeholder="compareWith" data-require="compareWith" data-params="password" data-msg="invalid-password">
+            </div>
+          </div>
 
-        <div class="float-container form-section">
-          <label for="text3">checkITFiscalCode</label>
-          <input type="text" id="text3" placeholder="checkITFiscalCode" data-require='checkITFiscalCode' data-msg='mandatory-field'>
-        </div>
+          <div class="float-container form-section">
+            <label for="text2">checkTelephone</label>
+            <input type="text" id="text2" placeholder="checkTelephone" data-require='checkTelephone' data-msg='mandatory-field'>
+          </div>
 
-        <div class="float-container form-section">
-          <label for="text4">checkITVAT</label>
-          <input type="text" id="text4" placeholder="checkITVAT" data-require='checkITVAT' data-msg='mandatory-field'>
-        </div>
+          <div class="float-container form-section">
+            <label for="text3">checkITFiscalCode</label>
+            <input type="text" id="text3" placeholder="checkITFiscalCode" data-require='checkITFiscalCode' data-msg='mandatory-field'>
+          </div>
 
-        <div class="form-section">
-          <label for="select">isValidDate</label>
-          <select id="select" data-require='isValidDate' data-params="1980,2030" data-msg='mandatory-field'>
-            <option value="20/12/1979">20/12/1979</option>
-            <option value="29/02/2023">29/02/2023</option>
-            <option value="31/09/2022">31/09/2022</option>
-            <option value="06/01/1980">06/01/1980</option>
-          </select>
-        </div>
+          <div class="float-container form-section">
+            <label for="text4">checkITVAT</label>
+            <input type="text" id="text4" placeholder="checkITVAT" data-require='checkITVAT' data-msg='mandatory-field'>
+          </div>
 
-        <div class="float-container form-section">
-          <label for="text5">minChar(10)</label>
-          <textarea id="text5" placeholder="minChar(10)" data-require='minChar' data-params='10' data-msg='mandatory-field'></textarea>
-        </div>
+          <div class="form-section">
+            <label for="select">isValidDate</label>
+            <select id="select" data-require='isValidDate' data-params="1980,2030" data-msg='mandatory-field'>
+              <option value="20/12/1979">20/12/1979</option>
+              <option value="29/02/2023">29/02/2023</option>
+              <option value="31/09/2022">31/09/2022</option>
+              <option value="06/01/1980">06/01/1980</option>
+            </select>
+          </div>
 
-        <div class="float-item form-section w-12">
-          <label class="checkboxradio">
-            isChecked
-            <input type="checkbox" id="checkbox" data-require="isChecked" data-msg="mandatory-field">
-            <span class="checkbox"></span>
-          </label>
-        </div>
+          <div class="float-container form-section">
+            <label for="text5">minChar(10)</label>
+            <textarea id="text5" placeholder="minChar(10)" data-require='minChar' data-params='10' data-msg='mandatory-field'></textarea>
+          </div>
 
-        <div class="float-item form-section w-12">
-          <div class="float-item w-6">
+          <div class="float-item form-section w-12">
             <label class="checkboxradio">
-              Radio 1
-              <input type="radio" id="radio1" name="radio-example" checked="">
-              <span class="radio"></span>
+              isChecked
+              <input type="checkbox" id="checkbox" data-require="isChecked" data-msg="mandatory-field">
+              <span class="checkbox"></span>
             </label>
           </div>
-          <div class="float-item w-6">
-            <label class="checkboxradio">
-              Radio 2
-              <input type="radio" id="radio2" name="radio-example">
-              <span class="radio"></span>
-            </label>
-          </div>
-        </div>
 
-        <div class="float-item form-section w-12">
-          <button type="submit" class="btn display-block w-12 radius-5 light-btn-background padding-medium text-big uppercase">
-            <span class="white-background icon-checkmark icon-small text-small"></span>
-            Submit
-          </button>
-        </div>
-      </fieldset>
-    </form>
+          <div class="float-item form-section w-12">
+            <div class="float-item w-6">
+              <label class="checkboxradio">
+                Radio 1
+                <input type="radio" id="radio1" name="radio-example" checked="">
+                <span class="radio"></span>
+              </label>
+            </div>
+            <div class="float-item w-6">
+              <label class="checkboxradio">
+                Radio 2
+                <input type="radio" id="radio2" name="radio-example">
+                <span class="radio"></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="float-item form-section w-12">
+            <button type="submit" class="btn display-block w-12 radius-5 light-btn-background padding-medium text-big uppercase">
+              <span class="white-background icon-checkmark icon-small text-small"></span>
+              Submit
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
   </div>
 </div>
+
+<nav id="sidenav" class="sidenav xxlight-grey-background">
+  <button type="button" id="close-menu" class="light-grey-background icon-close icon-medium text-medium"></button>
+
+  <div class="menu">
+    <ul class="main">
+      <li class="xlight-grey-background"><a href="javascript:void(0);"><span class="xxlight-grey-background icon-padlock icon-small text-small"></span> <span>Accesso</span></a></li>
+      <li class="xlight-grey-background"><a href="javascript:void(0);"><span class="xxlight-grey-background icon-user icon-small text-small"></span> <span>Profilo</span></a></li>
+      <li><a href="javascript:void(0);"><span class="xlight-grey-background icon-phone icon-small text-small"></span> <span>Contatti</span></a></li>
+      <li>
+        <a href="#" class="has-children rotate-arrow">
+          <span class="xlight-grey-background icon-marker icon-small text-small"></span>
+          <span>Dove siamo</span>
+          <span class="arrow"><span class="xxlight-grey-background icon-arrow icon-small text-small"></span></span>
+        </a>
+        <ul class="sub-menu">
+          <li>
+            <a href="#" class="has-children rotate-arrow">
+              <span data-i18n="submenu"></span> 1
+              <span class="arrow"><span class="xxlight-grey-background icon-arrow icon-small text-small"></span></span>
+            </a>
+            <ul class="sub-menu">
+              <li><a href="javascript:void(0);"><span data-i18n="page"></span> 2</a></li>
+              <li><a href="javascript:void(0);"><span data-i18n="page"></span> 3</a></li>
+              <li><a href="javascript:void(0);"><span data-i18n="page"></span> 4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="javascript:void(0);"><span class="xlight-grey-background icon-faq icon-small text-small"></span> FAQ</a></li>
+      <li><a href="javascript:void(0);"><span class="xlight-grey-background icon-info icon-small text-small"></span> Privacy</a></li>
+    </ul>
+  </div>
+</nav>

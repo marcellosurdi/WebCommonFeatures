@@ -5,6 +5,7 @@
  * Entry point per la modalità production
  */
 import './css/style.scss';
+import './js/sidenav';
 import { l10n } from './js/l10n';
 import { Lightbox } from './js/lightbox';
 import { Modalbox } from './js/modalbox';
