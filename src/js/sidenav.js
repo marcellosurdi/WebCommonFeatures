@@ -8,7 +8,6 @@
  * @see {@link https://www.w3schools.com/howto/howto_js_sidenav.asp|Sidenav tutorial on W3C}
  */
 
-import './../css/sidenav.scss';
 import { Overlay } from './overlay';
 
 function Sidenav() {
@@ -17,7 +16,7 @@ function Sidenav() {
 
   document.getElementById( 'open-menu' ).addEventListener( 'click', openSidenav );
   sidenav.open = openSidenav;
-  
+
   document.getElementById( 'close-menu' ).addEventListener( 'click', closeSidenav );
 
   sidenav.querySelectorAll( 'a.has-children' ).forEach( item => {
