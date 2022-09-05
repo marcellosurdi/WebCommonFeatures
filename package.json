@@ -1,7 +1,7 @@
 {
   "name": "web-common-features",
-  "description": "Common features and default CSS classes for web projects",
-  "version": "0.0.11",
+  "description": "Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web",
+  "version": "0.0.12",
   "keywords": [],
   "main": "dist/js/web-common-plugins.min.js",
   "repository": {},
@@ -11,9 +11,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --config config/webpack.dev.js --open",
-    "build-local": "webpack --config config/webpack.prod.js --output-public-path /www/WebCommonPlugins/dist/",
+    "build-local": "webpack --config config/webpack.prod.js --output-public-path /www/WebCommonFeatures/dist/",
     "build": "webpack --config config/webpack.prod.js --env BUILD",
-    "jsdoc": "jsdoc -r src -d docs -R README.md -c jsdoc.json"
+    "jsdoc": "jsdoc -r src -d docs -R README.md -c jsdoc.json",
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
