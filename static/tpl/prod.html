@@ -30,20 +30,20 @@
         }
       }
 
-      WebCommonPlugins.l10n.add( translation_strings );
+      WebCommonFeatures.l10n.add( translation_strings );
 
       // Smooth behavior
-      WebCommonPlugins.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );
+      WebCommonFeatures.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );
       document.querySelector( 'a#_open-menu' ).addEventListener( 'click', () => {
         document.getElementById( 'sidenav' ).open();
       });
 
       // LightBox
-      WebCommonPlugins.Lightbox( document.getElementById( 'lightbox-section' ) );
+      WebCommonFeatures.Lightbox( document.getElementById( 'lightbox-section' ) );
 
       // Modalbox
       document.querySelector( 'button#modalbox-btn' ).addEventListener( 'click', ( e ) => {
-        WebCommonPlugins.Modalbox(
+        WebCommonFeatures.Modalbox(
           'modalbox-title',
           'modalbox-text',
           () => { console.log( "L'utente ha confermato!" ); return true; },
@@ -52,7 +52,7 @@
       } );
 
       document.querySelector( 'button#modalbox-btn-2' ).addEventListener( 'click', ( e ) => {
-        WebCommonPlugins.Modalbox(
+        WebCommonFeatures.Modalbox(
           'Lorem ipsum',
           `
             <div class="float-container form-section">
@@ -61,7 +61,7 @@
             </div>
           `,
           ( form ) => {
-            if( WebCommonPlugins.Validation( form, [ 'modal-box-email' ] ) ) {
+            if( WebCommonFeatures.Validation( form, [ 'modal-box-email' ] ) ) {
               console.log( 'Invio dati!' );
               return true;
             }
@@ -76,38 +76,38 @@
 
       // Notification
       document.querySelector( 'button#notification-btn-success' ).addEventListener( 'click', ( e ) => {
-        WebCommonPlugins.Notification( 'success', 'Testo di prova' );
+        WebCommonFeatures.Notification( 'success', 'Testo di prova' );
       } );
 
       document.querySelector( 'button#notification-btn-warning' ).addEventListener( 'click', ( e ) => {
-        WebCommonPlugins.Notification( 'warning', 'Testo di prova' );
+        WebCommonFeatures.Notification( 'warning', 'Testo di prova' );
       } );
 
       document.querySelector( 'button#notification-btn-notice' ).addEventListener( 'click', ( e ) => {
-        WebCommonPlugins.Notification( 'notice', 'notification-text', 0, () => { console.log( "L'utente ha confermato!" ) } );
+        WebCommonFeatures.Notification( 'notice', 'notification-text', 0, () => { console.log( "L'utente ha confermato!" ) } );
       } );
 
       document.querySelector( 'button#notification-btn-alert' ).addEventListener( 'click', ( e ) => {
-        WebCommonPlugins.Notification( 'alert', 'Testo di prova' );
+        WebCommonFeatures.Notification( 'alert', 'Testo di prova' );
       } );
 
       // Overlay
       document.querySelector( 'button#overlay-btn' ).addEventListener( 'click', ( e ) => {
-        WebCommonPlugins.Overlay( true );
-        setTimeout( () => { WebCommonPlugins.Overlay( false ) }, 2000 );
+        WebCommonFeatures.Overlay( true );
+        setTimeout( () => { WebCommonFeatures.Overlay( false ) }, 2000 );
       } );
 
       document.querySelector( 'button#overlay-btn-2' ).addEventListener( 'click', ( e ) => {
         // Mostra un overlay con spinner di caricamento
-        WebCommonPlugins.Overlay( true, true );
-        setTimeout( () => { WebCommonPlugins.Overlay( false ) }, 2000 );
+        WebCommonFeatures.Overlay( true, true );
+        setTimeout( () => { WebCommonFeatures.Overlay( false ) }, 2000 );
       } );
 
       // Validation
       document.getElementById( 'test-form' ).addEventListener( 'submit', function( e ) {
         e.preventDefault();
 
-        if( WebCommonPlugins.Validation( this, [ 'text1', 'email', 'password', 'password2', 'text2', 'text3', 'text4', 'select', 'text5', 'checkbox' ] ) ) {
+        if( WebCommonFeatures.Validation( this, [ 'text1', 'email', 'password', 'password2', 'text2', 'text3', 'text4', 'select', 'text5', 'checkbox' ] ) ) {
           console.log( 'Invio dati!' );
         }
         else {

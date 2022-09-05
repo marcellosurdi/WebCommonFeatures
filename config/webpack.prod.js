@@ -13,7 +13,7 @@ module.exports = ( env, argv ) => {
       mode: 'production',
 
       entry: {
-        'web-common-plugins': paths.src + '/prod.js',
+        'web-common-features': paths.src + '/prod.js',
       },
 
       devtool: false,
@@ -37,7 +37,7 @@ module.exports = ( env, argv ) => {
         filename: 'js/[name].min.js',
 
         library: {
-          name: 'WebCommonPlugins',
+          name: 'WebCommonFeatures',
           type: 'umd',
         },
       },
