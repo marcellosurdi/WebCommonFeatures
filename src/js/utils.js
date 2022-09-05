@@ -6,6 +6,8 @@
  * Libreria di funzioni condivise.
  */
 
+import { l10n } from './l10n';
+
  /**
   * @desc
   * Recupera il codice ISO 639-1 della lingua corrente del progetto.
@@ -26,6 +28,34 @@ export function getCurrentLang() {
 
   return lang;
 }
+
+/**
+ * @desc
+ * Traduce le stringhe di testo presenti negli elementi contrassegnati dall'attributo `data-i18n`.
+ */
+export function translate() {
+  const lang = getCurrentLang();
+  const strings = l10n[ lang ];
+  const coll = document.querySelectorAll( '[data-i18n]' );
+
+  for( let i = 0, n = coll.length; i < n; i++ ) {
+    let attr = coll[i].getAttribute( 'data-i18n' );
+    if( attr == 'datetime' ) {
+      coll[i].innerHTML = toLocaleDateTime( +coll[i].getAttribute( 'data-timestamp' ) );
+    }
+    else {
+      coll[i].innerHTML = strings[ attr ];
+    }
+  }
+
+  function toLocaleDateTime( timestamp ) {
+    return new Date( timestamp ).toLocaleString( lang, { dateStyle: 'short', timeStyle: 'short' } );
+  }
+}
+
+
+
+
 
 /**
  * @desc
@@ -71,6 +101,10 @@ export function smoothScrollTo( ycoord ) {
     context.scrollTo( 0, ycoord );
   }
 }
+
+
+
+
 
 /**
  * Ricava le coordinate dell'elemento passato come parametro tenendo conto dello scorrimento di pagina
@@ -130,4 +164,21 @@ export function getCookie( cname ) {
   }
 
   return "";
+}
+
+/**
+ * @desc
+ * Tronca il testo di un elemento entro un numero di caratteri massimo consentito
+ *
+ * @param {HTMLElement} el L'elemento HTML di cui troncare il testo
+ * @param {number} maxlength Il numero di caratteri massimo consentito
+ */
+export function truncateString( el, maxlength ) {
+  if( el ) {
+    let text = el.textContent;
+    if( text.length > maxlength ) {
+      text = text.substr( 0, ( maxlength - 1 ) ) + '…';
+      el.textContent = text;
+    }
+  }
 }

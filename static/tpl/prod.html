@@ -31,6 +31,9 @@
       }
 
       WebCommonFeatures.l10n.add( translation_strings );
+      WebCommonFeatures.Utils.translate();
+
+      WebCommonFeatures.Utils.truncateString( document.querySelector( 'h1' ), 14 );
 
       // Smooth behavior
       WebCommonFeatures.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );
