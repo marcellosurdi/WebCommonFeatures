@@ -1,4 +1,4 @@
-# Web Common Plugins
+# Web Common Features
 
 Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web:
 - Icone;
