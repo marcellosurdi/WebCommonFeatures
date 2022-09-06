@@ -20,6 +20,8 @@ import { l10n } from './l10n';
   *
   * @returns {string} Il codice della lingua corrente
   *
+  * @see {@link module:js/utils.getCookie|getCookie}
+  * @see {@link module:js/utils.setCookie|setCookie}
   * @see {@link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes|List of ISO 639-1 codes}
   */
 export function getCurrentLang() {
@@ -128,9 +130,12 @@ export function setCookie( cname, cvalue, exdays ) {
 
 /**
  * @desc
- * Imposta lo scorrimento fluido di pagina all'interno di un elemento contenitore passato come parametro per tutti gli elementi `<a data-smooth>` che puntano a un'ancora.
+ * Imposta lo scorrimento fluido di pagina, all'interno di un elemento contenitore passato come parametro, per tutti gli elementi `<a data-smooth>` che puntano a un'ancora.
  *
  * @param {HTMLElement} el Elemento contenitore
+ *
+ * @see {@link module:js/utils.getCoords|getCoords}
+ * @see {@link module:js/utils.smoothScroll|smoothScroll}
  *
  * @example
  * // <a href="#anchor-name" data-smooth>...</a>
