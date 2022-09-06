@@ -3,7 +3,7 @@
  * @author Marcello Surdi
  *
  * @desc
- * La funzione Notification mostra o nasconde un riquadro di notifica nella parte alta del display.
+ * Si tratta di una notifica in stile toast message che compare sulla parte alta dello schermo per notificare un'operazione in corso o l'esito di un'operazione svanendo poco tempo dopo.
  */
 
 import { l10n } from './l10n';
@@ -13,12 +13,15 @@ let timeout_id = 0;
 
 /**
  * @desc
- * Mostra o nasconde una notifica. La notifica è aggiunta a un elemento `<div id="body">...</div>` che racchiude tutti i contenuti.
+ * Mostra una notifica in stile toast message.
  *
  * @param {string} type 'warning'|'alert'|'notice'|'success'
  * @param {string} text Testo da mostrare come contenuto della notifica, può contenere HTML o essere una stringa dell'oggetto `l10n`
- * @param {number} [timeout=7000] Tempo espresso in millisecondi dopo il quale la notifica sparisce, 0 indica una notifica persistente
+ * @param {number} [timeout=7000] Tempo espresso in millisecondi dopo il quale la notifica sparisce, **0 indica una notifica persistente**
  * @param {function} [onConfirm] Funzione callback invocata quando l'utente conferma l'operazione corrente
+ *
+ * @see {@link module:js/l10n|l10n}
+ * @see {@link module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
  *
  * @example
  * Notification( 'alert', 'text', 0, () => {} );

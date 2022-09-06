@@ -3,7 +3,7 @@
  * @author Marcello Surdi
  *
  * @desc
- * La funzione Modalbox mostra o nasconde una finestra modale.
+ * Una finestra modale è una finestra secondaria che richiede all'utente di interagire con essa prima di ritornare ad operare con la finestra principale
  */
 
 import { l10n } from './l10n';
@@ -12,12 +12,16 @@ import { Overlay } from './overlay';
 
 /**
  * @desc
- * Mostra o nasconde una finestra modale. La finestra è aggiunta a un elemento `<div id="body">...</div>` che racchiude tutti i contenuti.
+ * Mostra una finestra modale.
  *
  * @param {string} title Testo da mostrare come titolo della finestra
  * @param {string} text Testo da mostrare come contenuto della finestra, può contenere HTML, moduli o essere una stringa dell'oggetto `l10n`
- * @param {function} onConfirm Funzione callback invocata quando l'utente conferma l'operazione corrente. Riceve come parametro un riferimento al form della finestra modale, deve restituire true per chiudere la finestra.
+ * @param {function} onConfirm Funzione callback invocata quando l'utente conferma l'operazione corrente. Riceve come parametro un riferimento al form della finestra modale, **deve restituire true per chiudere la finestra**
  * @param {function} [onCancel = () => {}] Funzione callback invocata se l'utente annulla l'operazione corrente
+ *
+ * @see {@link module:js/l10n|l10n}
+ * @see {@link module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @see {@link module:js/overlay|Overlay}
  *
  * @example
  * Modalbox( 'title', 'text', () => {} );

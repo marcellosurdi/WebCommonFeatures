@@ -9,6 +9,7 @@ Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti 
 - Sfondi;
 - Skeleton;
 - Sidenav;
+- Tooltip;
 - Validation.
 
 ## Installazione
@@ -18,24 +19,18 @@ Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti 
 
 ### Server di sviluppo
 
-```
-npm run dev
-```
+`npm run dev`
 
 Webpack avvia il server di sviluppo su localhost:3001.
 
 ### File minificati
 
-```
-npm run build
-```
+`npm run build`
 
 Webpack minifica i file nella cartella `dist`.
 
 ### JSDoc
 
-```
-npm run jsdoc
-```
+`npm run jsdoc`
 
 Viene generata la documentazione JSDoc nella cartella `docs`.

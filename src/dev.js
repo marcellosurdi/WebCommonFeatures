@@ -1,5 +1,5 @@
 /**
- * @module main
+ * @module dev
  *
  * @desc
  * Entry point per la modalità development
@@ -13,6 +13,7 @@
  import { Modalbox } from './js/modalbox';
  import { Notification } from './js/notification';
  import { Overlay } from './js/overlay';
+ import { Tooltip } from './js/tooltip';
  import { Validation } from './js/validation';
  import { setSmoothBehavior, translate, truncateString } from './js/utils';
 
@@ -23,17 +24,17 @@ const translation_strings = {
   'it': {
     'invalid-password': 'Password non valida',
     'mandatory-field': 'Compila tutti i campi obbligatori',
-    'modalbox-text': "Il noleggio auto è uno dei servizi più richiesti in ambito turistico, ma, specie per chi si ritrova a noleggiare un'auto per la prima volta, <strong>non è sempre facile intuire quali decisioni prendere per contenere i costi</strong> o, semplicemente, per evitare sgradite sorprese.",
+    'modalbox-text': 'Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Nulla tincidunt ante nulla, a tincidunt dui molestie vel. Aliquam orci augue, bibendum sed velit ut, interdum cursus mi.',
     'modalbox-title': 'Titolo modalbox',
-    'notification-text': 'Le tariffe variano di continuo, a volte anche nel corso della stessa giornata',
+    'notification-text': 'Aenean semper et nibh aliquam rutrum.',
     'submenu': 'Sotto elemento',
   },
   'en': {
     'invalid-password': 'Invalid password',
     'mandatory-field': 'Fill in all required fields',
-    'modalbox-text': "Car rental is one of the most requested services in the tourism sector, but, especially for first-time car renters, <strong>it can be difficult to guess which decisions will contain costs</strong> or simply how to avoid unpleasant surprises.",
+    'modalbox-text': 'Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Nulla tincidunt ante nulla, a tincidunt dui molestie vel. Aliquam orci augue, bibendum sed velit ut, interdum cursus mi.',
     'modalbox-title': 'Modalbox title',
-    'notification-text': 'Rates vary continuously, sometimes even within the same day',
+    'notification-text': 'Aenean semper et nibh aliquam rutrum.',
     'submenu': 'Submenu',
   }
 }
@@ -42,6 +43,8 @@ l10n.add( translation_strings );
 translate();
 
 truncateString( document.querySelector( 'h1' ), 14 );
+
+[].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', Tooltip ) );
 
 // Smooth behavior
 setSmoothBehavior( document.getElementById( 'toc' ) );

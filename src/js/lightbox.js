@@ -3,24 +3,30 @@
  * @author Marcello Surdi
  *
  * @desc
- * Gallery in stile lightbox
+ * Una gallery in stile lighbox mostra immagini o video riempiendo quanto più possibile lo schermo e oscurando il resto dei contenuti.
  *
- * @example
- * <a href="path-to-image.png" data-lightbox="gallery-name">Show</a>
- *
- * @todo
- * - Gestione errore di caricamento immagine
- * - Descrizione opzionale immagine
- * - Visualizzazione di immagini multiple
+ * @todo Gestione errore di caricamento immagine,
+ * @todo descrizione opzionale immagine,
+ * @todo visualizzazione di immagini multiple.
  */
 
 import { Overlay } from './overlay';
 
 /**
  * @desc
- * Gestisce una gallery in stile lightbox
+ * Mostra una gallery in stile lightbox
  *
  * @param {HTMLElement} el Elemento contenitore della gallery
+ *
+ * @see {@link module:js/overlay|Overlay}
+ *
+ * @example
+ * // <div id="lightbox-section">
+ * //   <a href="path-to-image1.jpg" data-lightbox>Mostra</a>
+ * //   <a href="path-to-image2.jpg" data-lightbox="gallery-name">Mostra</a>
+ * //   <a href="path-to-image3.jpg" data-lightbox="gallery-name">Mostra</a>
+ * // </div>
+ * Lightbox( document.getElementById( 'lightbox-section' ) );
  */
 export function Lightbox( el ) {
   let lightbox, close_btn, overlay;

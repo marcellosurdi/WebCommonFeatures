@@ -1,5 +1,5 @@
 /**
- * @module dev
+ * @module prod
  *
  * @desc
  * Entry point per la modalità production
@@ -13,6 +13,7 @@ import { Lightbox } from './js/lightbox';
 import { Modalbox } from './js/modalbox';
 import { Notification } from './js/notification';
 import { Overlay } from './js/overlay';
+import { Tooltip } from './js/tooltip';
 import { Validation, ValidationMethods } from './js/validation';
 import * as Utils from './js/utils';
 
@@ -22,6 +23,7 @@ export {
   Modalbox,
   Notification,
   Overlay,
+  Tooltip,
   Validation,
   ValidationMethods,
   Utils

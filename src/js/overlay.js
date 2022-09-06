@@ -3,12 +3,12 @@
  * @author Marcello Surdi
  *
  * @desc
- * La funzione Overlay mostra o nasconde un overlay, un velo scuro semitrasparente che si sovrappone ai contenuti di primo livello.
+ * Un overlay è un velo scuro semitrasparente che si sovrappone ai contenuti di primo livello.
  */
 
  /**
   * @desc
-  * Mostra o nasconde l'overlay. L'overlay è aggiunto a un elemento `<div id="body">...</div>` che racchiude tutti i contenuti.
+  * Mostra o nasconde l'overlay.
   *
   * @param {boolean} [show=true] true per mostrare l'overlay, false per nasconderlo
   * @param {boolean} [spinner=false] Indica se mostrare o meno uno spinner di caricamento

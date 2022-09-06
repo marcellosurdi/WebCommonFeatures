@@ -3,13 +3,23 @@
  * @author Marcello Surdi
  *
  * @desc
- * La funzione Sidenav gestisce una sidenav multilivello
- *
- * @see {@link https://www.w3schools.com/howto/howto_js_sidenav.asp|Sidenav tutorial on W3C}
+ * Una sidenav è un menu di navigazione laterale multilivello
  */
 
 import { Overlay } from './overlay';
 
+/**
+ * @desc
+ * Mostra o nasconde la sidenav del sito.
+ *
+ * @see {@link module:js/overlay|Overlay}
+ * @see {@link https://www.w3schools.com/howto/howto_js_sidenav.asp|Sidenav tutorial on W3C}
+ *
+ * @example
+ * import './css/sidenav.scss';
+ * import './js/sidenav';
+ * document.getElementById( 'sidenav' ).open();
+ */
 function Sidenav() {
   let body = document.getElementById( 'body' );
   let sidenav = document.getElementById( 'sidenav' );

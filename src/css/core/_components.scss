@@ -1,62 +1,4 @@
-// overlay.js
-div#overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,.6);
-  z-index: 10;
-}
-
-// notification.js
-div#notification {
-  position: fixed;
-  top: -250px;
-  left: 0;
-  z-index: 20;
-  box-shadow: 0 0 10px $xxdark_grey_color;
-  width: 100%;
-  min-height: 45px;
-  transition: all .25s ease-out;
-}
-div#notification.show { @include transform(translate3d(0,250px,0)); }
-div#notification div.container-max-width { padding-right: 50px; }
-div#notification button.icon-close { position: absolute; top: 10px; right: 10px; }
-.success-btn-background, .success-background button { background-color: $dark_success_color; text-decoration: none; color: $white_color; }
-.alert-btn-background, .alert-background button { background-color: $dark_alert_color; text-decoration: none; color: $white_color; }
-.warning-btn-background, .warning-background button { background-color: $dark_warning_color; text-decoration: none; color: $white_color; }
-.notice-btn-background, .notice-background button { background-color: $dark_notice_color; text-decoration: none; color: $white_color; }
-
-// modalbox.js
-div#modal-box {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  z-index: 20;
-  transform: translate(-50%, -200%);
-  transition: transform .3s ease-out;
-}
-div#modal-box.show { @include transform(translate(-50%, 70px)); }
-div#modal-box h3 { border-top-right-radius: 5px; border-top-left-radius: 5px; @include font-a; }
-div#modal-box > div { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
-// modalbox.js
-div#modal-box {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  z-index: 20;
-  transform: translate(-50%, -200%);
-  transition: transform .3s ease-out;
-}
-div#modal-box.show { @include transform(translate(-50%, 70px)); }
-div#modal-box h3 { border-top-right-radius: 5px; border-top-left-radius: 5px; @include font-a; }
-div#modal-box > div { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
-
-// lightbox.js
+// lightbox
 div#lightbox {
   position: absolute; top: 52px; left: 50%; @include transform(translate(-50%,0));
   background-color: $white_color;
@@ -76,4 +18,81 @@ button#close-lightbox {
   position: absolute;
   top: 10px;
   right: 10px;
+}
+
+// modalbox
+div#modal-box {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 20;
+  transform: translate(-50%, -200%);
+  transition: transform .3s ease-out;
+}
+
+div#modal-box.show { @include transform(translate(-50%, 70px)); }
+div#modal-box h3 { border-top-right-radius: 5px; border-top-left-radius: 5px; @include font-a; }
+div#modal-box > div { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
+
+// notification
+div#notification {
+  position: fixed;
+  top: -250px;
+  left: 0;
+  z-index: 20;
+  box-shadow: 0 0 10px $xxdark_grey_color;
+  width: 100%;
+  min-height: 60px;
+  transition: all .25s ease-out;
+}
+div#notification.show { @include transform(translate3d(0,250px,0)); }
+div#notification div.container-max-width { padding-right: 50px; }
+div#notification button.icon-close { position: absolute; top: 10px; right: 10px; }
+.success-btn-background, .success-background button { background-color: $dark_success_color; text-decoration: none; color: $white_color; }
+.alert-btn-background, .alert-background button { background-color: $dark_alert_color; text-decoration: none; color: $white_color; }
+.warning-btn-background, .warning-background button { background-color: $dark_warning_color; text-decoration: none; color: $white_color; }
+.notice-btn-background, .notice-background button { background-color: $dark_notice_color; text-decoration: none; color: $white_color; }
+
+// overlay
+div#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.6);
+  z-index: 10;
+}
+
+// tooltip
+a.show-tooltip { text-decoration: none; }
+
+div.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 10px;
+  border-radius: 0 0 5px 5px;
+  width: 100%;
+  max-width: 250px;
+  z-index: 99;
+  animation: slidetop .3s ease-out both, fadein .3s linear;
+}
+
+div.tooltip.hide {
+  animation: slidebottom .3s ease-in, fadeout .3s linear;
+}
+
+div.tooltip span {
+  position: absolute;
+  top: -20px;
+  z-index: 1;
+  border: solid;
+  border-width: 10px;
+  border-color: transparent transparent $xdark_grey_color transparent;
+  width: 0;
+  height: 0;
 }
