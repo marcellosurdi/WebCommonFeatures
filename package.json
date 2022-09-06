@@ -11,7 +11,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack serve --config config/webpack.dev.js --open",
-    "build-local": "webpack --config config/webpack.prod.js --output-public-path /www/WebCommonFeatures/dist/",
     "build": "webpack --config config/webpack.prod.js --env BUILD",
     "jsdoc": "jsdoc -r src -d docs -R README.md -c jsdoc.json"
   },

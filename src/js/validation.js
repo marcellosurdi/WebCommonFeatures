@@ -16,7 +16,7 @@ import { getCoords, getCurrentLang, smoothScroll } from './utils';
  *
  * @param {HTMLFormElement} form Form a cui appartengono i campi da validare
  * @param {array} fields_id_array Array che contiene tutti gli id dei campi del form da validare
- * @returns {boolean} true se l'invio dei dati passa la validazione, false diversamente
+ * @returns {boolean} `true` se l'invio dei dati passa la validazione, `false` diversamente
  *
  * @see {@link module:js/l10n|l10n}
  * @see {@link module:js/notification|Notification}
@@ -103,7 +103,7 @@ export const ValidationMethods = {
    * Verifica che un campo di testo contenga un codice fiscale italiano valido.
    *
    * @param {string} fiscal_code Codice fiscale da validare
-   * @returns {boolean} true se il codice fiscale passa la validazione, diversamente false
+   * @returns {boolean} `true` se il codice fiscale passa la validazione, `false` diversamente
    */
   checkITFiscalCode: function( fiscal_code ) {
     return ( fiscal_code.match( /^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$/ ) ) ? true : false;
@@ -114,7 +114,7 @@ export const ValidationMethods = {
    * Verifica che un campo di testo contenga una Partita IVA italiana valida.
    *
    * @param {string} it_vat Partita IVA da validare
-   * @returns {boolean} true se la partita IVA passa la validazione, diversamente false
+   * @returns {boolean} `true` se la partita IVA passa la validazione, `false` diversamente
    */
   checkITVAT: function( it_vat ) {
     return ( it_vat.match( /^([0-9]{11})$/ ) ) ? true : false;
@@ -125,7 +125,7 @@ export const ValidationMethods = {
    * Verifica che un campo di testo contenga un'email valida.
    *
    * @param {string} mail Email da validare
-   * @returns {boolean} true se l'email passa la validazione, diversamente false
+   * @returns {boolean} `true` se l'email passa la validazione, `false` diversamente
    */
   checkMail: function( mail ) {
     return ( mail.match( /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,6})+$/ ) ) ? true : false;
@@ -137,7 +137,7 @@ export const ValidationMethods = {
    * Per essere valida la password deve contenere un **minimo di 8 caratteri alfanumerici** di cui almeno un numero ed un carattere speciale tra ! ? = . @ - _
    *
    * @param {string} pwd Password da validare
-   * @returns {boolean} true se la password passa la validazione, diversamente false
+   * @returns {boolean} `true` se la password passa la validazione, `false` diversamente
    */
   checkPassword: function( pwd ) {
     return ( pwd.match( /^(?=.*\d)(?=.*[!?=.@_-])[\w!?=.@_-]{8,}$/ ) ) ? true : false;
@@ -149,7 +149,7 @@ export const ValidationMethods = {
    * Per essere valido convenzionalmente il numero di telefono deve contenere un **minimo di 7 numeri**
    *
    * @param {string} tel_number Numero di telefono da validare
-   * @returns {boolean} true se il numero di telefono passa la validazione, diversamente false
+   * @returns {boolean} `true` se il numero di telefono passa la validazione, `false` diversamente
    */
   checkTelephone: function( tel_number ) {
     return ( tel_number.match( /^([0-9]{7,})$/ ) ) ? true : false;
@@ -161,7 +161,7 @@ export const ValidationMethods = {
    *
    * @param {string} value Valore del primo campo di testo
    * @param {string} id id del secondo campo di testo
-   * @returns {boolean} true se l'uguaglianza è verificata, diversamente false
+   * @returns {boolean} `true` se l'uguaglianza è verificata, `false` diversamente
    */
   compareWith: function( value, id ) {
     return ( value == document.getElementById( id ).value ) ? true : false;
@@ -172,7 +172,7 @@ export const ValidationMethods = {
    * Verifica che un campo di tipo `radio` o `checkbox` sia selezionato.
    *
    * @param {boolean} check Il valore della proprietà `checked` del campo da validare
-   * @returns {boolean} true se la stringa passa la validazione, diversamente false
+   * @returns {boolean} `true` se la stringa passa la validazione, `false` diversamente
    */
   isChecked: function( check ) {
     return check;
@@ -184,7 +184,7 @@ export const ValidationMethods = {
    *
    * @param {string} date Data in formato stringa dd/mm/yyyy
    * @param {array} [interval=[1900,3000]] Array che definisce l'intervallo di anni
-   * @returns {object|boolean} Un oggetto `{ 'day': day, 'month': month, 'year': year }` se la data passa la validazione, diversamente false
+   * @returns {object|boolean} Un oggetto `{ 'day': day, 'month': month, 'year': year }` se la data passa la validazione, `false` diversamente
    */
   isValidDate: function( date, interval = [ 1900, 3000 ] ) {
     let year_min = interval[0];
@@ -229,7 +229,7 @@ export const ValidationMethods = {
    *
    * @param {string} str Stringa da validare
    * @param {number} min Numero minimo di caratteri che devono comporre la stringa da validare
-   * @returns {boolean} true se la stringa passa la validazione, diversamente false
+   * @returns {boolean} `true` se la stringa passa la validazione, `false` diversamente
    */
   minChar: function( str, min ) {
     return ( str.length < min ) ? false : true;

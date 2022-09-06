@@ -3,7 +3,7 @@
  * @author Marcello Surdi
  *
  * @desc
- * Si tratta di una notifica in stile toast message che compare sulla parte alta dello schermo per notificare un'operazione in corso o l'esito di un'operazione svanendo poco tempo dopo.
+ * Si tratta di una notifica in stile toast message che compare sulla parte alta dello schermo per notificare un'operazione in corso o l'esito di un'operazione e svanisce poco tempo dopo.
  */
 
 import { l10n } from './l10n';

@@ -97,7 +97,7 @@ export function getCookie( cname ) {
  * Ricava le coordinate dell'elemento passato come parametro tenendo conto dello scorrimento di pagina
  *
  * @param {HTMLElement} el
- * @returns {object}
+ * @returns {object} `{ top: coord_y, left: coord_x }`
  */
 export function getCoords( el ) {
   let context = document.querySelector( '.page' );
@@ -128,7 +128,7 @@ export function setCookie( cname, cvalue, exdays ) {
 
 /**
  * @desc
- * Imposta lo scorrimento fluido di pagina per tutti gli elementi `<a data-smooth>` che puntano a un'ancora all'interno di un elemento contenitore passato come parametro.
+ * Imposta lo scorrimento fluido di pagina all'interno di un elemento contenitore passato come parametro per tutti gli elementi `<a data-smooth>` che puntano a un'ancora.
  *
  * @param {HTMLElement} el Elemento contenitore
  *
@@ -156,10 +156,10 @@ export function setSmoothBehavior( el ) {
 
 /**
  * @desc
- * Modifica la chiamata al metodo indicato come parametro in base al supporto del browser per lo scorrimento fluido.
+ * Imposta la proprietà `behavior: 'smooth'` per il metodo indicato come parametro se il browser supporta lo scorrimento fluido.
  *
  * @param {number} y Valore y
- * @param {string} [method='scrollTo']
+ * @param {string} [method=scrollTo]
  */
 export function smoothScroll( y, method = 'scrollTo' ) {
   let context = document.querySelector( '.page' );

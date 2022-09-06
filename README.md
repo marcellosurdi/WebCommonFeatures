@@ -21,7 +21,7 @@ Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti 
 
 `npm run dev`
 
-Webpack avvia il server di sviluppo su localhost:3001.
+Webpack avvia il server di sviluppo su `localhost:3001`.
 
 ### File minificati
 
