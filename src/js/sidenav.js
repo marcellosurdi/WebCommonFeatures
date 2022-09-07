@@ -12,12 +12,13 @@ import { Overlay } from './overlay';
  * @desc
  * Mostra o nasconde la sidenav del sito.
  *
- * @see {@link module:js/overlay|Overlay}
- * @see {@link https://www.w3schools.com/howto/howto_js_sidenav.asp|Sidenav tutorial on W3C}
+ * @see {@link https://www.w3schools.com/howto/howto_js_sidenav.asp|Come creare un menu di navigazione laterale}
+ * @requires {@linkcode module:js/overlay|Overlay}
  *
  * @example
  * import './css/sidenav.scss';
  * import './js/sidenav';
+ *
  * document.getElementById( 'sidenav' ).open();
  */
 function Sidenav() {

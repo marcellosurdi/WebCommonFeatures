@@ -18,7 +18,7 @@ import { Overlay } from './overlay';
  *
  * @param {HTMLElement} el Elemento contenitore della gallery
  *
- * @see {@link module:js/overlay|Overlay}
+ * @requires {@linkcode module:js/overlay|Overlay}
  *
  * @example
  * // <div id="lightbox-section">

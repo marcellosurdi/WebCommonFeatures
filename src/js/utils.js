@@ -20,9 +20,9 @@ import { l10n } from './l10n';
   *
   * @returns {string} Il codice della lingua corrente
   *
-  * @see {@link module:js/utils.getCookie|getCookie}
-  * @see {@link module:js/utils.setCookie|setCookie}
-  * @see {@link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes|List of ISO 639-1 codes}
+  * @see {@link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes|Elenco dei codici ISO 639-1},
+  * @see {@linkcode module:js/utils.getCookie|getCookie},
+  * @see {@linkcode module:js/utils.setCookie|setCookie}
   */
 export function getCurrentLang() {
   let lang;
@@ -42,7 +42,7 @@ export function getCurrentLang() {
  * @desc
  * Traduce le stringhe di testo presenti negli elementi contrassegnati dall'attributo `data-i18n`.
  *
- * @see {@link module:js/l10n|l10n}
+ * @requires {@linkcode module:js/l10n|l10n}
  */
 export function translate() {
   const lang = getCurrentLang();
@@ -75,7 +75,7 @@ export function translate() {
  * @param {string} cname Nome
  * @returns {string} Il valore del cookie o una stringa vuota
  *
- * @see {@link https://www.w3schools.com/js/js_cookies.asp|JavaScript cookies}
+ * @see {@link https://www.w3schools.com/js/js_cookies.asp|Tutorial sui cookie con JavaScript}
  */
 export function getCookie( cname ) {
   let name = cname + '=';
@@ -117,13 +117,13 @@ export function getCoords( el ) {
  *
  * @param {string} cname Nome
  * @param {string} cvalue Valore
- * @param {number} exdays Giorni di validità
+ * @param {number} days Giorni di validità
  *
- * @see {@link https://www.w3schools.com/js/js_cookies.asp|JavaScript cookies}
+ * @see {@link https://www.w3schools.com/js/js_cookies.asp|Tutorial sui cookie con JavaScript}
  */
-export function setCookie( cname, cvalue, exdays ) {
+export function setCookie( cname, cvalue, days ) {
   const d = new Date();
-  d.setTime( d.getTime() + ( exdays * 24 * 60 * 60 * 1000 ) );
+  d.setTime( d.getTime() + ( days * 24 * 60 * 60 * 1000 ) );
   let expires = 'expires=' + d.toUTCString();
   document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
 }
@@ -134,8 +134,8 @@ export function setCookie( cname, cvalue, exdays ) {
  *
  * @param {HTMLElement} el Elemento contenitore
  *
- * @see {@link module:js/utils.getCoords|getCoords}
- * @see {@link module:js/utils.smoothScroll|smoothScroll}
+ * @see {@linkcode module:js/utils.getCoords|getCoords}
+ * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
  *
  * @example
  * // <a href="#anchor-name" data-smooth>...</a>

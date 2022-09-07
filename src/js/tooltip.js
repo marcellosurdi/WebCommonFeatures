@@ -6,7 +6,7 @@
  * Il tooltip è un piccolo riquadro che mostra informazioni supplementari.
  * Solitamente compare cliccando o passando col mouse sopra un'icona o un testo.
  *
- * @todo Utilizzare evento 'mouseover' su desktop e 'click' su mobile,
+ * @todo Utilizzare evento `mouseover` su desktop e `click` su mobile,
  * @todo evento click normalizzato per dispositivi Apple.
  */
 
@@ -19,9 +19,9 @@ import { getCurrentLang, smoothScroll } from './utils'
  *
  * @param {MouseEvent} e
  *
- * @see {@link module:js/l10n|l10n}
- * @see {@link module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
- * @see {@link module:js/utils.smoothScroll|smoothScroll}
+ * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
+ * @requires {@linkcode module:js/l10n|l10n}
  *
  * @example
  * // <a href="javascript:void(0);" class="show-tooltip icon-info radius-circle notice-background text-xl" data-tooltip-text="text-id"></a>

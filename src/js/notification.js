@@ -20,8 +20,8 @@ let timeout_id = 0;
  * @param {number} [timeout=7000] Tempo espresso in millisecondi dopo il quale la notifica sparisce, **0 indica una notifica persistente**
  * @param {function} [onConfirm] Funzione callback invocata quando l'utente conferma l'operazione corrente
  *
- * @see {@link module:js/l10n|l10n}
- * @see {@link module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @requires {@linkcode module:js/l10n|l10n}
  *
  * @example
  * Notification( 'alert', 'text', 0, () => {} );

@@ -18,12 +18,12 @@ import { getCoords, getCurrentLang, smoothScroll } from './utils';
  * @param {array} fields_id_array Array che contiene tutti gli id dei campi del form da validare
  * @returns {boolean} `true` se l'invio dei dati passa la validazione, `false` diversamente
  *
- * @see {@link module:js/l10n|l10n}
- * @see {@link module:js/notification|Notification}
- * @see {@link module:js/utils.getCoords|getCoords}
- * @see {@link module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
- * @see {@link module:js/utils.smoothScroll|smoothScroll}
- * @see {@link module:js/validation~ValidationMethods|ValidationMethods}
+ * @see {@linkcode module:js/utils.getCoords|getCoords}
+ * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
+ * @see {@linkcode module:js/validation~ValidationMethods|ValidationMethods}
+ * @requires {@linkcode module:js/l10n|l10n}
+ * @requires {@linkcode module:js/notification|Notification}
  *
  * @example
  * // <input type='text' id='text-field' data-require='minChar' data-params='2' data-msg='mandatory-field'>
