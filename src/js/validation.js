@@ -61,11 +61,28 @@ export function Validation( form, fields_id_array ) {
 
     if( !error && method && !ValidationMethods[method]( value, params ) ) {
       setTimeout( function() {
-        const notification = document.getElementById( 'notification' );
-        const h = ( notification ) ? notification.offsetHeight + 10 : 0;
 
-        el.focus();
-        smoothScroll( coords.top - h, false );
+        // Se il form non è all'interno di una finestra modale esegue lo scorrimento di pagina
+        if( form.parentElement.id != 'modal-box' ) {
+          let timeout;
+          document.querySelector( '.page' ).addEventListener( 'scroll', function detectScrollEnd( e ) {
+            clearTimeout( timeout );
+
+            // Dà il focus all'elemento solo al termine dello scorrimento di pagina per non interferire con esso
+            timeout = setTimeout( () => {
+              this.removeEventListener( 'scroll', detectScrollEnd );
+              el.focus();
+            }, 50 );
+          } );
+
+          const notification = document.getElementById( 'notification' );
+          const h = ( notification ) ? notification.offsetHeight + 10 : 0;
+          smoothScroll( coords.top - h, false );
+        }
+        else {
+          el.focus();
+        }
+
       }, 0 );
 
       el.parentElement.classList.add( 'error' );

@@ -105,7 +105,7 @@ export function collapsible ( e ) {
   if( el.classList.contains( 'collapsible-element' ) ) {
     const coords = getCoords( el );
     smoothScroll( coords.top );
-    
+
     if( el.style.maxHeight.length == 0 ) {
         el.style.maxHeight = this.getAttribute( 'data-max-height' );
 
@@ -120,6 +120,30 @@ export function collapsible ( e ) {
       this.innerHTML = `<span data-i18n="${ attr }">${ l10n[ getCurrentLang() ][ attr ] }</span>`;
       this.insertAdjacentHTML( 'beforeend', ' <span class="icon-arrow rotate-bottom text-small"></span>' );
     }
+  }
+}
+
+/**
+ * @desc
+ * Al termine del flusso di aggiornamenti di eventi come `mousemove`, `resize` e `scroll` esegue il listener dopo l'intervallo di tempo impostato.
+ *
+ * @param {function} listener Il listener di eventi da eseguire terminato l'intervallo di tempo impostato
+ * @param {number} delay L'intervallo di tempo da impostare
+ *
+ * @see {@link https://codepen.io/AmeliaBR/post/basic-javascript-event-throttling|Throttling di eventi con JavaScript}
+ *
+ * @example
+ * document.addEventListener( 'scroll', debounceEvent( listener, 50 ) );
+ */
+export function debounceEvent( listener, delay ) {
+  let timeout;
+
+  return function( e ) {
+    if( timeout ) {
+      clearTimeout( timeout );
+    }
+
+    timeout = setTimeout( listener, delay, e );
   }
 }
 
