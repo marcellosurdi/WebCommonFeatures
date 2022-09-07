@@ -1,6 +1,7 @@
 # Web Common Features
 
 Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web:
+- Collapsible
 - Icone;
 - Lightbox;
 - Modalbox;

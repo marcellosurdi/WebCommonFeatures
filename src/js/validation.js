@@ -65,7 +65,7 @@ export function Validation( form, fields_id_array ) {
         const h = ( notification ) ? notification.offsetHeight + 10 : 0;
 
         el.focus();
-        smoothScroll( coords.top - h );
+        smoothScroll( coords.top - h, false );
       }, 0 );
 
       el.parentElement.classList.add( 'error' );

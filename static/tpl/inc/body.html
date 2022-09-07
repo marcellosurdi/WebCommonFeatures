@@ -10,18 +10,52 @@
         <div class="margin-top-medium xlight-grey-background padding-medium">
           <p>Questo pacchetto rende disponibili funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web.</p>
 
-
           <ul id="toc" class="list-view">
-            <li><a href="#icons-section" data-smooth>Icone<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
-            <li><a href="#lightbox-section" data-smooth>Lightbox<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
-            <li><a href="#modalbox-section" data-smooth>Modalbox<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
-            <li><a href="#notification-section" data-smooth>Notification<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
-            <li><a href="#overlay-section" data-smooth>Overlay<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
-            <li><a href="#backgrounds-section" data-smooth>Sfondi<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
-            <li><a href="#skeleton-section" data-smooth>Skeleton<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
+            <li><a href="#collapsible-section" data-smooth>Collapsible<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
+            <li><a href="#icons-section" data-smooth>Icone<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
+            <li><a href="#lightbox-section" data-smooth>Lightbox<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
+            <li><a href="#modalbox-section" data-smooth>Modalbox<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
+            <li><a href="#notification-section" data-smooth>Notification<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
+            <li><a href="#overlay-section" data-smooth>Overlay<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
+            <li><a href="#backgrounds-section" data-smooth>Sfondi<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
+            <li><a href="#skeleton-section" data-smooth>Skeleton<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
             <li><a href="javascript:void(0);" id="_open-menu">Sidenav<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
-            <li><a href="#validation-section" data-smooth>Validation<span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span></a></li>
+            <li><a href="#validation-section" data-smooth>Validation<span class="arrow"><span class="white-background icon-arrow rotate-bottom icon-small text-small"></span></span></a></li>
           </ul>
+        </div>
+
+        <div id="collapsible-section" class="white-background margin-top-xxl padding-medium">
+          <h2>Collapsible <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></h2>
+
+          Mostra una sezione di pagina nascosta.
+          <div class="collapsible-element">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis rhoncus nisl quis pulvinar. Suspendisse ac massa at dui malesuada rhoncus in eu nulla.</p>
+            <p>Quisque ac turpis nec urna hendrerit semper ut nec purus. Vivamus tempor erat sem, id aliquet turpis suscipit quis. Praesent congue lacus ut nulla tincidunt, eu convallis velit ultricies.</p>
+            <p>Nulla bibendum, nibh nec auctor pretium, purus leo tincidunt purus, quis aliquet urna tellus eu diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Suspendisse potenti. Donec ut tincidunt est. Vivamus nisi risus, blandit sed sagittis eu, accumsan nec diam.</p>
+            <p>Vivamus quis leo purus. Proin scelerisque massa et justo euismod, ac fermentum augue dictum. Phasellus blandit ultrices sollicitudin.</p>
+          </div>
+          <a href="javascript:void(0);" id="collapse1" class="collapse-btn" data-max-height="1000px" data-text-expand="expand" data-text-collapse="collapse">
+            <span data-i18n="expand">Espandi</span>
+            <span class="icon-arrow rotate-bottom text-small"></span>
+          </a>
+
+          <div class="margin-top-big xlight-grey-background padding-top-medium padding-left-medium padding-right-medium">
+            <p>Mostra una sezione di pagina nascosta.</p>
+          </div>
+          <div class="collapsible-element xlight-grey-background padding-left-medium padding-right-medium padding-bottom-medium">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis rhoncus nisl quis pulvinar. Suspendisse ac massa at dui malesuada rhoncus in eu nulla.</p>
+            <p>Quisque ac turpis nec urna hendrerit semper ut nec purus. Vivamus tempor erat sem, id aliquet turpis suscipit quis. Praesent congue lacus ut nulla tincidunt, eu convallis velit ultricies.</p>
+            <p>Nulla bibendum, nibh nec auctor pretium, purus leo tincidunt purus, quis aliquet urna tellus eu diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+            <p>Suspendisse potenti. Donec ut tincidunt est. Vivamus nisi risus, blandit sed sagittis eu, accumsan nec diam.</p>
+            <p>Vivamus quis leo purus. Proin scelerisque massa et justo euismod, ac fermentum augue dictum. Phasellus blandit ultrices sollicitudin.</p>
+          </div>
+          <div class="collapse-btn-container">
+            <a href="javascript:void(0);" id="collapse2" class="collapse-btn" data-max-height="1000px" data-text-expand="expand" data-text-collapse="collapse">
+              <span data-i18n="expand">Espandi</span>
+              <span class="icon-arrow rotate-bottom text-small"></span>
+            </a>
+          </div>
         </div>
 
         <div id="icons-section" class="white-background margin-top-xxl padding-medium">
@@ -52,7 +86,7 @@
         </div>
 
         <div id="lightbox-section" class="white-background margin-top-xxl padding-medium">
-          <h2>Lightbox</h2>
+          <h2>Lightbox <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></h2>
           <p>Visualizza l'ingrandimento per una singola immagine</p>
           <a
             href="img/img-1.jpg"
@@ -63,7 +97,7 @@
         </div>
 
         <div id="modalbox-section" class="white-background margin-top-xxl padding-medium">
-          <h2>Modalbox</h2>
+          <h2>Modalbox <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></h2>
           <p class="margin-top-medium">Mostra una finestra modale</p>
           <button
             type="button"
@@ -82,7 +116,7 @@
         </div>
 
         <div id="notification-section" class="white-background margin-top-xxl padding-medium">
-          <h2>Notification</h2>
+          <h2>Notification <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></h2>
           <p class="margin-top-medium">Mostra una notifica di tipo <code>success</code></p>
           <button
             type="button"
@@ -117,7 +151,7 @@
         </div>
 
         <div id="overlay-section" class="white-background margin-top-xxl padding-medium">
-          <h2>Overlay</h2>
+          <h2>Overlay <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></h2>
           <p class="margin-top-medium">Mostra un overlay che scompare dopo due secondi</p>
           <button
             type="button"
@@ -136,7 +170,7 @@
         </div>
 
         <div id="backgrounds-section" class="white-background margin-top-xxl padding-medium">
-          <h2>Sfondi</h2>
+          <h2>Sfondi <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></h2>
           <p class="margin-top-medium">Classi CSS predefinite per assegnare sfondi e posizionamenti adattivi.</p>
           <div class="float-container">
             <div class="float-item dark-a-background padding-medium w-2 w-1366-3 w-864-4 w-640-6 w-424-12 text-1366-medium text-424-big">.dark-a-background</div>
@@ -157,7 +191,7 @@
         </div>
 
         <div id="skeleton-section" class="white-background margin-top-xxl padding-medium">
-          <h2>Skeleton</h2>
+          <h2>Skeleton <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></h2>
           <p class="margin-medium">Effetto di caricamento dei contenuti</p>
           <div class="skeleton-loader margin-top-xl w-10 text-5xl"></div>
           <div class="skeleton-loader w-9 text-4xl"></div>
@@ -260,6 +294,10 @@
     </div><!-- div.page -->
   </div><!-- div#container -->
 </div><!-- div#body -->
+
+
+
+
 
 <nav id="sidenav" class="sidenav xxlight-grey-background">
   <button type="button" id="close-menu" class="light-grey-background icon-close icon-medium text-medium"></button>

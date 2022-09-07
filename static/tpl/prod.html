@@ -39,6 +39,9 @@
 
       [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', WebCommonFeatures.Tooltip ) );
 
+      document.querySelector( 'a#collapse1' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
+      document.querySelector( 'a#collapse2' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
+
       // Smooth behavior
       WebCommonFeatures.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );
       document.querySelector( 'a#_open-menu' ).addEventListener( 'click', () => {

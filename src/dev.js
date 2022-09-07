@@ -15,7 +15,7 @@
  import { Overlay } from './js/overlay';
  import { Tooltip } from './js/tooltip';
  import { Validation } from './js/validation';
- import { setSmoothBehavior, translate, truncateString } from './js/utils';
+ import { collapsible, setSmoothBehavior, translate, truncateString } from './js/utils';
 
 
 
@@ -45,6 +45,9 @@ translate();
 truncateString( document.querySelector( 'h1' ), 14 );
 
 [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', Tooltip ) );
+
+document.querySelector( 'a#collapse1' ).addEventListener( 'click', collapsible );
+document.querySelector( 'a#collapse2' ).addEventListener( 'click', collapsible );
 
 // Smooth behavior
 setSmoothBehavior( document.getElementById( 'toc' ) );

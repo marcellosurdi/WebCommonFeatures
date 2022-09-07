@@ -46,9 +46,8 @@ export function Tooltip( e ) {
   const coords = tooltip.getBoundingClientRect();
   // Eventuale correzione dello scorrimento verticale di pagina
   let scroll_y = ( coords.top + tooltip.offsetHeight ) - document.documentElement.clientHeight;
-  console.log( scroll_y );
   if( scroll_y > 0 ) {
-    smoothScroll( scroll_y, 'scrollBy' );
+    smoothScroll( scroll_y, false, 'scrollBy' );
   }
 
   // Eventuale correzione della coordinata x
@@ -58,7 +57,7 @@ export function Tooltip( e ) {
     span.style.left = ( 5 + offset_x + 5 ) + 'px';
   }
 
-  // Evita che l'evento click venga processato subito dopo a livello dell'elemento body
+  // Evita che l'evento click venga processato immediatamente a livello dell'elemento contenitore
   setTimeout( () => context.addEventListener( 'click', close ), 0 );
 
   function close( e ) {

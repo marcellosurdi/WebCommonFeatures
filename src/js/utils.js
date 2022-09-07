@@ -42,6 +42,7 @@ export function getCurrentLang() {
  * @desc
  * Traduce le stringhe di testo presenti negli elementi contrassegnati dall'attributo `data-i18n`.
  *
+ * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
  * @requires {@linkcode module:js/l10n|l10n}
  */
 export function translate() {
@@ -67,6 +68,60 @@ export function translate() {
 
 
 
+
+/**
+ * @desc
+ * Mostra o nasconde una sezione della pagina
+ *
+ * @param {MouseEvent} e
+ *
+ * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @see {@linkcode module:js/utils.getCoords|getCoords}
+ * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
+ * @requires {@linkcode module:js/l10n|l10n}
+ *
+ * @example
+ * // <div class="collapsible-element"></div>
+ * // <a href="javascript:void(0);" class="collapse" data-max-height="1000px" data-text-expand="Espandi" data-text-collapse="Contrai">
+ * //  <span data-i18n="expand">Espandi</span>
+ * //  <span class="icon-arrow rotate-bottom text-small"></span>
+ * // </a>
+ *
+ * // oppure
+ *
+ * // <div class="collapsible-element"></div>
+ * // <div class="">
+ * //  <a href="javascript:void(0);" class="collapse" data-max-height="1000px" data-text-expand="expand" data-text-collapse="collapse">
+ * //   <span data-i18n="expand">Espandi</span>
+ * //   <span class="icon-arrow rotate-bottom text-small"></span>
+ * //  </a>
+ * // </div>
+ *
+ * document.querySelector( 'a.collapse' ).addEventListener( 'click', collapsible );
+ */
+export function collapsible ( e ) {
+  const el = ( this.previousElementSibling ) ? this.previousElementSibling : this.parentElement.previousElementSibling;
+
+  if( el.classList.contains( 'collapsible-element' ) ) {
+    const coords = getCoords( el );
+    smoothScroll( coords.top );
+    
+    if( el.style.maxHeight.length == 0 ) {
+        el.style.maxHeight = this.getAttribute( 'data-max-height' );
+
+        const attr = this.getAttribute( 'data-text-collapse' );
+        this.innerHTML = `<span data-i18n="${ attr }">${ l10n[ getCurrentLang() ][ attr ] }</span>`;
+        this.insertAdjacentHTML( 'beforeend', ' <span class="icon-arrow rotate-up text-small"></span>' );
+      }
+    else {
+      el.style.maxHeight = null;
+
+      const attr = this.getAttribute( 'data-text-expand' );
+      this.innerHTML = `<span data-i18n="${ attr }">${ l10n[ getCurrentLang() ][ attr ] }</span>`;
+      this.insertAdjacentHTML( 'beforeend', ' <span class="icon-arrow rotate-bottom text-small"></span>' );
+    }
+  }
+}
 
 /**
  * @desc
@@ -149,11 +204,8 @@ export function setSmoothBehavior( el ) {
       const id = e.currentTarget.getAttribute( 'href' ).slice( 1 );
       const target = document.getElementById( id );
       if( target ) {
-        const header = document.getElementById( 'header' );
-        const h = ( header ) ? header.offsetHeight : 0;
-
         const box = getCoords( target );
-        smoothScroll( box.top - h );
+        smoothScroll( box.top );
       }
     } );
   } );
@@ -164,10 +216,17 @@ export function setSmoothBehavior( el ) {
  * Imposta la proprietà `behavior: 'smooth'` per il metodo indicato come parametro se il browser supporta lo scorrimento fluido.
  *
  * @param {number} y Valore y
+ * @param {boolean} [subtract=true] `true` sottrae il valore dell'altezza dell'header del sito
  * @param {string} [method=scrollTo]
  */
-export function smoothScroll( y, method = 'scrollTo' ) {
-  let context = document.querySelector( '.page' );
+export function smoothScroll( y, subtract = true, method = 'scrollTo' ) {
+  const context = document.querySelector( '.page' );
+
+  const header = document.getElementById( 'header' );
+  const h = ( header ) ? header.offsetHeight : 0;
+  if( subtract ) {
+    y -= h;
+  }
 
   if( 'scrollBehavior' in document.documentElement.style ) {
     context[ method ]( {

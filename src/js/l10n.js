@@ -10,11 +10,15 @@ export const l10n = {
   it: {
     'cancel': 'Annulla',
     'confirm': 'Conferma',
+    'collapse': 'Contrai',
+    'expand': 'Espandi',
   },
 
   en: {
     'cancel': 'Cancel',
     'confirm': 'Confirm',
+    'collapse': 'Collapse',
+    'expand': 'Expand',
   },
 
   add: function( obj ) {

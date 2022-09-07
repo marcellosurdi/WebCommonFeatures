@@ -1,95 +1,17 @@
-.rotate-bottom { @include transform( rotate(90deg) ); }
-.rotate-right { @include transform( rotate(180deg) ); }
-.rotate-up { @include transform( rotate(270deg) ); }
-
-// Skeleton effect
-.skeleton-loader {
-  overflow: hidden;
-  position: relative;
+// .collapsible-element
+.collapsible-element { max-height: 0; overflow: hidden; transition: all .25s ease-out }
+.collapse-btn { text-decoration: none; color: $link_color; }
+.collapse-btn-container { border-top: 1px solid $light_grey_color; text-align: center; }
+.collapse-btn-container .collapse-btn {
   display: inline-block;
-  background: $xlight_grey_color;
+  border: 1px solid $light_grey_color;
+  border-top: 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px 10px;
 }
 
-.skeleton-loader.text-small { height: $text_small; }
-.skeleton-loader.text-medium { height: $text_medium; }
-.skeleton-loader.text-big { height: $text_big; }
-.skeleton-loader.text-xl { height: $text_xl; }
-.skeleton-loader.text-xxl { height: $text_xxl; }
-.skeleton-loader.text-3xl { height: $text_3xl; }
-.skeleton-loader.text-4xl { height: $text_4xl; }
-.skeleton-loader.text-5xl { height: $text_5xl; }
-
-.skeleton-loader::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  animation: skeleton-effect .8s infinite;
-}
-
-@keyframes skeleton-effect {
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-
-// Lazy loading
-.lazy { background-color: $xlight_grey_color; }
-
-.preload:after {
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border: 5px solid $dark_grey_color;
-  border-color: $dark_grey_color transparent $dark_grey_color transparent;
-  border-radius: 50%;
-  margin: -28px 0 0 -28px;
-  width: 46px;
-  height: 46px;
-  @include rotate-animation( 1s, ease-out );
-}
-
-.complete { animation: fadein 1s linear forwards; }
-
-
-// .list-view
-.list-view li {
-  position: relative;
-  border-bottom: 1px solid #ddd;
-}
-
-.list-view li > a {
-  display: block;
-  position: relative;
-  padding: 10px;
-  text-decoration: none;
-}
-
-a span.arrow {
-  position: absolute;
-  top: 12px;
-  right: 0;
-  width: 42px;
-  border-left: 1px solid #ccc;
-  text-align: center;
-}
-
-a.rotate-arrow span.arrow span {
-  @include transform( rotate(90deg) );
-  transition: transform .25s;
-}
-
-a.rotate-arrow.active span.arrow span {
-  @include transform( rotate(-90deg) );
-}
-
-
-// a.right-arrow-btn, a.left-arrow-btn
+// .left-arrow-btn, .right-arrow-btn
 a.right-arrow-btn, a.left-arrow-btn {
   background-color: $light_btn_color;
   height: 32px;
@@ -134,3 +56,93 @@ a.left-arrow-btn::before {
 a.left-arrow-btn:hover::before {
   border-color: transparent $dark_btn_color transparent transparent;
 }
+
+// .list-view
+.list-view li {
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-view li > a {
+  display: block;
+  position: relative;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+a span.arrow {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  width: 42px;
+  border-left: 1px solid #ccc;
+  text-align: center;
+}
+
+a.rotate-arrow span.arrow span {
+  @include transform( rotate(90deg) );
+  transition: transform .25s;
+}
+
+a.rotate-arrow.active span.arrow span {
+  @include transform( rotate(-90deg) );
+}
+
+// .rotate-*
+.rotate-bottom { @include transform( rotate(90deg) ); }
+.rotate-right { @include transform( rotate(180deg) ); }
+.rotate-up { @include transform( rotate(270deg) ); }
+
+// .skeleton-loader
+.skeleton-loader {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  background: $xlight_grey_color;
+}
+
+.skeleton-loader.text-small { height: $text_small; }
+.skeleton-loader.text-medium { height: $text_medium; }
+.skeleton-loader.text-big { height: $text_big; }
+.skeleton-loader.text-xl { height: $text_xl; }
+.skeleton-loader.text-xxl { height: $text_xxl; }
+.skeleton-loader.text-3xl { height: $text_3xl; }
+.skeleton-loader.text-4xl { height: $text_4xl; }
+.skeleton-loader.text-5xl { height: $text_5xl; }
+
+.skeleton-loader::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: skeleton-effect .8s infinite;
+}
+
+@keyframes skeleton-effect {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+// lazy loading
+.lazy { background-color: $xlight_grey_color; }
+
+.preload:after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 5px solid $dark_grey_color;
+  border-color: $dark_grey_color transparent $dark_grey_color transparent;
+  border-radius: 50%;
+  margin: -28px 0 0 -28px;
+  width: 46px;
+  height: 46px;
+  @include rotate-animation( 1s, ease-out );
+}
+
+.complete { animation: fadein 1s linear forwards; }

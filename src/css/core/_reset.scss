@@ -6,6 +6,6 @@ ul li { list-style-type: none; }
 ul li.disc, ul.disc li, ol li { margin-left: 20px; }
 ul li.disc, ul.disc li { list-style-type: disc; list-style-position: outside; }
 p { padding: 5px 0; font-weight: normal; }
-a { text-decoration: underline; color: inherit; }
+a { text-decoration: underline; color: $link_color; }
 a:hover { text-decoration: none; }
 a:active { background-color: $active_color; color: $white_color; }

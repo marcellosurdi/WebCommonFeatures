@@ -1,7 +1,7 @@
 {
   "name": "web-common-features",
   "description": "Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "keywords": [],
   "main": "dist/js/web-common-plugins.min.js",
   "repository": {},
