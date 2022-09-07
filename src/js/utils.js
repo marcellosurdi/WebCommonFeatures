@@ -125,9 +125,9 @@ export function collapsible ( e ) {
 
 /**
  * @desc
- * Al termine del flusso di aggiornamenti di eventi come `mousemove`, `resize` e `scroll` esegue il listener dopo l'intervallo di tempo impostato.
+ * Esegue un listener al termine del flusso di aggiornamenti di eventi come `mousemove`, `resize` e `scroll` e dopo l'intervallo di tempo impostato.
  *
- * @param {function} listener Il listener di eventi da eseguire terminato l'intervallo di tempo impostato
+ * @param {function} listener Il listener di eventi da eseguire
  * @param {number} delay L'intervallo di tempo da impostare
  *
  * @see {@link https://codepen.io/AmeliaBR/post/basic-javascript-event-throttling|Throttling di eventi con JavaScript}

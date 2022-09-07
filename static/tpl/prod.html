@@ -35,7 +35,20 @@
       WebCommonFeatures.l10n.add( translation_strings );
       WebCommonFeatures.Utils.translate();
 
-      WebCommonFeatures.Utils.truncateString( document.querySelector( 'h1' ), 14 );
+      window.addEventListener( 'resize', WebCommonFeatures.Utils.debounceEvent( listener, 50 ) );
+
+      const h1 = document.querySelector( 'h1' );
+      const text = h1.textContent;
+      function listener() {
+        const w = document.documentElement.clientWidth;
+        if( w < 480 ) {
+          WebCommonFeatures.Utils.truncateString( h1, 11 );
+        }
+        else {
+          h1.textContent = text;
+        }
+      }
+      listener();
 
       [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', WebCommonFeatures.Tooltip ) );
 
