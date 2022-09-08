@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href="./css/web-common-features.min.css" rel="stylesheet">
+  </head>
+
+  <body class="index light-grey-background" data-lang="en" data-output-path="<%= webpackConfig.output.publicPath %>">
+    <%= require('html-loader!./inc/body.html').default %>
+
+    <script src="./js/web-common-features.min.js"></script>
+    <script>
+      const translation_strings = {
+        'it': {
+          'invalid-password': 'Password non valida',
+          'mandatory-field': 'Compila tutti i campi obbligatori',
+          'modalbox-text': 'Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Nulla tincidunt ante nulla, a tincidunt dui molestie vel. Aliquam orci augue, bibendum sed velit ut, interdum cursus mi.',
+          'modalbox-title': 'Titolo modalbox',
+          'notification-text': 'Aenean semper et nibh aliquam rutrum.',
+          'submenu': 'Sotto elemento',
+        },
+        'en': {
+          'invalid-password': 'Invalid password',
+          'mandatory-field': 'Fill in all required fields',
+          'modalbox-text': 'Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Nulla tincidunt ante nulla, a tincidunt dui molestie vel. Aliquam orci augue, bibendum sed velit ut, interdum cursus mi.',
+          'modalbox-title': 'Modalbox title',
+          'notification-text': 'Aenean semper et nibh aliquam rutrum.',
+          'submenu': 'Submenu',
+        }
+      }
+
+      WebCommonFeatures.l10n.add( translation_strings );
+      WebCommonFeatures.Utils.translate();
+
+      window.addEventListener( 'resize', WebCommonFeatures.Utils.debounceEvent( listener, 50 ) );
+
+      const h1 = document.querySelector( 'h1' );
+      const text = h1.textContent;
+      function listener() {
+        const w = document.documentElement.clientWidth;
+        if( w < 480 ) {
+          WebCommonFeatures.Utils.truncateString( h1, 11 );
+        }
+        else {
+          h1.textContent = text;
+        }
+      }
+      listener();
+
+      [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', WebCommonFeatures.Tooltip ) );
+
+      document.querySelector( 'a#collapse1' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
+      document.querySelector( 'a#collapse2' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
+
+      // Smooth behavior
+      WebCommonFeatures.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );
+      document.querySelector( 'a#_open-menu' ).addEventListener( 'click', () => {
+        document.getElementById( 'sidenav' ).open();
+      });
+
+      // LightBox
+      WebCommonFeatures.Lightbox( document.getElementById( 'lightbox-section' ) );
+
+      // Modalbox
+      document.querySelector( 'button#modalbox-btn' ).addEventListener( 'click', ( e ) => {
+        WebCommonFeatures.Modalbox(
+          'modalbox-title',
+          'modalbox-text',
+          () => { console.log( "L'utente ha confermato!" ); return true; },
+          () => { console.log( "L'utente ha annullato!" ); }
+        );
+      } );
+
+      document.querySelector( 'button#modalbox-btn-2' ).addEventListener( 'click', ( e ) => {
+        WebCommonFeatures.Modalbox(
+          'Lorem ipsum',
+          `
+            <div class="float-container form-section">
+              <label for="modal-box-email">Email</label>
+              <input type="text" id="modal-box-email" data-require="checkMail" data-msg="mandatory-field">
+            </div>
+          `,
+          ( form ) => {
+            if( WebCommonFeatures.Validation( form, [ 'modal-box-email' ] ) ) {
+              console.log( 'Invio dati!' );
+              return true;
+            }
+            else {
+              console.log( 'Si è verificato un errore!' );
+            }
+          },
+          () => { console.log( "L'utente ha annullato!" ); }
+        );
+      } );
+
+
+      // Notification
+      document.querySelector( 'button#notification-btn-success' ).addEventListener( 'click', ( e ) => {
+        WebCommonFeatures.Notification( 'success', 'Testo di prova' );
+      } );
+
+      document.querySelector( 'button#notification-btn-warning' ).addEventListener( 'click', ( e ) => {
+        WebCommonFeatures.Notification( 'warning', 'Testo di prova' );
+      } );
+
+      document.querySelector( 'button#notification-btn-notice' ).addEventListener( 'click', ( e ) => {
+        WebCommonFeatures.Notification( 'notice', 'notification-text', 0, () => { console.log( "L'utente ha confermato!" ) } );
+      } );
+
+      document.querySelector( 'button#notification-btn-alert' ).addEventListener( 'click', ( e ) => {
+        WebCommonFeatures.Notification( 'alert', 'Testo di prova' );
+      } );
+
+      // Overlay
+      document.querySelector( 'button#overlay-btn' ).addEventListener( 'click', ( e ) => {
+        WebCommonFeatures.Overlay( true );
+        setTimeout( () => { WebCommonFeatures.Overlay( false ) }, 2000 );
+      } );
+
+      document.querySelector( 'button#overlay-btn-2' ).addEventListener( 'click', ( e ) => {
+        // Mostra un overlay con spinner di caricamento
+        WebCommonFeatures.Overlay( true, true );
+        setTimeout( () => { WebCommonFeatures.Overlay( false ) }, 2000 );
+      } );
+
+      // Validation
+      document.getElementById( 'test-form' ).addEventListener( 'submit', function( e ) {
+        e.preventDefault();
+
+        if( WebCommonFeatures.Validation( this, [ 'text1', 'email', 'password', 'password2', 'text2', 'text3', 'text4', 'select', 'text5', 'checkbox' ] ) ) {
+          console.log( 'Invio dati!' );
+        }
+        else {
+          console.log( 'Si è verificato un errore!' );
+        }
+      } );
+    </script>
+  </body>
+</html>

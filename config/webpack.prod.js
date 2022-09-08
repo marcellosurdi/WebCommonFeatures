@@ -13,16 +13,25 @@ module.exports = ( env, argv ) => {
       mode: 'production',
 
       entry: {
-        'web-common-features': paths.src + '/prod.js',
+        'web-common-features': {
+          import: paths.src + '/pro.js',
+          library: {
+            name: 'WebCommonFeatures',
+            type: 'umd',
+          },
+        },
+
+        megamenu: {
+          import: paths.src + '/megamenu-pro.js',
+          library: {
+            name: 'Megamenu',
+            type: 'umd',
+          },
+        },
       },
 
       output: {
         filename: 'js/[name].min.js',
-
-        library: {
-          name: 'WebCommonFeatures',
-          type: 'umd',
-        },
       },
 
       devtool: false,
@@ -50,7 +59,15 @@ module.exports = ( env, argv ) => {
         new HtmlWebpackPlugin({
           filename: 'index.html',
           title: 'index@' + version,
-          template: paths.static + '/tpl/prod.html',
+          template: paths.static + '/tpl/pro.html',
+          inject: false,
+          minify: false,
+        }),
+
+        new HtmlWebpackPlugin({
+          filename: 'megamenu.html',
+          title: 'megamenu@' + version,
+          template: paths.static + '/tpl/megamenu-pro.html',
           inject: false,
           minify: false,
         }),

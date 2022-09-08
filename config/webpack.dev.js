@@ -11,6 +11,7 @@ module.exports = ( env, argv ) => {
 
       entry: {
         main: paths.src + '/dev.js',
+        main: paths.src + '/megamenu-dev.js',
       },
 
       output: {
@@ -48,6 +49,12 @@ module.exports = ( env, argv ) => {
           filename: 'index.html',
           title: 'index@' + version,
           template: paths.static + '/tpl/dev.html',
+        }),
+
+        new HtmlWebpackPlugin({
+          filename: 'megamenu.html',
+          title: 'megamenu@' + version,
+          template: paths.static + '/tpl/megamenu-dev.html',
         }),
       ],
     }
