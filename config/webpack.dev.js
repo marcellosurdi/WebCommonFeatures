@@ -13,6 +13,10 @@ module.exports = ( env, argv ) => {
         main: paths.src + '/dev.js',
       },
 
+      output: {
+        filename: 'js/[name].js',
+      },
+
       devtool: 'inline-source-map',
 
       module: {
@@ -26,10 +30,6 @@ module.exports = ( env, argv ) => {
            ],
           },
         ],
-      },
-
-      output: {
-        filename: 'js/[name].js',
       },
 
       devServer: {

@@ -16,6 +16,15 @@ module.exports = ( env, argv ) => {
         'web-common-features': paths.src + '/prod.js',
       },
 
+      output: {
+        filename: 'js/[name].min.js',
+
+        library: {
+          name: 'WebCommonFeatures',
+          type: 'umd',
+        },
+      },
+
       devtool: false,
 
       module: {
@@ -31,15 +40,6 @@ module.exports = ( env, argv ) => {
             ],
           },
         ],
-      },
-
-      output: {
-        filename: 'js/[name].min.js',
-
-        library: {
-          name: 'WebCommonFeatures',
-          type: 'umd',
-        },
       },
 
       plugins: [
