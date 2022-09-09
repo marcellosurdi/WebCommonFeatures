@@ -4,18 +4,16 @@
  * @desc
  * Entry point per la modalità development
  */
- import './css/style.scss';
- import './js/sidenav';
- import { l10n } from './js/l10n';
- import { Lightbox } from './js/lightbox';
- import { Modalbox } from './js/modalbox';
- import { Notification } from './js/notification';
- import { Overlay } from './js/overlay';
- import { Tooltip } from './js/tooltip';
- import { Validation } from './js/validation';
- import { collapsible, debounceEvent, setSmoothBehavior, translate, truncateString } from './js/utils';
-
-
+import './css/style.scss';
+import './js/sidenav';
+import { l10n } from './js/l10n';
+import { Lightbox } from './js/lightbox';
+import { Modalbox } from './js/modalbox';
+import { Notification } from './js/notification';
+import { Overlay } from './js/overlay';
+import { Tooltip } from './js/tooltip';
+import { Validation } from './js/validation';
+import { collapsible, debounceEvent, setSmoothBehavior, translate, truncateString } from './js/utils';
 
 // Gestione stringhe di traduzione
 const translation_strings = {

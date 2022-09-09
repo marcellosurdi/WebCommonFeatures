@@ -11,7 +11,7 @@ module.exports = ( env, argv ) => {
 
       entry: {
         main: paths.src + '/dev.js',
-        main: paths.src + '/megamenu-dev.js',
+        megamenu: paths.src + '/megamenu-dev.js',
       },
 
       output: {
@@ -57,6 +57,10 @@ module.exports = ( env, argv ) => {
           template: paths.static + '/tpl/megamenu-dev.html',
         }),
       ],
+
+      optimization: {
+        runtimeChunk: 'single',
+      },
     }
   );
 };
