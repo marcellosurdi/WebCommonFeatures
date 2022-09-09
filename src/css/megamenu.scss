@@ -1,0 +1,92 @@
+@import './core/globals';
+
+h1 {float:left}
+nav#main {
+  float: right;
+
+  // Le voci del menu di navigazione principale
+  > a, div.dropdown-container > a {
+    transition: all .3s ease-out;
+    display: block;
+    margin: 0;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    cursor: pointer;
+    color: $white_color;
+  }
+
+  > a:hover, div.dropdown-container > a:hover,
+  > a.active, div.dropdown-container > a.active {
+    background-color: $dark_btn_color; color: $black_color;
+  }
+
+  > a:active, div.dropdown-container > a:active {
+    background-color: $active_color; color: $white_color;
+  }
+
+  > a.current-page { background-color: $dark_btn_color; color: $black_color; }
+  > a span.icon-checkmark { display: none; }
+
+  div.dropdown-content {
+    transition: opacity .3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  div.dropdown-content.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  div.dropdown-content h2 {
+    position: relative;
+    font-size: $text_xl;
+  }
+
+  div.dropdown-content h2 a.icon-close {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0,-50%);
+  }
+
+  div.dropdown-content h3 {
+    border-bottom: 1px dotted $light_grey_color;
+    padding-bottom: 5px;
+    font-size: $text_big;
+  }
+
+  div.dropdown-content div.row, div.dropdown-content div.fixed-row {
+    border-radius: 0 0 5px 5px;
+    border-top: 10px solid $dark_btn_color;
+  }
+
+  div.dropdown-content div.fixed-row {
+    float: right;
+    width: 350px;
+  }
+
+  div.dropdown-content div.row:after, div.dropdown-content div.fixed-row:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  div.column {
+    height: 300px;
+  }
+
+  // Only for SPA
+  span.current-lang { width: 25px; }
+}
+
+@media screen and (max-width: 1024px) {
+  nav#main { display: none; }
+}

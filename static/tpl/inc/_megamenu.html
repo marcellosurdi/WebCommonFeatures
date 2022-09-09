@@ -1,0 +1,161 @@
+<nav id="main" class="main float-container">
+  <!-- HOME -->
+  <a href="#index" data-page="index" class="float-item btn align-center">
+    <span class="radius-circle white-background icon-home icon-small text-small"></span>
+    <span class="uppercase" data-i18n="home">{{home}}</span>
+  </a>
+
+  <!-- TARIFFE -->
+  <a href="#rates" data-page="rates" class="float-item btn align-center">
+    <span class="uppercase" data-i18n="rates">{{rates}}</span>
+  </a>
+
+  <!-- SERVIZI -->
+  <a href="#services" data-page="services" class="float-item btn align-center">
+    <span class="uppercase" data-i18n="services">{{services}}</span>
+  </a>
+
+  <!-- FAQ -->
+  <a href="#faq" data-page="faq" class="float-item btn align-center">
+    <span class="uppercase" data-i18n="faq">{{faq}}</span>
+  </a>
+
+  <!-- INFO -->
+  <div class="dropdown-container float-container float-item">
+    <a href="javascript:void(0);" class="align-center uppercase"><span data-i18n="info">{{info}}</span> <span class="icon-arrow rotate-clockwise icon-small text-small"></span></a>
+    <div class="dropdown-content">
+      <div class="fixed-row white-background padding-medium">
+        <h2>
+          <span data-i18n="contacts">{{contacts}}</span>
+          <a href="javascript:void(0);" class="xdark-grey-background icon-close icon-small text-small"></a>
+        </h2>
+        <a href="tel:00390916390919" class="display-block btn margin-medium notice-background padding-medium">
+          <span class="white-background icon-phone icon-medium text-medium"></span>
+          +39 091 6390 919
+        </a>
+
+        <a href="mailto:parkandfly@sbc.it" class="display-block btn margin-medium xlight-grey-background padding-medium">
+          <span class="white-background icon-mail icon-medium text-medium"></span>
+          parkandfly@sbc.it
+        </a>
+
+        <table class="margin-medium notice-background padding-medium w-12">
+          <tr>
+            <td colspan="2" data-i18n="opening-hours">{{opening-hours}}</td>
+          </tr>
+          <tr>
+            <td><strong data-i18n="mon-fri">{{mon-fri}}</strong></td>
+            <td>08:30 - 20:00</td>
+          </tr>
+          <tr>
+            <td><strong data-i18n="sat">{{sat}}</strong></td>
+            <td>08:30 - 19:00</td>
+          </tr>
+          <tr>
+            <td class="align-top"><strong data-i18n="sun">{{sun}}</strong></td>
+            <td>
+              09:00 - 13:00<br>
+              15:00 - 19:00
+            </td>
+          </tr>
+        </table>
+
+        <h2 class="margin-small" data-i18n="useful-info">{{useful-info}}</h2>
+        <ul class="list-view">
+          <li>
+            <a href="#where" data-page="where">
+              <span class="xlight-grey-background icon-marker icon-small text-small"></span>
+              <span data-i18n="how-to-reach-us">{{how-to-reach-us}}</span>
+              <span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#company" data-page="company">
+              <span class="xlight-grey-background icon-company icon-small text-small"></span>
+              <span data-i18n="our-company">{{our-company}}</span>
+              <span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#privacy" data-page="privacy">
+              <span class="xlight-grey-background icon-info icon-small text-small"></span>
+              <span data-i18n="privacy-policy">{{privacy-policy}}</span>
+              <span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCEDI -->
+  <div class="dropdown-container float-container float-item dark-a-background">
+    <a href="javascript:void(0);" class="align-center uppercase"><span data-i18n="signin">{{signin}}</span> <span class="icon-arrow rotate-clockwise icon-small text-small"></span></a>
+    <div class="dropdown-content">
+      <div class="fixed-row white-background padding-medium">
+        <h2>
+          <span data-i18n="signin">{{signin}}</span>
+          <a href="javascript:void(0);" class="xdark-grey-background icon-close icon-small text-small"></a>
+        </h2>
+        <p data-i18n="signin-summary">{{signin-summary}}</p>
+
+        <form>
+          <div class="form-section">
+            <label for="email" data-i18n="email">{{email}}</label>
+            <input type="email" id="email" class="clear fix-enter" autocomplete="off" data-fix-enter="form-login-1-submit">
+          </div>
+          <div class="form-section">
+            <label for="pwd" data-i18n="password">{{password}}</label>
+            <input type="password" id="pwd" class="reveal fix-enter" data-fix-enter="form-login-1-submit">
+          </div>
+          <div class="form-section">
+            <button type="submit" id="form-login-submit" class="btn radius-5 w-12 dark-btn-background padding-medium">
+              <span class="radius-circle white-background icon-checkmark icon-small text-small"></span>
+              <span class="uppercase text-big" data-i18n="signin">{{signin}}</span>
+            </button>
+          </div>
+        </form>
+
+        <ul class="list-view form-section">
+          <li>
+            <a href="#password" data-page="password">
+              <span class="xlight-grey-background icon-padlock icon-small text-small"></span>
+              <span data-i18n="forgot-password">{{forgot-password}}</span>
+              <span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span>
+            </a>
+          </li>
+          <li>
+            <a href="#signup" data-page="signup">
+              <span class="xlight-grey-background icon-signup icon-small text-small"></span>
+              <span data-i18n="signup">{{signup}}</span>
+              <span class="arrow"><span class="white-background icon-arrow icon-small text-small"></span></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINGUA -->
+  <div class="dropdown-container float-container float-item dark-a-background">
+    <a href="javascript:void(0);" class="lang btn align-center uppercase">
+      <span class="xxlight-grey-background svg-icon en icon-small text-small"></span>
+      <span class="display-inline-block current-lang uppercase">En</span>
+      <span class="icon-arrow rotate-clockwise icon-small text-small"></span>
+    </a>
+    <div class="dropdown-content">
+      <div class="fixed-row white-background padding-medium">
+        <h2>
+          <span data-i18n="choose-your-language">{{choose-your-language}}</span>
+          <a href="javascript:void(0);" class="xdark-grey-background icon-close icon-small text-small"></a>
+        </h2>
+        <ul class="langs list-view">
+          <li><a href="javascript:void(0);" data-lang="it">Italiano</a></li>
+          <li><a href="javascript:void(0);" data-lang="en">English</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<button type="button" id="open-menu" class="icon-menu icon-medium text-medium" style="display: none"></button>
