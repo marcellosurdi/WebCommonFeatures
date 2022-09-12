@@ -1,31 +1,11 @@
 /**
- * @module js/core/megamenu
+ * @module js/megamenu
  * @author Marcello Surdi
  *
  * @desc
- * Contiene il componente **MegaMenu**.
- *
- * @see {@link module:js/utils/helpers.click|js/utils/helpers.click}
- * @see {@link module:js/utils/helpers.truncate|js/utils/helpers.truncate}
- * @see {@link module:js/components/overlay|js/components/overlay}
- *
- * @example
- * <!-- Esempio di codice HTML da inserire nella pagina -->
- * <nav>
- *  <div class="dropdown-container float-container float-item">
- *    <a href="javascript:void(0);" class="btn align-center">
- *      Voce menu
- *    </a>
- *    <div class="dropdown-content">
- *      <div class="row centered-content white-background padding-medium">
- *        <!-- [...] -->
- *      </div>
- *    </div>
- *  </div>
- * </nav>
+ * Un megamenu è un menu di navigazione a comparsa che contiene link, immagini o altro suddivisi e organizzati su più colonne
  */
 
-// import { click, truncate } from './../utils/helpers.js';
 import './../css/megamenu.scss';
 import { Overlay } from './overlay';
 
@@ -33,13 +13,28 @@ import { Overlay } from './overlay';
  * @desc
  * Inizializza e gestisce il mega menu
  *
+ * @requires {@linkcode module:js/overlay|Overlay}
+ *
  * @example
+ * // <nav>
+ * //  <div class="dropdown-container float-container float-item">
+ * //    <a href="javascript:void(0);" class="btn align-center">
+ * //      Voce menu
+ * //    </a>
+ * //   <div class="dropdown-content">
+ * //      <div class="row centered-content white-background padding-medium">
+ * //        <!-- [...] -->
+ * //     </div>
+ * //   </div>
+ * //  </div>
+ * // </nav>
+ *
  * MegaMenu();
  */
 export function MegaMenu() {
   let current_button;
-  // Only for SPA, closes megamenu when the user clicks on a link with data-page or data-lang attribute
-  const a = document.querySelector( 'nav#main' ).querySelectorAll( 'a[data-page], a[data-lang]' );
+  // Chiude il megamenu se un utente cambia la lingua
+  const a = document.querySelector( 'nav#main' ).querySelectorAll( 'a[data-lang]' );
   for( let i = 0; i < a.length; i++ ) {
     a[ i ].addEventListener( 'click', close );
   }
@@ -53,9 +48,7 @@ export function MegaMenu() {
     button_close[ i ].addEventListener( 'click', close );
   }
 
-  // truncate( document.querySelector( 'span#user-logged-in-name' ), 12 );
-
-  // User clicks on a top-level button
+  // Click su una voce di primo livello
   function toggle( e ) {
     e.preventDefault();
     current_button = e.currentTarget;

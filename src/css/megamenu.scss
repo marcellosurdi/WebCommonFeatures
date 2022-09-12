@@ -1,10 +1,12 @@
 @import './core/globals';
 
-h1 {float:left}
+h1 { float: left; }
+#header #open-menu { display: none; }
+
 nav#main {
   float: right;
 
-  // Le voci del menu di navigazione principale
+  // Voci del menu di navigazione principale
   > a, div.dropdown-container > a {
     transition: all .3s ease-out;
     display: block;
@@ -12,8 +14,8 @@ nav#main {
     border: none;
     outline: none;
     padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
+    height: 59px;
+    line-height: 59px;
     text-decoration: none;
     cursor: pointer;
     color: $white_color;
@@ -21,23 +23,20 @@ nav#main {
 
   > a:hover, div.dropdown-container > a:hover,
   > a.active, div.dropdown-container > a.active {
-    background-color: $dark_btn_color; color: $black_color;
+    background-color: $dark_btn_color; color: $white_color;
   }
 
   > a:active, div.dropdown-container > a:active {
     background-color: $active_color; color: $white_color;
   }
 
-  > a.current-page { background-color: $dark_btn_color; color: $black_color; }
-  > a span.icon-checkmark { display: none; }
-
   div.dropdown-content {
-    transition: opacity .3s ease-out;
-    visibility: hidden;
-    opacity: 0;
     position: absolute;
     left: 0;
+    visibility: hidden;
+    opacity: 0;
     width: 100%;
+    transition: opacity .3s ease-out;
   }
 
   div.dropdown-content.open {
@@ -47,20 +46,21 @@ nav#main {
 
   div.dropdown-content h2 {
     position: relative;
+    padding-left: 10px;
     font-size: $text_xl;
   }
 
   div.dropdown-content h2 a.icon-close {
     position: absolute;
     top: 50%;
-    right: 0;
+    right: 10px;
     transform: translate(0,-50%);
   }
 
   div.dropdown-content h3 {
     border-bottom: 1px dotted $light_grey_color;
     padding-bottom: 5px;
-    font-size: $text_big;
+    font-size: $text_xl;
   }
 
   div.dropdown-content div.row, div.dropdown-content div.fixed-row {
@@ -82,11 +82,9 @@ nav#main {
   div.column {
     height: 300px;
   }
-
-  // Only for SPA
-  span.current-lang { width: 25px; }
 }
 
 @media screen and (max-width: 1024px) {
   nav#main { display: none; }
+  #header #open-menu { display: block; }
 }

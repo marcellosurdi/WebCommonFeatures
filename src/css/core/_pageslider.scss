@@ -13,12 +13,19 @@
   border-bottom: 1px solid $dark_a_color;
   background: $light_a_color;
   height: 59px;
-  line-height: 59px;
   color: $white_color;
   z-index: 2;
 }
 
-#header > #open-menu {
+#header > div {
+  position: relative;
+  margin: 0 auto;
+  max-width: $container_max_width;
+}
+
+#header h1 { line-height: 59px; }
+
+#header #open-menu {
   position: absolute;
   top: 14px;
   right: 10px;
@@ -37,7 +44,9 @@
 }
 
 .page .content {
-  padding: 70px 10px 10px;
+  margin: 0 auto;
+  padding: 60px 0 0;
+  max-width: $container_max_width;
   overflow: auto;
 }
 

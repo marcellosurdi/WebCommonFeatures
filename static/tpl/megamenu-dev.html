@@ -8,68 +8,9 @@
   </head>
 
   <body class="index light-grey-background" data-lang="en" data-output-path="<%= webpackConfig.output.publicPath %>">
-    <div id="body">
-      <header id="header">
-        <h1 class="padding-left-medium">Megamenu</h1>
-        
-        <%= require('html-loader!./inc/_megamenu.html').default %>
-      </header>
 
-      <div id="container">
-        <div class="page">
-          <div class="content">
-            <div class="margin-top-medium xlight-grey-background padding-medium">
-              <p>Questo pacchetto rende disponibili funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dapibus fermentum scelerisque. Nunc vel enim odio. Quisque vel erat velit. Aliquam eleifend nisi vitae commodo auctor. Suspendisse sed lorem orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras blandit elit enim, ut tempus nibh porta id. Proin luctus sem non dui venenatis, vel rhoncus lectus lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer orci metus, facilisis a consequat ut, viverra quis ex. Proin sed fermentum ex. Aliquam erat volutpat. Vivamus vitae nibh ornare, facilisis enim ac, pellentesque lorem. Nam porta eget nulla a tincidunt. Mauris fermentum malesuada egestas.</p>
-              <p>Nullam eleifend, ipsum quis eleifend ultricies, leo felis pulvinar ante, at blandit nisl lacus sit amet nunc. Quisque at justo sit amet lorem suscipit faucibus at eget mi. Fusce ac vulputate lectus, et tempus purus. Cras mattis elementum accumsan. Mauris massa nisi, gravida vitae dictum in, consectetur eget justo. Cras egestas lectus ut justo eleifend, eu vulputate justo faucibus. Nam suscipit aliquam odio euismod malesuada. Etiam rhoncus dui suscipit sapien egestas rhoncus. Mauris ipsum mi, consectetur at nisi non, fermentum faucibus dui. Quisque elementum turpis id mollis feugiat. Vestibulum lobortis non lectus at aliquet.</p>
-              <p>Vestibulum luctus cursus interdum. Nulla rhoncus hendrerit orci, nec laoreet mauris posuere in. Ut hendrerit, quam sit amet mattis tincidunt, turpis nibh congue nisi, id placerat turpis eros non purus. Cras non nisl metus. Cras tincidunt lorem ut purus dignissim, quis mattis ex pulvinar. Cras venenatis mattis tempus. Aenean sollicitudin lorem et neque posuere, a finibus enim faucibus. Sed fermentum vitae nisl ut egestas. In non nunc malesuada, egestas mauris ac, gravida dolor. Fusce lectus turpis, interdum quis lacus non, ornare auctor mi. Morbi egestas quis nulla id tincidunt. Curabitur a orci a neque blandit aliquam et ut urna.</p>
-              <p>Proin at nibh finibus, egestas enim id, dapibus eros. Morbi vestibulum congue sem. Duis tristique libero est. Ut nisi magna, consequat et maximus et, malesuada ut purus. Duis et ipsum a ex ullamcorper dignissim. Nulla sollicitudin malesuada enim, id volutpat ligula luctus a. Maecenas a leo nunc. Nulla orci massa, fermentum eu commodo vitae, vestibulum non augue. Quisque ultrices augue nibh, sed vestibulum felis consequat vitae. Sed ac placerat mi. Pellentesque et blandit est. Phasellus quis magna accumsan sem molestie faucibus. Integer laoreet mattis condimentum.</p>
-              <p>Nunc vitae diam dictum, luctus dui vel, gravida ante. Nullam ullamcorper eget turpis at tempor. Quisque sit amet risus facilisis erat facilisis tristique. Nunc placerat enim vitae ornare iaculis. Vestibulum pulvinar, ipsum vitae fringilla commodo, orci mi commodo neque, sed condimentum turpis justo at augue. Nullam elementum nunc a magna sagittis, non semper diam viverra. Mauris a purus lacinia, consectetur dolor sed, venenatis sapien. Ut vehicula nunc a eleifend sodales. Fusce ullamcorper in nisl non vulputate. Maecenas vitae pretium mi, a vulputate orci. Maecenas vel mollis ligula, sed sollicitudin arcu. Sed mollis pharetra sodales. Nunc convallis, sapien eu blandit scelerisque, ligula sem mollis mi, eu gravida orci mi et ante.</p>
-            </div>
-          </div><!-- div.content -->
-        </div><!-- div.page -->
-      </div><!-- div#container -->
-    </div><!-- div#body -->
-
-
-
-
-
-    <nav id="sidenav" class="sidenav xxlight-grey-background">
-      <button type="button" id="close-menu" class="light-grey-background icon-close icon-medium text-medium"></button>
-
-      <div class="menu">
-        <ul class="main">
-          <li class="xlight-grey-background"><a href="megamenu.html">Megamenu</a></li>
-          <li class="xlight-grey-background"><a href="javascript:void(0);"><span class="xxlight-grey-background icon-padlock icon-small text-small"></span> <span>Accesso</span></a></li>
-          <li class="xlight-grey-background"><a href="javascript:void(0);"><span class="xxlight-grey-background icon-user icon-small text-small"></span> <span>Profilo</span></a></li>
-          <li><a href="javascript:void(0);"><span class="xlight-grey-background icon-phone icon-small text-small"></span> <span>Contatti</span></a></li>
-          <li>
-            <a href="#" class="has-children rotate-arrow">
-              <span class="xlight-grey-background icon-marker icon-small text-small"></span>
-              <span>Dove siamo</span>
-              <span class="arrow"><span class="xxlight-grey-background icon-arrow icon-small text-small"></span></span>
-            </a>
-            <ul class="sub-menu">
-              <li>
-                <a href="#" class="has-children rotate-arrow">
-                  <span data-i18n="submenu"></span> 1
-                  <span class="arrow"><span class="xxlight-grey-background icon-arrow icon-small text-small"></span></span>
-                </a>
-                <ul class="sub-menu">
-                  <li><a href="javascript:void(0);"><span data-i18n="submenu"></span> 2</a></li>
-                  <li><a href="javascript:void(0);"><span data-i18n="submenu"></span> 3</a></li>
-                  <li><a href="javascript:void(0);"><span data-i18n="submenu"></span> 4</a></li>
-                  <li><a href="javascript:void(0);"><span data-i18n="submenu"></span> 5</a></li>
-                  <li><a href="javascript:void(0);"><span data-i18n="submenu"></span> 6</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="javascript:void(0);"><span class="xlight-grey-background icon-faq icon-small text-small"></span> FAQ</a></li>
-          <li><a href="javascript:void(0);"><span class="xlight-grey-background icon-info icon-small text-small"></span> Privacy</a></li>
-        </ul>
-      </div>
-    </nav>
+    <%= require('html-loader!./inc/_megamenu.html').default %>
+    <%= require('html-loader!./inc/_sidenav.html').default %>
+    
   </body>
 </html>

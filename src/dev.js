@@ -1,9 +1,3 @@
-/**
- * @module dev
- *
- * @desc
- * Entry point per la modalità development
- */
 import './css/style.scss';
 import './js/sidenav';
 import { l10n } from './js/l10n';

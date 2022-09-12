@@ -61,6 +61,7 @@ module.exports = ( env, argv ) => {
       ],
 
       optimization: {
+        // Per risolvere un problema con il Live Reloading in caso di entry multiple
         runtimeChunk: 'single',
       },
     }

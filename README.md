@@ -4,6 +4,7 @@ Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti 
 - Collapsible
 - Icone;
 - Lightbox;
+- Megamenu;
 - Modalbox;
 - Notification;
 - Overlay;
