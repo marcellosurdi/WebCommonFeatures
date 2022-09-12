@@ -7,7 +7,7 @@ import { Notification } from './js/notification';
 import { Overlay } from './js/overlay';
 import { Tooltip } from './js/tooltip';
 import { Validation } from './js/validation';
-import { collapsible, debounceEvent, setSmoothBehavior, translate, truncateString } from './js/utils';
+import { alignHeader, collapsible, debounceEvent, setSmoothBehavior, translate, truncateString } from './js/utils';
 
 // Gestione stringhe di traduzione
 const translation_strings = {
@@ -31,6 +31,9 @@ const translation_strings = {
 
 l10n.add( translation_strings );
 translate();
+
+window.addEventListener( 'resize', debounceEvent( alignHeader, 10 ) );
+alignHeader();
 
 window.addEventListener( 'resize', debounceEvent( listener, 50 ) );
 
