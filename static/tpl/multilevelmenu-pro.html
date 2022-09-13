@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <link href="./css/web-common-features.min.css" rel="stylesheet">
+    <link href="./css/multilevelmenu.min.css" rel="stylesheet">
+  </head>
+
+  <body class="index light-grey-background" data-lang="en" data-output-path="<%= webpackConfig.output.publicPath %>">
+
+    <%= require('html-loader!./inc/_multilevelmenu.html').default %>
+    <%= require('html-loader!./inc/_sidenav.html').default %>
+
+    <script src="./js/web-common-features.min.js"></script>
+    <script src="./js/multilevelmenu.min.js"></script>
+    <script>
+      window.addEventListener( 'resize', WebCommonFeatures.Utils.debounceEvent( WebCommonFeatures.Utils.alignHeader, 10 ) );
+      WebCommonFeatures.Utils.alignHeader();
+    </script>
+  </body>
+</html>

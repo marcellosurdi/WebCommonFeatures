@@ -16,25 +16,30 @@ import { Overlay } from './overlay';
  * @requires {@linkcode module:js/overlay|Overlay}
  *
  * @example
- * // <nav>
+ * // <nav id="main">
  * //  <div class="dropdown-container float-container float-item">
- * //    <a href="javascript:void(0);" class="btn align-center">
- * //      Voce menu
- * //    </a>
+ * //   <a href="javascript:void(0);" class="btn align-center">Elemento menu</a>
  * //   <div class="dropdown-content">
- * //      <div class="row centered-content white-background padding-medium">
- * //        <!-- [...] -->
- * //     </div>
+ * //    <div class="row centered-content white-background padding-medium">
+ * //     <!-- [...] -->
+ * //    </div>
  * //   </div>
  * //  </div>
  * // </nav>
  *
  * MegaMenu();
  */
-export function MegaMenu() {
+function MegaMenu() {
+  let menu = document.querySelector( 'nav#main' );
   let current_button;
+
+  let items_with_dropdown = menu.querySelectorAll( 'a.menu-item-has-dropdown' );
+  for( let i = 0, n = items_with_dropdown.length; i < n; i++ ) {
+    items_with_dropdown[ i ].insertAdjacentHTML( 'beforeend', ' <span class="icon-arrow rotate-bottom icon-small text-small"></span>' );
+  }
+
   // Chiude il megamenu se un utente cambia la lingua
-  const a = document.querySelector( 'nav#main' ).querySelectorAll( 'a[data-lang]' );
+  const a = menu.querySelectorAll( 'a[data-lang]' );
   for( let i = 0; i < a.length; i++ ) {
     a[ i ].addEventListener( 'click', close );
   }

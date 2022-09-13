@@ -23,10 +23,10 @@ module.exports = ( env, argv ) => {
 
         megamenu: {
           import: paths.src + '/megamenu-pro.js',
-          library: {
-            name: 'Megamenu',
-            type: 'umd',
-          },
+        },
+
+        multilevelmenu: {
+          import: paths.src + '/multilevelmenu-pro.js',
         },
       },
 
@@ -68,6 +68,14 @@ module.exports = ( env, argv ) => {
           filename: 'megamenu.html',
           title: 'megamenu@' + version,
           template: paths.static + '/tpl/megamenu-pro.html',
+          inject: false,
+          minify: false,
+        }),
+
+        new HtmlWebpackPlugin({
+          filename: 'multilevelmenu.html',
+          title: 'multilevelmenu@' + version,
+          template: paths.static + '/tpl/multilevelmenu-pro.html',
           inject: false,
           minify: false,
         }),

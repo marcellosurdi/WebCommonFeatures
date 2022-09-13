@@ -1,0 +1,91 @@
+@import './core/globals';
+
+h1 { float: left; }
+#header #open-menu { display: none; }
+
+ul#main {
+  float: right;
+
+  a {
+    display: block;
+    height: 59px;
+    line-height: 59px;
+    text-indent: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: $text_big;
+    color: $white_color;
+  }
+
+  [class^="icon-"], [class*=" icon-"] { text-indent: 0; }
+
+  > li li a {
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    text-transform: none;
+  }
+
+  a:hover { text-decoration: underline; }
+
+  > li li {
+    background-color: $black_color;
+  }
+
+  > li li:first-child {
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+
+  > li li:last-child {
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+
+  > li { float: left; }
+
+  li { position: relative; width: 150px; }
+
+  // Posizione elementi <ul> dei sottomenu
+  li ul { position: absolute; top: 0; right: 150px; padding-top: 0; padding-right: 15px; }
+  > li > ul { top: 40px; right: 0; padding-top: 15px; padding-right: 0; }
+
+  li ul::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -5px;
+    z-index: 1;
+    border: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent $black_color;
+    width: 0;
+    height: 0;
+  }
+  > li > ul::after {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent $black_color transparent;
+  }
+
+  // Animazione :hover dei sottomenu
+  li.menu-item-has-children ul {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: visibility 0.15s linear, opacity 0.15s linear, transform 0.15s linear;
+  }
+
+  li.menu-item-has-children:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  ul#main { display: none; }
+  #header #open-menu { display: block; }
+}

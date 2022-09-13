@@ -6,6 +6,7 @@ Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti 
 - Lightbox;
 - Megamenu;
 - Modalbox;
+- Multilevel menu;
 - Notification;
 - Overlay;
 - Sfondi;

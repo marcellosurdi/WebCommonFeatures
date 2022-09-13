@@ -12,6 +12,7 @@ module.exports = ( env, argv ) => {
       entry: {
         main: paths.src + '/dev.js',
         megamenu: paths.src + '/megamenu-dev.js',
+        multilevelmenu: paths.src + '/multilevelmenu-dev.js',
       },
 
       output: {
@@ -58,10 +59,17 @@ module.exports = ( env, argv ) => {
           template: paths.static + '/tpl/megamenu-dev.html',
           chunks: [ 'megamenu' ],
         }),
+
+        new HtmlWebpackPlugin({
+          filename: 'multilevelmenu.html',
+          title: 'multilevelmenu@' + version,
+          template: paths.static + '/tpl/multilevelmenu-dev.html',
+          chunks: [ 'multilevelmenu' ],
+        }),
       ],
 
       optimization: {
-        // Per risolvere un problema con il Live Reloading in caso di entry multiple
+        // Risolve un problema con il Live Reloading in caso di entry multiple
         runtimeChunk: 'single',
       },
     }
