@@ -9,8 +9,9 @@
   </head>
 
   <body class="index light-grey-background" data-lang="en" data-output-path="<%= webpackConfig.output.publicPath %>">
-    
+
     <%= require('html-loader!./inc/_body.html').default %>
+    <%= require('html-loader!./inc/_sidenav.html').default %>
 
     <script src="./js/web-common-features.min.js"></script>
     <script>
@@ -36,6 +37,9 @@
       WebCommonFeatures.l10n.add( translation_strings );
       WebCommonFeatures.Utils.translate();
 
+      window.addEventListener( 'resize', WebCommonFeatures.Utils.debounceEvent( WebCommonFeatures.Utils.alignHeader, 10 ) );
+      WebCommonFeatures.Utils.alignHeader();
+
       window.addEventListener( 'resize', WebCommonFeatures.Utils.debounceEvent( listener, 50 ) );
 
       const h1 = document.querySelector( 'h1' );
@@ -53,8 +57,7 @@
 
       [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', WebCommonFeatures.Tooltip ) );
 
-      document.querySelector( 'a#collapse1' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
-      document.querySelector( 'a#collapse2' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
+      document.querySelector( 'a#collapse' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
 
       // Smooth behavior
       WebCommonFeatures.Utils.setSmoothBehavior( document.getElementById( 'toc' ) );

@@ -52,8 +52,7 @@ listener();
 
 [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', Tooltip ) );
 
-document.querySelector( 'a#collapse1' ).addEventListener( 'click', collapsible );
-document.querySelector( 'a#collapse2' ).addEventListener( 'click', collapsible );
+document.querySelector( 'a#collapse' ).addEventListener( 'click', collapsible );
 
 // Smooth behavior
 setSmoothBehavior( document.getElementById( 'toc' ) );

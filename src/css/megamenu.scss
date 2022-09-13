@@ -50,6 +50,14 @@ nav#main {
     font-size: $text_xl;
   }
 
+  div.dropdown-content h2 span {
+    display: inline-block;
+    border-radius: 0 0 5px 5px;
+    background-color: $dark_btn_color;
+    padding: 0 10px;
+    color: $white_color;
+  }
+
   div.dropdown-content h2 a.icon-close {
     position: absolute;
     top: 50%;

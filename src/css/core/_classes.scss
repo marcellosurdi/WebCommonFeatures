@@ -34,11 +34,14 @@ div.banner a span {
 .collapse-btn { text-decoration: none; color: $link_color; }
 .collapse-btn-container { border-top: 1px solid $light_grey_color; text-align: center; }
 .collapse-btn-container .collapse-btn {
+  position: relative;
+  bottom: 1px;
   display: inline-block;
   border: 1px solid $light_grey_color;
   border-top: 0;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+  background-color: $white_color;
   padding: 5px 10px;
 }
 

@@ -71,7 +71,7 @@ export function translate() {
 
 /**
  * @desc
- * Allinea la barra di intestazione ai contenuti (necessario quando i contenuti hanno la barra di scorrimento).
+ * Allinea la barra di intestazione ai contenuti (necessario perché i contenuti hanno la barra di scorrimento).
  */
 export function alignHeader() {
   const header_div = document.querySelector( '#header div' );
