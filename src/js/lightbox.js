@@ -58,7 +58,7 @@ export function Lightbox( el ) {
     overlay.appendChild( lightbox );
     overlay.appendChild( close_btn );
 
-    loadImg( document.body.getAttribute( 'data-output-path' ) + e.target.getAttribute( 'href') );
+    loadImg( e.target.getAttribute( 'href') );
   }
 
   function close( e ) {
