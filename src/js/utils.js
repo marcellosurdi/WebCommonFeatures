@@ -98,14 +98,6 @@ export function alignHeader() {
  *
  * @example
  * // <div class="collapsible-element"></div>
- * // <a href="javascript:void(0);" class="collapse" data-max-height="1000px" data-text-expand="Espandi" data-text-collapse="Contrai">
- * //  <span data-i18n="expand">Espandi</span>
- * //  <span class="icon-arrow rotate-bottom text-small"></span>
- * // </a>
- *
- * // oppure
- *
- * // <div class="collapsible-element"></div>
  * // <div class="">
  * //  <a href="javascript:void(0);" class="collapse" data-max-height="1000px" data-text-expand="expand" data-text-collapse="collapse">
  * //   <span data-i18n="expand">Espandi</span>
@@ -116,7 +108,7 @@ export function alignHeader() {
  * document.querySelector( 'a.collapse' ).addEventListener( 'click', collapsible );
  */
 export function collapsible ( e ) {
-  const el = ( this.previousElementSibling ) ? this.previousElementSibling : this.parentElement.previousElementSibling;
+  const el = this.parentElement.previousElementSibling;
 
   if( el.classList.contains( 'collapsible-element' ) ) {
     const coords = getCoords( el );

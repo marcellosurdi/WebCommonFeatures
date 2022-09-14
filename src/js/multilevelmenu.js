@@ -14,7 +14,7 @@ import './../css/multilevelmenu.scss';
  *
  * @example
  * // <ul id="main">
- * //  <li class="menu-item-has-children">
+ * //  <li class="has-children">
  * //   <a href="javascript:void(0);">Elemento menu</a>
  * //   <ul class="sub-menu">
  * //    <li>
@@ -28,8 +28,8 @@ import './../css/multilevelmenu.scss';
  */
 
 function MultilevelMenu() {
-  let menu = document.querySelector( 'ul#main' );
-  let items_with_children = menu.querySelectorAll( 'li.menu-item-has-children > a' );
+  let menu = document.querySelector( 'nav#main ul' );
+  let items_with_children = menu.querySelectorAll( 'li.has-children > a' );
 
   for( let i = 0, n = items_with_children.length; i < n; i++ ) {
     items_with_children[ i ].insertAdjacentHTML( 'beforeend', ' <span class="icon-arrow rotate-bottom icon-small text-small"></span>' );

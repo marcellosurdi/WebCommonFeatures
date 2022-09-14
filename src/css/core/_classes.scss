@@ -31,7 +31,6 @@ div.banner a span {
 
 // .collapsible-element
 .collapsible-element { max-height: 0; overflow: hidden; transition: all .25s ease-out }
-.collapse-btn { text-decoration: none; color: $link_color; }
 .collapse-btn-container { border-top: 1px solid $light_grey_color; text-align: center; }
 .collapse-btn-container .collapse-btn {
   position: relative;
@@ -43,6 +42,8 @@ div.banner a span {
   border-bottom-left-radius: 5px;
   background-color: $white_color;
   padding: 5px 10px;
+  text-decoration: none;
+  color: $link_color;
 }
 
 // .left-arrow-btn, .right-arrow-btn

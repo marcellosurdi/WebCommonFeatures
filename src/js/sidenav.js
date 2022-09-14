@@ -30,7 +30,7 @@ function Sidenav() {
 
   document.getElementById( 'close-menu' ).addEventListener( 'click', closeSidenav );
 
-  sidenav.querySelectorAll( 'a.has-children' ).forEach( item => {
+  sidenav.querySelectorAll( 'li.has-children > a' ).forEach( item => {
     item.addEventListener( 'click', openSubMenu );
 
     let sub_menu = item.nextElementSibling;
@@ -38,7 +38,7 @@ function Sidenav() {
     sub_menu.style.maxHeight = '0px';
   });
 
-  sidenav.querySelectorAll( 'a:not(.has-children)' ).forEach( item => {
+  sidenav.querySelectorAll( 'li:not(.has-children) > a' ).forEach( item => {
     item.addEventListener( 'click', closeSidenav );
   });
 
