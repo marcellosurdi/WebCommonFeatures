@@ -29,17 +29,19 @@ import { getCurrentLang, smoothScroll } from './utils'
  * Tooltip();
  */
 export function Tooltip() {
-  [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', showTooltip ) );
+  [].slice.call( document.querySelectorAll( '.show-tooltip' ) ).forEach( ( item ) =>
+    item.onclick = showTooltip
+  );
 
   function showTooltip( e ) {
-      const a = e.currentTarget;
-      let context = document.querySelector( '.page' );
+      const el = this;
+      let context = el.offsetParent;
 
       const tooltip = document.createElement( 'DIV' );
       tooltip.className = 'tooltip xdark-grey-background padding-medium font-a text-small';
-      tooltip.innerHTML = l10n[ getCurrentLang() ][ a.getAttribute( 'data-tooltip-text' ) ];
-      tooltip.style.top = ( context.scrollTop + e.pageY + 15 ) + 'px';
-      tooltip.style.left = ( context.scrollLeft + e.pageX - 15 ) + 'px';
+      tooltip.innerHTML = l10n[ getCurrentLang() ][ el.getAttribute( 'data-tooltip-text' ) ];
+      tooltip.style.top = (  el.offsetTop + el.offsetHeight + 15 ) + 'px';
+      tooltip.style.left = ( el.offsetLeft + ( el.offsetWidth / 2 ) - 15 ) + 'px';
 
       const span = document.createElement( 'SPAN' );
       span.style.left = '5px';
@@ -62,7 +64,8 @@ export function Tooltip() {
       }
 
       // Evita che l'evento click venga processato immediatamente a livello dell'elemento contenitore
-      setTimeout( () => context.addEventListener( 'click', close ), 0 );
+      setTimeout( () => document.body.addEventListener( 'click', close ), 0 );
+      window.addEventListener( 'resize', close );
 
       function close( e ) {
         tooltip.classList.add( 'hide' );
@@ -71,7 +74,8 @@ export function Tooltip() {
           context.removeChild( tooltip );
         } );
 
-        context.removeEventListener( 'click', close );
+        document.body.removeEventListener( 'click', close );
+        window.removeEventListener( 'resize', close );
       }
     }
  }

@@ -68,7 +68,7 @@ div#overlay {
 }
 
 // tooltip
-a.show-tooltip { text-decoration: none; }
+.show-tooltip { text-decoration: none; cursor: pointer; }
 
 div.tooltip {
   position: absolute;

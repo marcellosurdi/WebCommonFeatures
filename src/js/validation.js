@@ -27,6 +27,7 @@ import { getCoords, getCurrentLang, smoothScroll } from './utils';
  *
  * @example
  * // <input type='text' id='text-field' data-require='minChar' data-params='2' data-msg='mandatory-field'>
+ *
  * if( Validation( form, [ 'text-field' ] ) ) { console.log( 'Invio dati!' ); }
  */
 export function Validation( form, fields_id_array ) {

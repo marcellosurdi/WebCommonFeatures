@@ -98,8 +98,14 @@ function MegaMenu() {
   }
 
   function ifOutside( e ) {
-    // Se l'utente clicca dentro un pulsante o un sottomenu aperto
-    if( e.target.closest('.dropdown-container > a, [class*="row"]') ) {
+    // Se l'utente clicca dentro un pulsante o un sottomenu aperto O
+    // clicca su un elemento .tooltip O
+    // un su un pulsante .inputbtn
+    if(
+      e.target.closest( '.dropdown-container > a, [class*="row"]' ) ||
+      e.target.classList.contains( 'tooltip' ) ||
+      e.target.classList.contains( 'inputbtn' )
+    ) {
       return;
     } else {
       close();

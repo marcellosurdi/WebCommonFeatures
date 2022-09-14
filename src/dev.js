@@ -80,7 +80,7 @@ document.querySelector( 'button#modalbox-btn-2' ).addEventListener( 'click', ( e
     'Lorem ipsum',
     `
       <div class="float-container form-section">
-        <label for="modal-box-email">Email <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></label>
+        <label for="modal-box-email">Email <span class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></span></label>
         <input type="text" class="inputbtns" id="modal-box-email" data-require="checkMail" data-msg="mandatory-field">
       </div>
     `,
@@ -95,6 +95,8 @@ document.querySelector( 'button#modalbox-btn-2' ).addEventListener( 'click', ( e
     },
     () => { console.log( "L'utente ha annullato!" ); }
   );
+
+  Tooltip();
   InputBtns();
 } );
 
