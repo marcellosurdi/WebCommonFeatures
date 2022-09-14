@@ -25,48 +25,53 @@ import { getCurrentLang, smoothScroll } from './utils'
  *
  * @example
  * // <a href="javascript:void(0);" class="show-tooltip icon-info radius-circle notice-background text-xl" data-tooltip-text="text-id"></a>
- * [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', Tooltip ) );
+ *
+ * Tooltip();
  */
-export function Tooltip( e ) {
-  const a = e.currentTarget;
-  let context = document.querySelector( '.page' );
+export function Tooltip() {
+  [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', showTooltip ) );
 
-  const tooltip = document.createElement( 'DIV' );
-  tooltip.className = 'tooltip xdark-grey-background padding-medium font-a text-small';
-  tooltip.innerHTML = l10n[ getCurrentLang() ][ a.getAttribute( 'data-tooltip-text' ) ];
-  tooltip.style.top = ( context.scrollTop + e.pageY + 15 ) + 'px';
-  tooltip.style.left = ( context.scrollLeft + e.pageX - 15 ) + 'px';
+  function showTooltip( e ) {
+      const a = e.currentTarget;
+      let context = document.querySelector( '.page' );
 
-  const span = document.createElement( 'SPAN' );
-  span.style.left = '5px';
+      const tooltip = document.createElement( 'DIV' );
+      tooltip.className = 'tooltip xdark-grey-background padding-medium font-a text-small';
+      tooltip.innerHTML = l10n[ getCurrentLang() ][ a.getAttribute( 'data-tooltip-text' ) ];
+      tooltip.style.top = ( context.scrollTop + e.pageY + 15 ) + 'px';
+      tooltip.style.left = ( context.scrollLeft + e.pageX - 15 ) + 'px';
 
-  tooltip.appendChild( span );
-  context.appendChild( tooltip );
+      const span = document.createElement( 'SPAN' );
+      span.style.left = '5px';
 
-  const coords = tooltip.getBoundingClientRect();
-  // Eventuale correzione dello scorrimento verticale di pagina
-  let scroll_y = ( coords.top + tooltip.offsetHeight ) - document.documentElement.clientHeight;
-  if( scroll_y > 0 ) {
-    smoothScroll( scroll_y, false, 'scrollBy' );
-  }
+      tooltip.appendChild( span );
+      context.appendChild( tooltip );
 
-  // Eventuale correzione della coordinata x
-  const offset_x = ( coords.left + tooltip.offsetWidth ) - document.documentElement.clientWidth;
-  if( offset_x > 0 ) {
-    tooltip.style.left = ( coords.left - offset_x - 5 ) + 'px';
-    span.style.left = ( 5 + offset_x + 5 ) + 'px';
-  }
+      const coords = tooltip.getBoundingClientRect();
+      // Eventuale correzione dello scorrimento verticale di pagina
+      let scroll_y = ( coords.top + tooltip.offsetHeight ) - document.documentElement.clientHeight;
+      if( scroll_y > 0 ) {
+        smoothScroll( scroll_y, false, 'scrollBy' );
+      }
 
-  // Evita che l'evento click venga processato immediatamente a livello dell'elemento contenitore
-  setTimeout( () => context.addEventListener( 'click', close ), 0 );
+      // Eventuale correzione della coordinata x
+      const offset_x = ( coords.left + tooltip.offsetWidth ) - document.documentElement.clientWidth;
+      if( offset_x > 0 ) {
+        tooltip.style.left = ( coords.left - offset_x - 5 ) + 'px';
+        span.style.left = ( 5 + offset_x + 5 ) + 'px';
+      }
 
-  function close( e ) {
-    tooltip.classList.add( 'hide' );
-    tooltip.addEventListener( 'animationend', function handler( e ) {
-      tooltip.removeEventListener( 'animationend', handler );
-      context.removeChild( tooltip );
-    } );
+      // Evita che l'evento click venga processato immediatamente a livello dell'elemento contenitore
+      setTimeout( () => context.addEventListener( 'click', close ), 0 );
 
-    context.removeEventListener( 'click', close );
-  }
+      function close( e ) {
+        tooltip.classList.add( 'hide' );
+        tooltip.addEventListener( 'animationend', function handler( e ) {
+          tooltip.removeEventListener( 'animationend', handler );
+          context.removeChild( tooltip );
+        } );
+
+        context.removeEventListener( 'click', close );
+      }
+    }
  }

@@ -1,6 +1,7 @@
 import './css/style.scss';
 import './js/sidenav';
 import { l10n } from './js/l10n';
+import { InputBtns } from'./js/inputbtns';
 import { Lightbox } from './js/lightbox';
 import { Modalbox } from './js/modalbox';
 import { Notification } from './js/notification';
@@ -50,7 +51,8 @@ function listener() {
 }
 listener();
 
-[].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', Tooltip ) );
+Tooltip();
+InputBtns();
 
 document.querySelector( 'a#collapse' ).addEventListener( 'click', collapsible );
 
@@ -78,8 +80,8 @@ document.querySelector( 'button#modalbox-btn-2' ).addEventListener( 'click', ( e
     'Lorem ipsum',
     `
       <div class="float-container form-section">
-        <label for="modal-box-email">Email</label>
-        <input type="text" id="modal-box-email" data-require="checkMail" data-msg="mandatory-field">
+        <label for="modal-box-email">Email <a href="javascript:void(0);" class="show-tooltip icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></a></label>
+        <input type="text" class="inputbtns" id="modal-box-email" data-require="checkMail" data-msg="mandatory-field">
       </div>
     `,
     ( form ) => {
@@ -93,6 +95,7 @@ document.querySelector( 'button#modalbox-btn-2' ).addEventListener( 'click', ( e
     },
     () => { console.log( "L'utente ha annullato!" ); }
   );
+  InputBtns();
 } );
 
 // Notification
