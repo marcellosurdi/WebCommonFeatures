@@ -47,9 +47,9 @@ div.banner a span {
 }
 
 // .inputbtns
-button.inputbtn { position: absolute; top: -100px; z-index: 999; opacity: 0; }
-button.inputbtn.show { animation: bouncein .5s ease; opacity: 1; }
-button.inputbtn.hide { animation: fadeout .5s ease; }
+.inputbtn { position: absolute; top: -100px; z-index: 999; opacity: 0; }
+.inputbtn.show { animation: bouncein .5s ease; opacity: 1; }
+.inputbtn.hide { animation: fadeout .1s ease; }
 
 // .left-arrow-btn, .right-arrow-btn
 a.right-arrow-btn, a.left-arrow-btn {

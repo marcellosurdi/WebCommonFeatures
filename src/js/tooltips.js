@@ -24,6 +24,7 @@ import { getCurrentLang, smoothScroll } from './utils'
  * @requires {@linkcode module:js/l10n|l10n}
  *
  * @example
+ * // L'attributo id nell'elemento è obbligatorio per il corretto funzionamento del modulo
  * // <span id="collapsible-info" class="tooltips icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></span>
  *
  * Tooltips();

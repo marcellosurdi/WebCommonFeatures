@@ -43,10 +43,10 @@ export function InputBtns() {
         btn.classList.remove( 'hide' );
         btn.classList.add( 'show' );
 
-        if( icon == 'icon-close' ) {
-          btn.addEventListener( 'click', reset );
-        } else {
+        if( icon.indexOf( 'icon-closed-eye' ) != -1 ) {
           btn.addEventListener( 'click', toggle );
+        } else {
+          btn.addEventListener( 'click', reset );
         }
 
         // Cancella il testo
@@ -68,7 +68,6 @@ export function InputBtns() {
             this.classList.add( 'icon-closed-eye' );
             text_field.type = 'password';
           }
-
           text_field.focus();
         }
       }
@@ -80,14 +79,17 @@ export function InputBtns() {
       }
     }
 
+    // !!!NON FUNZIONA IL RESIZE!!!
     window.addEventListener( 'resize', hide );
   }
 
   // Nasconde il pulsante senza effettuare l'operazione predefinita
   function hide( e ) {
     const text_field = this;
+    console.log( text_field );
     const inputbtn = document.querySelector( 'button#inputbtn-' + text_field.id );
 
+    // Il pulsante potrebbe non essere stato creato
     if( inputbtn !== null ) {
       inputbtn.classList.remove( 'show' );
       inputbtn.classList.add( 'hide' );
