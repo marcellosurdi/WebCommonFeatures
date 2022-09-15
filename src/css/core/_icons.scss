@@ -56,6 +56,12 @@ a.btn { text-decoration: none; }
 .es { background-position: -72px 0; }
 .de { background-position: -96px 0; }
 
+.icon-open-eye:before {
+  content: "\e913";
+}
+.icon-closed-eye:before {
+  content: "\e914";
+}
 .icon-login:before {
   content: "\e911";
 }

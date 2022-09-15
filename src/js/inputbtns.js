@@ -33,7 +33,8 @@ export function InputBtns() {
       if( inputbtn === null ) {
         let btn = document.createElement( 'BUTTON' );
         btn.id = 'inputbtn-' + text_field.id;
-        btn.className = 'inputbtn light-a-background icon-close icon-medium text-medium';
+        const icon = ( text_field.type == 'password' ) ? 'icon-closed-eye text-xl' : 'icon-close text-medium';
+        btn.className = `inputbtn light-a-background ${ icon } icon-medium`;
 
         text_field.offsetParent.appendChild( btn );
 
@@ -42,13 +43,32 @@ export function InputBtns() {
         btn.classList.remove( 'hide' );
         btn.classList.add( 'show' );
 
-        btn.addEventListener( 'click', reset );
+        if( icon == 'icon-close' ) {
+          btn.addEventListener( 'click', reset );
+        } else {
+          btn.addEventListener( 'click', toggle );
+        }
 
         // Cancella il testo
         function reset( e ) {
           this.classList.remove( 'show' );
           this.classList.add( 'hide' );
           text_field.value = '';
+          text_field.focus();
+        }
+
+        // Mostra/nasconde la password
+        function toggle( e ) {
+          if( this.classList.contains( 'icon-closed-eye' ) ) {
+            this.classList.remove( 'icon-closed-eye' );
+            this.classList.add( 'icon-open-eye' );
+            text_field.type = 'text';
+          } else {
+            this.classList.remove( 'icon-open-eye' );
+            this.classList.add( 'icon-closed-eye' );
+            text_field.type = 'password';
+          }
+
           text_field.focus();
         }
       }
