@@ -15,21 +15,19 @@ import { getCurrentLang, smoothScroll } from './utils'
 
 /**
  * @desc
- * Mostra un tooltip
- *
- * @param {MouseEvent} e
+ * Mostra/nasconde un tooltip
  *
  * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
  * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
  * @requires {@linkcode module:js/l10n|l10n}
  *
  * @example
- * // <a href="javascript:void(0);" class="show-tooltip icon-info radius-circle notice-background text-xl" data-tooltip-text="text-id"></a>
+ * // <span class="tooltips icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></span>
  *
- * Tooltip();
+ * Tooltips();
  */
-export function Tooltip() {
-  [].slice.call( document.querySelectorAll( '.show-tooltip' ) ).forEach( ( item ) =>
+export function Tooltips() {
+  [].slice.call( document.querySelectorAll( '.tooltips' ) ).forEach( ( item ) =>
     item.onclick = showTooltip
   );
 

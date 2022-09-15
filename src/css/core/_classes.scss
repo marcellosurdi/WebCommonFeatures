@@ -49,6 +49,7 @@ div.banner a span {
 // .inputbtn
 button.inputbtn { position: absolute; top: -100px; z-index: 999; opacity: 0; }
 button.inputbtn.show { animation: bouncein .5s ease; opacity: 1; }
+button.inputbtn.hide { animation: fadeout .5s ease; }
 
 // .left-arrow-btn, .right-arrow-btn
 a.right-arrow-btn, a.left-arrow-btn {
