@@ -8,19 +8,18 @@
 
 /**
 * @desc
-* Mostra/nasconde il pulsante
+* Mostra/nasconde il pulsante.
 *
 * @example
+* // L'attributo id nell'elemento è obbligatorio per il corretto funzionamento del modulo
 * // <input type="text" id="text4" class="inputbtns" placeholder="checkITVAT" data-require='checkITVAT' data-msg='mandatory-field'>
 *
 * InputBtns();
 */
 export function InputBtns() {
   [].slice.call( document.querySelectorAll( '.inputbtns' ) ).forEach( ( text_field ) => {
-    if( document.querySelector( 'button#inputbtn-' + text_field.id ) === null ) {
-      text_field.addEventListener( 'focus', show );
-      text_field.addEventListener( 'blur', hide );
-    }
+      text_field.onfocus = show;
+      text_field.onblur = hide;
   } );
 
   function show( e ) {
@@ -38,9 +37,7 @@ export function InputBtns() {
 
         text_field.offsetParent.appendChild( btn );
 
-        const top = text_field.offsetTop + ( ( text_field.offsetHeight - btn.offsetHeight ) / 2 );
-        const left = text_field.offsetLeft + text_field.offsetWidth - ( btn.offsetWidth + 10 );
-        btn.style.cssText = 'position: absolute; top: ' + top + 'px; left: ' + left + 'px;';
+        setCoords( btn, text_field );
 
         btn.classList.remove( 'hide' );
         btn.classList.add( 'show' );
@@ -49,8 +46,6 @@ export function InputBtns() {
 
         // Cancella il testo
         function reset( e ) {
-          console.log( 'reset' );
-
           this.classList.remove( 'show' );
           this.classList.add( 'hide' );
           text_field.value = '';
@@ -58,6 +53,8 @@ export function InputBtns() {
         }
       }
       else {
+        setCoords( inputbtn, text_field );
+
         inputbtn.classList.remove( 'hide' );
         inputbtn.classList.add( 'show' );
       }
@@ -77,5 +74,11 @@ export function InputBtns() {
     }
 
     window.removeEventListener( 'resize', hide );
+  }
+
+  function setCoords( btn, text_field ) {
+    const top = text_field.offsetTop + ( ( text_field.offsetHeight - btn.offsetHeight ) / 2 );
+    const left = text_field.offsetLeft + text_field.offsetWidth - ( btn.offsetWidth + 10 );
+    btn.style.cssText = 'position: absolute; top: ' + top + 'px; left: ' + left + 'px;';
   }
 }

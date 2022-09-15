@@ -46,7 +46,7 @@ div.banner a span {
   color: $link_color;
 }
 
-// .inputbtn
+// .inputbtns
 button.inputbtn { position: absolute; top: -100px; z-index: 999; opacity: 0; }
 button.inputbtn.show { animation: bouncein .5s ease; opacity: 1; }
 button.inputbtn.hide { animation: fadeout .5s ease; }

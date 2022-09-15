@@ -67,7 +67,7 @@ div#overlay {
   z-index: 10;
 }
 
-// tooltip
+// tooltips
 .tooltips { text-decoration: none; cursor: pointer; }
 
 div.tooltip {
@@ -79,11 +79,14 @@ div.tooltip {
   width: 100%;
   max-width: 250px;
   z-index: 99;
-  animation: slidetop .3s ease-out both, fadein .3s linear;
+}
+
+div.tooltip.show {
+  animation: slidetop .3s ease-out both, fadein .3s linear forwards;
 }
 
 div.tooltip.hide {
-  animation: slidebottom .3s ease-in, fadeout .3s linear;
+  animation: slidebottom .3s ease-in, fadeout .3s linear forwards;
 }
 
 div.tooltip span {
