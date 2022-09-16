@@ -57,7 +57,7 @@ a.right-arrow-btn, a.left-arrow-btn {
   height: 32px;
   line-height: 32px;
   text-decoration: none;
-  color: $white_color;
+  color: $foreground_btn_color;
 }
 a.right-arrow-btn:hover, a.left-arrow-btn:hover {
   background-color: $dark_btn_color;

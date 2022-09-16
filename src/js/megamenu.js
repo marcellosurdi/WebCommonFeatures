@@ -13,6 +13,7 @@ import { Overlay } from './overlay';
  * @desc
  * Inizializza e gestisce il mega menu
  *
+ * @see {@link https://www.w3schools.com/howto/howto_css_mega_menu.asp|Come creare un megamenu}
  * @requires {@linkcode module:js/overlay|Overlay}
  *
  * @example

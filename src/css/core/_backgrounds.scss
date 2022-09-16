@@ -8,12 +8,12 @@
 .xlight-grey-background { background-color: $xlight_grey_color; fill: $xlight_grey_color; color: $text_color; }
 .xxlight-grey-background { background-color: $xxlight_grey_color; fill: $xxlight_grey_color; color: $text_color; }
 
-.dark-a-background { background-color: $dark_a_color; fill: $dark_a_color; color: $white_color; }
-.light-a-background { background-color: $light_a_color; fill: $light_a_color; color: $white_color; }
+.dark-a-background { background-color: $dark_a_color; fill: $dark_a_color; color: $foreground_a_color; }
+.light-a-background { background-color: $light_a_color; fill: $light_a_color; color: $foreground_a_color; }
 
-.dark-btn-background { background-color: $dark_btn_color; fill: $dark_btn_color; color: $white_color; }
-.light-btn-background { background-color: $light_btn_color; fill: $light_btn_color; color: $white_color; }
-.dark-btn-background:hover { background-color: $light_btn_color; fill: $light_btn_color; color: $white_color; }
+.dark-btn-background { background-color: $dark_btn_color; fill: $dark_btn_color; color: $foreground_btn_color; }
+.light-btn-background { background-color: $light_btn_color; fill: $light_btn_color; color: $foreground_btn_color; }
+.dark-btn-background:hover { background-color: $light_btn_color; fill: $light_btn_color; color: $foreground_btn_color; }
 .light-btn-background:active { background-color: $active_color; fill: $active_color; color: $white_color; }
 
 .success-background { background-color: $light_success_color; color: $dark_success_color; }

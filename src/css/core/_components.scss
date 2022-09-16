@@ -1,4 +1,4 @@
-// lightbox
+// js/lightbox
 div#lightbox {
   position: absolute; top: 52px; left: 50%; @include transform(translate(-50%,0));
   background-color: $white_color;
@@ -20,7 +20,7 @@ button#close-lightbox {
   right: 10px;
 }
 
-// modalbox
+// js/modalbox
 div#modal-box {
   position: fixed;
   top: 0;
@@ -34,7 +34,7 @@ div#modal-box.show { @include transform(translate(-50%, 70px)); }
 div#modal-box h3 { border-top-right-radius: 5px; border-top-left-radius: 5px; @include font-a; }
 div#modal-box > div { border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; }
 
-// notification
+// js/notification
 div#notification {
   position: fixed;
   top: -250px;
@@ -53,7 +53,7 @@ div#notification button.icon-close { position: absolute; top: 10px; right: 10px;
 .warning-btn-background, .warning-background button { background-color: $dark_warning_color; text-decoration: none; color: $white_color; }
 .notice-btn-background, .notice-background button { background-color: $dark_notice_color; text-decoration: none; color: $white_color; }
 
-// overlay
+// js/overlay
 div#overlay {
   position: fixed;
   display: none;
@@ -67,7 +67,37 @@ div#overlay {
   z-index: 10;
 }
 
-// tooltips
+// js/tabs
+// Accordion
+a.tab {
+  display: inline-block;
+  border-top: 1px solid $light_grey_color;
+  background-color: $xxlight_grey_color;
+  width: 100%;
+  line-height: 40px;
+  text-indent: 5px;
+  text-decoration: none;
+}
+.tab-container .active { background-color: $light_a_color; color: $foreground_a_color; }
+.tab-container .active + .tab-content { display: block; padding: 10px 0; animation: fadein .5s linear; }
+.tab-container .tab-content { display: none; }
+.tab-placeholder { display: none; }
+
+// Tab
+.tab-container:not(.responsive) {
+  a.tab {
+    border-top: 0;
+    border-right: 1px solid $white_color;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 150px;
+  }
+  .active + .tab-content { display: none; }
+  .tab-placeholder { display: block; border-top: 1px solid $light_grey_color; padding-top: 10px; }
+  .tab-placeholder.show { animation: fadein .5s linear; }
+}
+
+// js/tooltips
 .tooltips { text-decoration: none; cursor: pointer; }
 
 div.tooltip {

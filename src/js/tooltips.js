@@ -5,9 +5,6 @@
  * @desc
  * Il tooltip è un piccolo riquadro che mostra informazioni supplementari.
  * Solitamente compare cliccando o passando col mouse sopra un'icona o un testo.
- *
- * @todo Utilizzare evento `mouseover` su desktop e `click` su mobile,
- * @todo evento click normalizzato per dispositivi Apple.
  */
 
 import { l10n } from './l10n';

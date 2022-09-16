@@ -6,6 +6,7 @@ import { Lightbox } from './js/lightbox';
 import { Modalbox } from './js/modalbox';
 import { Notification } from './js/notification';
 import { Overlay } from './js/overlay';
+import { Tabs } from './js/tabs';
 import { Tooltips } from './js/tooltips';
 import { Validation, ValidationMethods } from './js/validation';
 import * as Utils from './js/utils';
@@ -17,6 +18,7 @@ export {
   Modalbox,
   Notification,
   Overlay,
+  Tabs,
   Tooltips,
   Validation,
   ValidationMethods,

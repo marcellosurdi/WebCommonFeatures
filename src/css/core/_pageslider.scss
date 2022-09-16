@@ -13,7 +13,7 @@
   border-bottom: 1px solid $dark_a_color;
   background: $light_a_color;
   height: 59px;
-  color: $white_color;
+  color: $foreground_a_color;
   z-index: 2;
 }
 
@@ -29,7 +29,7 @@
   top: 14px;
   right: 10px;
   background-color: $dark_a_color;
-  color: $white_color;
+  color: $foreground_a_color;
 }
 
 .page {

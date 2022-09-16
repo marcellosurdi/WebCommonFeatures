@@ -6,6 +6,7 @@ import { Lightbox } from './js/lightbox';
 import { Modalbox } from './js/modalbox';
 import { Notification } from './js/notification';
 import { Overlay } from './js/overlay';
+import { Tabs } from './js/tabs';
 import { Tooltips } from './js/tooltips';
 import { Validation } from './js/validation';
 import { alignHeader, collapsible, debounceEvent, setSmoothBehavior, translate, truncateString } from './js/utils';
@@ -53,6 +54,7 @@ listener();
 
 Tooltips();
 InputBtns();
+Tabs();
 
 document.querySelector( 'a#collapse' ).addEventListener( 'click', collapsible );
 

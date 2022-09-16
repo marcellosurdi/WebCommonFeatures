@@ -12,6 +12,7 @@ Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti 
 - Sfondi;
 - Skeleton;
 - Sidenav;
+- Tab;
 - Tooltip;
 - Validation.
 
