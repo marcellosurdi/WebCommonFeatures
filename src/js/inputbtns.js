@@ -79,21 +79,15 @@ export function InputBtns() {
       }
     }
 
-    // !!!NON FUNZIONA IL RESIZE!!!
     window.addEventListener( 'resize', hide );
   }
 
   // Nasconde il pulsante senza effettuare l'operazione predefinita
   function hide( e ) {
-    const text_field = this;
-    console.log( text_field );
-    const inputbtn = document.querySelector( 'button#inputbtn-' + text_field.id );
-
-    // Il pulsante potrebbe non essere stato creato
-    if( inputbtn !== null ) {
+    [].slice.call( document.querySelectorAll( 'button[id*="inputbtn-"]') ).forEach( ( inputbtn ) => {
       inputbtn.classList.remove( 'show' );
       inputbtn.classList.add( 'hide' );
-    }
+    } );
 
     window.removeEventListener( 'resize', hide );
   }

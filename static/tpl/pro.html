@@ -55,7 +55,8 @@
       }
       listener();
 
-      [].slice.call( document.querySelectorAll( 'a.show-tooltip' ) ).forEach( ( item ) => item.addEventListener( 'click', WebCommonFeatures.Tooltip ) );
+      WebCommonFeatures.Tooltips();
+      WebCommonFeatures.InputBtns();
 
       document.querySelector( 'a#collapse' ).addEventListener( 'click', WebCommonFeatures.Utils.collapsible );
 
@@ -83,8 +84,8 @@
           'Lorem ipsum',
           `
             <div class="float-container form-section">
-              <label for="modal-box-email">Email</label>
-              <input type="text" id="modal-box-email" data-require="checkMail" data-msg="mandatory-field">
+              <label for="modal-box-email">Email <span class="tooltips icon-info icon-small radius-circle xlight-grey-background text-small" data-tooltip-text="notification-text"></span></label>
+              <input type="text" class="inputbtns" id="modal-box-email" data-require="checkMail" data-msg="mandatory-field">
             </div>
           `,
           ( form ) => {
@@ -98,6 +99,9 @@
           },
           () => { console.log( "L'utente ha annullato!" ); }
         );
+
+        WebCommonFeatures.Tooltips();
+        WebCommonFeatures.InputBtns();
       } );
 
 

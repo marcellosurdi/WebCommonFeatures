@@ -71,6 +71,15 @@ export function translate() {
 
 /**
  * @desc
+ * Normalizza l'evento click per i dispositivi mobili Apple
+ *
+ * @constant
+ * @type {string}
+ */
+export const click = navigator.userAgent.match( /(iPad|iPhone|iPod)/g ) ? 'touchstart' : 'click';
+
+/**
+ * @desc
  * Allinea la barra di intestazione ai contenuti (necessario perché i contenuti hanno la barra di scorrimento).
  */
 export function alignHeader() {
@@ -249,7 +258,7 @@ export function setSmoothBehavior( el ) {
  *
  * @param {number} y Valore y
  * @param {boolean} [subtract=true] `true` sottrae il valore dell'altezza dell'header del sito
- * @param {string} [method=scrollTo]
+ * @param {string} [method=scrollTo] scrollTo|scrollBy
  */
 export function smoothScroll( y, subtract = true, method = 'scrollTo' ) {
   const context = document.querySelector( '.page' );
@@ -268,7 +277,15 @@ export function smoothScroll( y, subtract = true, method = 'scrollTo' ) {
     } );
   }
   else {
-    context[ method ]( 0, y );
+    // @see https://stackoverflow.com/questions/51517324/scrollto-method-doesnt-work-in-edge
+    switch( method ) {
+      case 'scrollTo':
+        context.scrollTop = y;
+      break;
+      case 'scrollBy':
+        context.scrollTop += y;
+      break;
+    }
   }
 }
 

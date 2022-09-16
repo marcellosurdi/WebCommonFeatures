@@ -1,5 +1,5 @@
 /**
- * @module js/tooltip
+ * @module js/tooltips
  * @author Marcello Surdi
  *
  * @desc
@@ -11,7 +11,7 @@
  */
 
 import { l10n } from './l10n';
-import { getCurrentLang, smoothScroll } from './utils'
+import { click, getCurrentLang, smoothScroll } from './utils'
 
 /**
  * @desc
@@ -20,6 +20,7 @@ import { getCurrentLang, smoothScroll } from './utils'
  * @param {MouseEvent} e
  *
  * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @see {@linkcode module:js/utils.click|click}
  * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
  * @requires {@linkcode module:js/l10n|l10n}
  *
@@ -70,14 +71,14 @@ export function Tooltips() {
     }
 
     // Evita che l'evento click venga processato immediatamente a livello dell'elemento contenitore
-    setTimeout( () => document.body.addEventListener( 'click', close ), 0 );
+    setTimeout( () => document.body.addEventListener( click, close ), 0 );
     window.addEventListener( 'resize', close );
 
     function close( e ) {
       tooltip.classList.remove( 'show' );
       tooltip.classList.add( 'hide' );
 
-      document.body.removeEventListener( 'click', close );
+      document.body.removeEventListener( click, close );
       window.removeEventListener( 'resize', close );
     }
   }
