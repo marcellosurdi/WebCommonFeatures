@@ -18,6 +18,15 @@
  * @see {@link https://codepen.io/amustill/pen/nbrMzN|Tab adattivi}
  *
  * @example
+ * // <div class="tab-container" data-responsive="768">
+ * //    <a href="javascript:void(0);" class="tab active">Tab1 <span class="icon-arrow rotate-bottom icon-small text-small"></span></a>
+ * //    <div class="tab-content"></div>
+ * //    <a href="javascript:void(0);" class="tab">Tab2 <span class="icon-arrow rotate-bottom icon-small text-small"></span></a>
+ * //    <div class="tab-content"></div>
+ * //    <a href="javascript:void(0);" class="tab">Tab3 <span class="icon-arrow rotate-bottom icon-small text-small"></span></a>
+ * //    <div class="tab-content"></div>
+ * //  </div><!-- /.tab-container -->
+ *
  * Tabs();
  */
 export function Tabs() {
