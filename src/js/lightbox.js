@@ -26,6 +26,7 @@ import { Overlay } from './overlay';
  * //   <a href="path-to-image2.jpg" data-lightbox="gallery-name">Mostra</a>
  * //   <a href="path-to-image3.jpg" data-lightbox="gallery-name">Mostra</a>
  * // </div>
+ *
  * Lightbox( document.getElementById( 'lightbox-section' ) );
  */
 export function Lightbox( el ) {

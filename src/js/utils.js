@@ -21,8 +21,8 @@ import { l10n } from './l10n';
   * @returns {string} Il codice della lingua corrente
   *
   * @see {@link https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes|Elenco dei codici ISO 639-1},
-  * @see {@linkcode module:js/utils.getCookie|getCookie},
-  * @see {@linkcode module:js/utils.setCookie|setCookie}
+  * @requires {@linkcode module:js/utils.getCookie|getCookie},
+  * @requires {@linkcode module:js/utils.setCookie|setCookie}
   */
 export function getCurrentLang() {
   let lang;
@@ -42,8 +42,8 @@ export function getCurrentLang() {
  * @desc
  * Traduce le stringhe di testo presenti negli elementi contrassegnati dall'attributo `data-i18n`.
  *
- * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
  * @requires {@linkcode module:js/l10n|l10n}
+ * @requires {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
  */
 export function translate() {
   const lang = getCurrentLang();
@@ -100,10 +100,10 @@ export function alignHeader() {
  *
  * @param {MouseEvent} e
  *
- * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
- * @see {@linkcode module:js/utils.getCoords|getCoords}
- * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
  * @requires {@linkcode module:js/l10n|l10n}
+ * @requires {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @requires {@linkcode module:js/utils.getCoords|getCoords}
+ * @requires {@linkcode module:js/utils.smoothScroll|smoothScroll}
  *
  * @example
  * // <div class="collapsible-element"></div>
@@ -226,15 +226,16 @@ export function setCookie( cname, cvalue, days ) {
 
 /**
  * @desc
- * Imposta lo scorrimento fluido di pagina, all'interno di un elemento contenitore passato come parametro, per tutti gli elementi `<a data-smooth>` che puntano a un'ancora.
+ * Imposta lo scorrimento fluido di pagina all'interno di un elemento contenitore passato come parametro per tutti gli elementi `<a data-smooth>` che puntano a un'ancora.
  *
  * @param {HTMLElement} el Elemento contenitore
  *
- * @see {@linkcode module:js/utils.getCoords|getCoords}
- * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
+ * @requires {@linkcode module:js/utils.getCoords|getCoords}
+ * @requires {@linkcode module:js/utils.smoothScroll|smoothScroll}
  *
  * @example
  * // <a href="#anchor-name" data-smooth>...</a>
+ *
  * setSmoothBehavior( document.getElementById( 'toc' ) );
  */
 export function setSmoothBehavior( el ) {

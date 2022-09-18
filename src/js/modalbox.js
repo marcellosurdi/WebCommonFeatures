@@ -19,9 +19,9 @@ import { Overlay } from './overlay';
  * @param {function} onConfirm Funzione callback invocata quando l'utente conferma l'operazione corrente. Riceve come parametro un riferimento al form della finestra modale, **deve restituire true per chiudere la finestra**
  * @param {function} [onCancel = () => {}] Funzione callback invocata se l'utente annulla l'operazione corrente
  *
- * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
- * @requires {@linkcode module:js/l10n|l10n}
  * @requires {@linkcode module:js/overlay|Overlay}
+ * @requires {@linkcode module:js/l10n|l10n}
+ * @requires {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
  *
  * @example
  * Modalbox( 'title', 'text', () => {} );

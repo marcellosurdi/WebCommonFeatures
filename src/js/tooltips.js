@@ -16,10 +16,10 @@ import { click, getCurrentLang, smoothScroll } from './utils'
  *
  * @param {MouseEvent} e
  *
- * @see {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
- * @see {@linkcode module:js/utils.click|click}
- * @see {@linkcode module:js/utils.smoothScroll|smoothScroll}
  * @requires {@linkcode module:js/l10n|l10n}
+ * @requires {@linkcode module:js/utils.Lang.exports.getCurrentLang|getCurrentLang}
+ * @requires {@linkcode module:js/utils.click|click}
+ * @requires {@linkcode module:js/utils.smoothScroll|smoothScroll}
  *
  * @example
  * // L'attributo id nell'elemento è obbligatorio per il corretto funzionamento del modulo
