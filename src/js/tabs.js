@@ -13,6 +13,7 @@
  * @desc
  * Inizializza tutti i tab presenti nel documento.
  * I tab sono convertiti in accordion quando la larghezza del viewport è inferiore o uguale al valore dell'attributo `data-responsive`
+ * Se si vuole in ogni caso un accordion è sufficiente impostare un valore di `data-responsive` sicuramente superiore alla larghezza del viewport.
  *
  * @see {@link https://codepen.io/amustill/pen/nbrMzN|Tab adattivi}
  *
@@ -22,9 +23,8 @@
 export function Tabs() {
   [].slice.call( document.querySelectorAll( 'div.tab-container' ) ).forEach( ( container ) => {
     const responsive = +container.getAttribute( 'data-responsive' );
-    window.addEventListener( 'resize', () =>
-      ( document.documentElement.clientWidth <= responsive ) ? container.classList.add( 'responsive' ) : container.classList.remove( 'responsive' )
-     );
+    window.addEventListener( 'resize', resize );
+    resize();
 
     const placeholder = document.createElement( 'DIV' );
     placeholder.className = 'tab-placeholder';
@@ -45,6 +45,10 @@ export function Tabs() {
 
       placeholder.innerHTML = this.nextElementSibling.innerHTML;
       placeholder.classList.add( 'show' );
+    }
+
+    function resize( e ) {
+      ( document.documentElement.clientWidth <= responsive ) ? container.classList.add( 'responsive' ) : container.classList.remove( 'responsive' );
     }
   });
 }
