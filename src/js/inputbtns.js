@@ -33,7 +33,7 @@ export function InputBtns() {
       if( inputbtn === null ) {
         let btn = document.createElement( 'BUTTON' );
         btn.id = 'inputbtn-' + text_field.id;
-        const icon = ( text_field.type == 'password' ) ? 'icon-closed-eye text-xl' : 'icon-close text-medium';
+        const icon = ( text_field.type == 'password' ) ? 'icon-open-eye text-xl' : 'icon-close text-medium';
         btn.className = `inputbtn light-a-background ${ icon } icon-medium`;
 
         text_field.offsetParent.appendChild( btn );
@@ -43,7 +43,7 @@ export function InputBtns() {
         btn.classList.remove( 'hide' );
         btn.classList.add( 'show' );
 
-        if( icon.indexOf( 'icon-closed-eye' ) != -1 ) {
+        if( icon.indexOf( 'icon-open-eye' ) != -1 ) {
           btn.addEventListener( 'click', toggle );
         } else {
           btn.addEventListener( 'click', reset );
@@ -62,11 +62,11 @@ export function InputBtns() {
           if( this.classList.contains( 'icon-closed-eye' ) ) {
             this.classList.remove( 'icon-closed-eye' );
             this.classList.add( 'icon-open-eye' );
-            text_field.type = 'text';
+            text_field.type = 'password';
           } else {
             this.classList.remove( 'icon-open-eye' );
             this.classList.add( 'icon-closed-eye' );
-            text_field.type = 'password';
+            text_field.type = 'text';
           }
           text_field.focus();
         }

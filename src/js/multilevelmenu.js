@@ -29,10 +29,20 @@ import './../css/multilevelmenu.scss';
 
 function MultilevelMenu() {
   let menu = document.querySelector( 'nav#main ul' );
-  let items_with_children = menu.querySelectorAll( 'li.has-children > a' );
+  [].slice.call( menu.querySelectorAll( 'li.has-children > a' ) ).forEach( ( item ) => {
+    item.insertAdjacentHTML( 'beforeend', ' <span class="icon-arrow rotate-bottom icon-small text-small"></span>' );
+    item.addEventListener( 'click', show );
+  } );
 
-  for( let i = 0, n = items_with_children.length; i < n; i++ ) {
-    items_with_children[ i ].insertAdjacentHTML( 'beforeend', ' <span class="icon-arrow rotate-bottom icon-small text-small"></span>' );
+  function show( e ) {
+    if( this.parentElement.parentElement == menu ) {
+      // Chiude tutti i menu aperti
+      [].slice.call( menu.querySelectorAll( '.has-children.open' ) ).forEach( ( item ) => {
+        item.classList.remove( 'open' );
+      } );
+    }
+
+    this.parentElement.classList.toggle( 'open' );
   }
 }
 
