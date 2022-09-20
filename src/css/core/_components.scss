@@ -14,6 +14,34 @@ div#lightbox img {
   opacity: 0;
 }
 
+div#lightbox div.descr, div#lightbox button.prev-btn, div#lightbox button.next-btn {
+  display: none;
+  background-color: $black_color;
+  color: $white_color;
+  opacity: .7;
+  z-index: 2;
+}
+
+div#lightbox div.descr {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+div#lightbox button.prev-btn {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  margin-top: -19px;
+}
+
+div#lightbox button.next-btn {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  margin-top: -19px;
+}
+
 button#close-lightbox {
   position: absolute;
   top: 10px;

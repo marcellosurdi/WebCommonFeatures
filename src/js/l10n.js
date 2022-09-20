@@ -10,15 +10,17 @@ export const l10n = {
   it: {
     'cancel': 'Annulla',
     'confirm': 'Conferma',
-    'collapse': 'Contrai',
-    'expand': 'Espandi',
+    'collapse': 'Mostra di meno',
+    'expand': 'Mostra di più',
+    'loading-error': 'Errore di caricamento',
   },
 
   en: {
     'cancel': 'Cancel',
     'confirm': 'Confirm',
-    'collapse': 'Collapse',
-    'expand': 'Expand',
+    'collapse': 'Show less',
+    'expand': 'Show more',
+    'loading-error': 'Loading error',
   },
 
   add: function( obj ) {
