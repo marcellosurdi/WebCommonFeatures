@@ -22,38 +22,52 @@ import { getCurrentLang } from './utils';
  *
  * @example
  * // <div id="lightbox-section">
- * //   <a href="path-to-image1.jpg" data-lightbox data-lightbox-descr="...">Mostra</a>
- * //   <a href="path-to-image2.jpg" data-lightbox="gallery-name" data-lightbox-descr="...">Mostra</a>
- * //   <a href="path-to-image3.jpg" data-lightbox="gallery-name" data-lightbox-descr="...">Mostra</a>
+ * //   <a href="path-to-image1.jpg" data-lightbox data-descr="...">Mostra</a>
+ * //   <a href="path-to-image2.jpg" data-lightbox="gallery-name" data-descr="...">Mostra</a>
+ * //   <a href="path-to-image3.jpg" data-lightbox="gallery-name" data-descr="...">Mostra</a>
  * // </div>
  *
  * Lightbox( document.getElementById( 'lightbox-section' ) );
  */
 export function Lightbox( el ) {
-  let lightbox, close_btn, overlay;
+  /**
+   * @desc
+   * Oggetto che definisce lo stato della gallery
+   *
+   * @typedef {object} o
+   * @memberof module:js/lightbox.
+   *
+   * @property {array} paths Array dei percorsi delle immagini che compongono la gallery (ricavato dagli attributi `href`).
+   * @property {array} texts Array delle descrizioni testuali delle immagini che compongono la gallery (ricavato dagli attributi `data-descr`).
+   * @property {string} descr Descrizione testuale dell'immagine corrente.
+   * @property {number} next Chiave dell'immagine successiva negli array `o.paths` e `o.texts`.
+   * @property {number} prev Chiave dell'immagine precedente negli array `o.paths` e `o.texts`.
+   */
+  let o = {};
 
   [].slice.call( el.querySelectorAll( 'a[data-lightbox]' ) ).forEach( ( item ) => {
     item.addEventListener( 'click', open );
   } );
 
-
   // Inizializza la gallery e carica la prima immagine
   function open( e ) {
     e.preventDefault();
+    // Resetta l'oggetto ad ogni apertura del lightbox
+    o = {};
 
     const a = e.currentTarget;
 
-    lightbox = document.createElement( 'DIV' );
+    const lightbox = document.createElement( 'DIV' );
     lightbox.id = 'lightbox';
     lightbox.addEventListener( 'transitionend', onTransitionEnd );
 
-    close_btn = document.createElement( 'BUTTON' );
+    const close_btn = document.createElement( 'BUTTON' );
     close_btn.type = 'button';
     close_btn.id = 'close-lightbox';
-    close_btn.className = 'white-background icon-close icon-medium text-medium';
+    close_btn.className = 'black-background icon-close icon-medium text-medium';
     close_btn.addEventListener( 'click', close );
 
-    overlay = Overlay();
+    const overlay = Overlay();
     overlay.addEventListener( 'click', close );
     overlay.appendChild( lightbox );
     overlay.appendChild( close_btn );
@@ -61,79 +75,77 @@ export function Lightbox( el ) {
     const prev_button = document.createElement( 'BUTTON' );
     prev_button.className = 'prev-btn padding-medium';
     prev_button.innerHTML = '<span class="icon-arrow rotate-right text-big"></span>';
-    prev_button.addEventListener( 'click', prev );
+    prev_button.addEventListener( 'click', () => go( 'prev' ) );
     lightbox.appendChild( prev_button );
 
     const next_button = document.createElement( 'BUTTON' );
     next_button.className = 'next-btn padding-medium';
     next_button.innerHTML = '<span class="icon-arrow text-big"></span>';
-    next_button.addEventListener( 'click', next );
+    next_button.addEventListener( 'click', () => go( 'next' ) );
     lightbox.appendChild( next_button );
 
-    const text_div = document.createElement( 'DIV' );
-    text_div.className = 'descr padding-small text-small';
-    lightbox.appendChild( text_div );
+    const descr = document.createElement( 'DIV' );
+    descr.className = 'descr padding-small text-small';
+    lightbox.appendChild( descr );
 
-    // Crea la proprietà `lightbox.gallery`
+    // Crea le proprietà `o.paths` e `o.descr`
     const gallery_name = a.getAttribute( 'data-gallery' );
-    lightbox.gallery = [];
+    o.paths = [];
     if( gallery_name ) {
+      o.texts = [];
       [].slice.call( el.querySelectorAll( `a[data-gallery="${ gallery_name }"]` ) ).forEach( ( item ) => {
-        lightbox.gallery.push( item.getAttribute( 'href') );
+        o.paths.push( item.getAttribute( 'href') );
+        o.texts.push( item.getAttribute( 'data-descr') );
       } );
     }
 
-    // Crea la proprietà `lightbox.descr`
-    lightbox.descr = a.getAttribute( 'data-lightbox-descr');
+    o.descr = a.getAttribute( 'data-descr');
 
     loadImg( a.getAttribute( 'href') );
-  }
 
-  function close( e ) {
-    if( e.target.id == 'overlay' || e.target.id == 'close-lightbox' ) {
-      overlay.removeChild( lightbox );
-      overlay.removeEventListener( 'click', close );
-      overlay.removeChild( close_btn );
-      Overlay( false );
+
+    function close( e ) {
+      // Evita che l'overlay di chiuda cliccando sul lightbox
+      if( e.target.id == 'overlay' || e.target.id == 'close-lightbox' ) {
+        overlay.removeChild( lightbox );
+        overlay.removeEventListener( 'click', close );
+        overlay.removeChild( close_btn );
+        Overlay( false );
+      }
     }
-  }
 
-  function onTransitionEnd( e ) {
-    if( e.propertyName == 'width' ) {
+    function onTransitionEnd( e ) {
       const img = lightbox.querySelector( 'img' );
-      img.classList.add( 'complete' );
 
-      if( lightbox.hasOwnProperty( 'next' ) ) {
-        lightbox.querySelector( 'button.next-btn' ).style.display = 'block';
-        lightbox.querySelector( 'button.prev-btn' ).style.display = 'block';
-      }
+      if( !img.classList.contains( 'complete' ) ) {
+        img.classList.add( 'complete' );
 
-      if( lightbox.descr ) {
-        const descr = lightbox.querySelector( 'div.descr' );
-        descr.textContent = lightbox.descr;
-        descr.style.width = img.offsetWidth + 'px';
-        descr.style.display = 'block';
+        if( o.hasOwnProperty( 'next' ) ) {
+          next_button.style.display = 'block';
+          prev_button.style.display = 'block';
+        }
+
+        if( o.descr ) {
+          descr.textContent = o.descr;
+          descr.style.width = img.offsetWidth + 'px';
+          descr.style.display = 'block';
+        }
       }
     }
-  }
 
-  function next() {
-    lightbox.removeChild( lightbox.querySelector( 'img' ) );
-    lightbox.querySelector( 'button.next-btn' ).style.display = 'none';
-    lightbox.querySelector( 'button.prev-btn' ).style.display = 'none';
-    lightbox.querySelector( 'div.descr' ).style.display = 'none';
-    loadImg( lightbox.gallery[ lightbox.next ] );
-  }
+    function go( i ) {
+      lightbox.removeChild( lightbox.querySelector( 'img' ) );
+      next_button.style.display = 'none';
+      prev_button.style.display = 'none';
+      descr.style.display = 'none';
 
-  function prev() {
-    lightbox.removeChild( lightbox.querySelector( 'img' ) );
-    lightbox.querySelector( 'button.next-btn' ).style.display = 'none';
-    lightbox.querySelector( 'button.prev-btn' ).style.display = 'none';
-    lightbox.querySelector( 'div.descr' ).style.display = 'none';
-    loadImg( lightbox.gallery[ lightbox.prev ] );
+      o.descr = o.texts[ o[ i ] ];
+      loadImg( o.paths[ o[ i ] ] );
+    }
   }
 
   function loadImg( path ) {
+    const lightbox = document.getElementById( 'lightbox' );
     lightbox.className = 'preload';
 
     const img = new Image();
@@ -155,10 +167,12 @@ export function Lightbox( el ) {
 
       let ratio = img.offsetWidth / img.offsetHeight;
       let descrease = 10;
-      // Se l'altezza maggiore della larghezza, adatta per altezza
-      if( ratio < 1 && img.offsetHeight > img_available_height ) {
-        // Modifica il valore di `img.offsetWidth`
-        img.style.height = img_available_height + 'px';
+      // Se l'altezza dell'immagine è maggiore della larghezza, adatta per altezza
+      if( ratio < 1 ) {
+        if( img.offsetHeight > img_available_height ) {
+          // Modifica il valore di `img.offsetWidth`
+          img.style.height = img_available_height + 'px';
+        }
 
         while( img.offsetWidth > img_available_width ) {
           img.style.height = ( img_available_height - descrease ) + 'px';
@@ -166,10 +180,12 @@ export function Lightbox( el ) {
         }
       }
 
-      // Se la larghezza è maggiore o uguale dell'altezza, adatta per larghezza
-      else if( ratio >= 1 && img.offsetWidth > img_available_width ) {
-        // Modifica il valore di `img.offsetHeight`
-        img.style.width = img_available_width + 'px';
+      // Se la larghezza dell'immagine è maggiore o uguale dell'altezza, adatta per larghezza
+      else if( ratio >= 1 ) {
+        if( img.offsetWidth > img_available_width ) {
+          // Modifica il valore di `img.offsetHeight`
+          img.style.width = img_available_width + 'px';
+        }
 
         while( img.offsetHeight > img_available_height ) {
           img.style.width = ( img_available_width - descrease ) + 'px';
@@ -181,12 +197,11 @@ export function Lightbox( el ) {
       lightbox.style.height = ( img.offsetHeight + 10 ) + 'px';
       lightbox.classList.remove( 'preload' );
 
-      // Crea/aggiorna le proprietà `lightbox.next` e `lightbox.prev`
-      if( lightbox.gallery.length > 0 ) {
-        const current = lightbox.gallery.indexOf( path );
-        console.log( current );
-        lightbox.next = ( ( current + 1 ) > ( lightbox.gallery.length - 1 ) ) ? 0 : current + 1;
-        lightbox.prev = ( ( current - 1 ) < 0 ) ? ( lightbox.gallery.length - 1 ) : current - 1;
+      // Crea/aggiorna le proprietà `o.next` e `o.prev`
+      if( o.paths.length > 0 ) {
+        const current = o.paths.indexOf( path );
+        o.next = ( ( current + 1 ) > ( o.paths.length - 1 ) ) ? 0 : current + 1;
+        o.prev = ( ( current - 1 ) < 0 ) ? ( o.paths.length - 1 ) : current - 1;
       }
     }
 

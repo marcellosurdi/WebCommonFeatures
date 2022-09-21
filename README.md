@@ -1,20 +1,6 @@
 # Web Common Features
 
-Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web:
-- Collapsible
-- Icone;
-- Lightbox;
-- Megamenu;
-- Modalbox;
-- Multilevel menu;
-- Notification;
-- Overlay;
-- Sfondi;
-- Skeleton;
-- Sidenav;
-- Tab;
-- Tooltip;
-- Validation.
+Funzionalità di uso comune e classi CSS predefinite da utilizzare nei progetti web.
 
 ## Installazione
 

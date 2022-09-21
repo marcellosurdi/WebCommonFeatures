@@ -5,47 +5,49 @@ div#lightbox {
   width: 150px;
   height: 150px;
   transition: width .5s ease-out, height .5s ease-out;
-}
 
-div#lightbox img {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  opacity: 0;
-}
+  img {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    opacity: 0;
+  }
 
-div#lightbox div.descr, div#lightbox button.prev-btn, div#lightbox button.next-btn {
-  display: none;
-  background-color: $black_color;
-  color: $white_color;
-  opacity: .7;
-  z-index: 2;
-}
+  div.descr, button.prev-btn, button.next-btn {
+    display: none;
+    background-color: $black_color;
+    color: $white_color;
+    opacity: .7;
+    z-index: 2;
+  }
 
-div#lightbox div.descr {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-}
+  div.descr {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+  }
 
-div#lightbox button.prev-btn {
-  position: absolute;
-  top: 50%;
-  left: 5px;
-  margin-top: -19px;
-}
+  button.prev-btn {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    margin-top: -19px;
+  }
 
-div#lightbox button.next-btn {
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  margin-top: -19px;
+  button.next-btn {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -19px;
+  }
 }
 
 button#close-lightbox {
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 50%;
+  @include transform(translate(-50%,0));
+  opacity: .85;
 }
 
 // js/modalbox
@@ -108,6 +110,7 @@ a.tab {
   text-decoration: none;
   color: inherit;
 }
+a.tab:not(.active):hover { background-color: $xlight_grey_color; }
 a.tab span.icon-arrow { position: absolute; top: 8px; right: 5px; }
 a.tab.active span.icon-arrow { @include transform( rotate(270deg) ); }
 .tab-container .active { background-color: $light_a_color; color: $foreground_a_color; }
