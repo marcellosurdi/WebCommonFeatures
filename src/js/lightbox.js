@@ -37,11 +37,11 @@ export function Lightbox( el ) {
    * @typedef {object} o
    * @memberof module:js/lightbox.
    *
-   * @property {array} paths Array dei percorsi delle immagini che compongono la gallery (ricavato dagli attributi `href`).
-   * @property {array} texts Array delle descrizioni testuali delle immagini che compongono la gallery (ricavato dagli attributi `data-descr`).
+   * @property {array} paths Array ricavato dagli attributi `href` dei percorsi delle immagini che compongono la gallery.
+   * @property {array} texts Array ricavato dagli attributi `data-descr` delle descrizioni testuali delle immagini che compongono la gallery.
    * @property {string} descr Descrizione testuale dell'immagine corrente.
-   * @property {number} next Chiave dell'immagine successiva negli array `o.paths` e `o.texts`.
-   * @property {number} prev Chiave dell'immagine precedente negli array `o.paths` e `o.texts`.
+   * @property {number} next Chiave dell'immagine successiva nell'array `o.paths`.
+   * @property {number} prev Chiave dell'immagine precedente nell'array `o.paths`.
    */
   let o = {};
 
@@ -52,7 +52,7 @@ export function Lightbox( el ) {
   // Inizializza la gallery e carica la prima immagine
   function open( e ) {
     e.preventDefault();
-    // Resetta l'oggetto ad ogni apertura del lightbox
+    // Resetta l'oggetto ogni volta che il lightbox viene aperto
     o = {};
 
     const a = e.currentTarget;
@@ -88,7 +88,7 @@ export function Lightbox( el ) {
     descr.className = 'descr padding-small text-small';
     lightbox.appendChild( descr );
 
-    // Crea le proprietà `o.paths` e `o.descr`
+    // Crea le proprietà `o.paths`, `o.texts` e `o.descr`
     const gallery_name = a.getAttribute( 'data-gallery' );
     o.paths = [];
     if( gallery_name ) {
@@ -117,6 +117,7 @@ export function Lightbox( el ) {
     function onTransitionEnd( e ) {
       const img = lightbox.querySelector( 'img' );
 
+      // Esegue il metodo solo una volta
       if( !img.classList.contains( 'complete' ) ) {
         img.classList.add( 'complete' );
 
