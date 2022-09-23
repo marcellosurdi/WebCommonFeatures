@@ -1,4 +1,5 @@
 import './css/style.scss';
+import './js/header';
 import './js/sidenav';
 import { l10n } from './js/l10n';
 import { InputBtns } from'./js/inputbtns';

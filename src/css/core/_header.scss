@@ -15,7 +15,11 @@
   height: 59px;
   color: $foreground_a_color;
   z-index: 2;
+  transition: transform .25s;
 }
+
+#header.hide { transform: translateY(-59px); }
+#header.show { transform: translateY(0); }
 
 #header > div {
   position: relative;
@@ -47,20 +51,4 @@
   padding: 60px 0 0;
   max-width: $container_max_width;
   overflow: auto;
-}
-
-.page.left {
-  @include transform(translate3d(-100%, 0, 0));
-}
-
-.page.center {
-  @include transform(translate3d(0, 0, 0));
-}
-
-.page.right {
-  @include transform(translate3d(100%, 0, 0));
-}
-
-.page.transition {
-  transition-duration: .25s;
 }

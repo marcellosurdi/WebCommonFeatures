@@ -16,7 +16,6 @@ import { Overlay } from './overlay';
  * @requires {@linkcode module:js/overlay|Overlay}
  *
  * @example
- * import './css/sidenav.scss';
  * import './js/sidenav';
  *
  * document.getElementById( 'sidenav' ).open();
