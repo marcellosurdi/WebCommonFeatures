@@ -11,7 +11,7 @@ import { debounceEvent } from './utils'
  /**
   * @desc
   * - Allinea in senso orizzontale la barra di intestazione ai contenuti. Questi ultimi, a differenza della barra di intestazione,
-  * hanno quasi sempre la barra di scorrimento rendendo impreciso l'allinamento con i CSS.
+  * hanno quasi sempre la barra di scorrimento rendendo impreciso l'allinamento con i fogli di stile.
   * - Nasconde la barra di intestazione quando lo scorrimento di pagina è verso il basso, la mostra in caso contrario o se la proprietà `scrollTop == 0`.
   *
   * @param {boolean} hide `true` mostra/nasconde la barra di intestazione durante lo scorrimento, `false` barra di intestazione sempre visibile
