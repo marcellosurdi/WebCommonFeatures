@@ -106,14 +106,15 @@ export function Lightbox( el ) {
 
 
     function close( e ) {
-      console.log( e.type + ' close');
-
-      // WARNING Il metodo viene eseguito sempre!
-      // Chiude quando si verifica l'evento `resize` ma evita che l'overlay di chiuda cliccando dentro il lightbox
-      if( e.type == 'resize' || e.target.id == 'overlay' || e.target.id == 'close-lightbox' ) {
+      // Chiude il lightbox se si verifica l'evento `resize` O
+      // si clicca direttamente sull'elemento overlay sul pulsate close-lightbox
+      if(
+          e.type == 'resize' ||
+          ( e.currentTarget == e.target ) && ( e.currentTarget.id == 'overlay' || e.currentTarget.id == 'close-lightbox' ) 
+        ) {
         window.removeEventListener( 'resize', close );
-        overlay.removeChild( lightbox );
         overlay.removeEventListener( 'click', close );
+        overlay.removeChild( lightbox );
         overlay.removeChild( close_btn );
         Overlay( false );
       }
