@@ -80,22 +80,6 @@ export const click = navigator.userAgent.match( /(iPad|iPhone|iPod)/g ) ? 'touch
 
 /**
  * @desc
- * Allinea la barra di intestazione ai contenuti (necessario perché i contenuti hanno la barra di scorrimento).
- */
-export function alignHeader() {
-  const header_div = document.querySelector( '#header div' );
-  const styles = getComputedStyle( header_div );
-  const container_max_width = +styles.maxWidth.replace( 'px', '' );
-
-  let left = ( document.querySelector( '.page' ).clientWidth - container_max_width ) / 2;
-  if( left < 0 ) {
-    left = 0;
-  }
-  header_div.style.marginLeft = left + 'px';
-}
-
-/**
- * @desc
  * Mostra o nasconde una sezione della pagina
  *
  * @param {MouseEvent} e

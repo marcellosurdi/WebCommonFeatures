@@ -1,6 +1,8 @@
 import './css/style.scss';
+import './js/header';
 import './js/sidenav';
 import { l10n } from './js/l10n';
+import { Header } from './js/header';
 import { InputBtns } from'./js/inputbtns';
 import { Lightbox } from './js/lightbox';
 import { Modalbox } from './js/modalbox';
@@ -13,6 +15,7 @@ import * as Utils from './js/utils';
 
 export {
   l10n,
+  Header,
   InputBtns,
   Lightbox,
   Modalbox,

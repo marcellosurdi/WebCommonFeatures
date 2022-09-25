@@ -3,31 +3,41 @@
  * @author Marcello Surdi
  *
  * @desc
- * L'intestazione....
+ * La barra di intestazione del sito utilizzabile insieme al modulo js/pageslider
  */
 
 import { debounceEvent } from './utils'
 
  /**
   * @desc
-  * .
+  * - Allinea in senso orizzontale la barra di intestazione ai contenuti. Questi ultimi, a differenza della barra di intestazione,
+  * hanno quasi sempre la barra di scorrimento rendendo impreciso l'allinamento con i CSS.
+  * - Nasconde la barra di intestazione quando lo scorrimento di pagina è verso il basso, la mostra in caso contrario o se la proprietà `scrollTop == 0`.
+  *
+  * @param {boolean} hide `true` mostra/nasconde la barra di intestazione durante lo scorrimento, `false` barra di intestazione sempre visibile
   *
   * @requires {@linkcode module:js/utils.debounceEvent|debounceEvent}
   *
   * @example
   * Header();
   */
-export function Header() {
+export function Header( hide = true ) {
   let header = document.getElementById( 'header' );
   let page = document.querySelector( 'div.page' );
 
-  let start_scrolltop = page.scrollTop;
-  page.addEventListener( 'scroll', debounceEvent( scroll, 100 ) );
+  let start_scrolltop;
+  if( hide ) {
+    start_scrolltop = page.scrollTop;
+    page.addEventListener( 'scroll', debounceEvent( scroll, 100 ) );
+  }
+
+  align();
+  window.addEventListener( 'resize', debounceEvent( align, 10 ) );
 
   function scroll( e ) {
     let current_scrolltop = page.scrollTop;
 
-    // current_scrolltop == 0 perché altrimenti uno scorrimento veloce verso l'alto non fa riapparire l'header
+    // La condizione current_scrolltop == 0 è necessaria perché diversamente uno scorrimento veloce verso l'alto non farebbe riapparire l'header
     if( current_scrolltop >= header.offsetHeight || current_scrolltop == 0 ) {
 
       // Se lo scorrimento è verso il basso nascondi il pannello
@@ -49,6 +59,16 @@ export function Header() {
       start_scrolltop = ( current_scrolltop <= 0 ) ? 0 : current_scrolltop;
     }
   }
-}
 
-Header();
+  function align() {
+    const header_div = header.querySelector( 'div' );
+    const styles = getComputedStyle( header_div );
+    const container_max_width = +styles.maxWidth.replace( 'px', '' );
+
+    let left = ( page.clientWidth - container_max_width ) / 2;
+    if( left < 0 ) {
+      left = 0;
+    }
+    header_div.style.marginLeft = left + 'px';
+  }
+}

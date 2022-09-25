@@ -1,8 +1,6 @@
 import './css/style.scss';
 import './js/sidenav';
 import './js/multilevelmenu';
-import { alignHeader, debounceEvent } from './js/utils';
+import { Header } from './js/header';
 
-
-window.addEventListener( 'resize', debounceEvent( alignHeader, 10 ) );
-alignHeader();
+Header( false );

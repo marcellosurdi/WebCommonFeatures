@@ -37,8 +37,7 @@
       WebCommonFeatures.l10n.add( translation_strings );
       WebCommonFeatures.Utils.translate();
 
-      window.addEventListener( 'resize', WebCommonFeatures.Utils.debounceEvent( WebCommonFeatures.Utils.alignHeader, 10 ) );
-      WebCommonFeatures.Utils.alignHeader();
+      WebCommonFeatures.Header();
 
       window.addEventListener( 'resize', WebCommonFeatures.Utils.debounceEvent( listener, 50 ) );
 

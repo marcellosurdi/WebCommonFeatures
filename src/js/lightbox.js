@@ -54,6 +54,7 @@ export function Lightbox( el ) {
     e.preventDefault();
     // Resetta l'oggetto ogni volta che il lightbox viene aperto
     o = {};
+    window.addEventListener( 'resize', close );
 
     const a = e.currentTarget;
 
@@ -105,8 +106,12 @@ export function Lightbox( el ) {
 
 
     function close( e ) {
-      // Evita che l'overlay di chiuda cliccando sul lightbox
-      if( e.target.id == 'overlay' || e.target.id == 'close-lightbox' ) {
+      console.log( e.type + ' close');
+
+      // WARNING Il metodo viene eseguito sempre!
+      // Chiude quando si verifica l'evento `resize` ma evita che l'overlay di chiuda cliccando dentro il lightbox
+      if( e.type == 'resize' || e.target.id == 'overlay' || e.target.id == 'close-lightbox' ) {
+        window.removeEventListener( 'resize', close );
         overlay.removeChild( lightbox );
         overlay.removeEventListener( 'click', close );
         overlay.removeChild( close_btn );

@@ -1,7 +1,7 @@
 import './css/style.scss';
-import './js/header';
 import './js/sidenav';
 import { l10n } from './js/l10n';
+import { Header } from './js/header';
 import { InputBtns } from'./js/inputbtns';
 import { Lightbox } from './js/lightbox';
 import { Modalbox } from './js/modalbox';
@@ -10,7 +10,7 @@ import { Overlay } from './js/overlay';
 import { Tabs } from './js/tabs';
 import { Tooltips } from './js/tooltips';
 import { Validation } from './js/validation';
-import { alignHeader, collapsible, debounceEvent, setSmoothBehavior, translate, truncateString } from './js/utils';
+import { collapsible, debounceEvent, setSmoothBehavior, translate, truncateString } from './js/utils';
 
 // Gestione stringhe di traduzione
 const translation_strings = {
@@ -35,8 +35,7 @@ const translation_strings = {
 l10n.add( translation_strings );
 translate();
 
-window.addEventListener( 'resize', debounceEvent( alignHeader, 10 ) );
-alignHeader();
+Header();
 
 window.addEventListener( 'resize', debounceEvent( listener, 50 ) );
 
