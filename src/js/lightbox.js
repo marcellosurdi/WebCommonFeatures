@@ -110,7 +110,7 @@ export function Lightbox( el ) {
           // Se si verifica l'evento `resize` O
           e.type == 'resize' ||
           // se si clicca direttamente sull'elemento overlay sul pulsate close-lightbox
-          ( e.currentTarget == e.target ) && ( e.currentTarget.id == 'overlay' || e.currentTarget.id == 'close-lightbox' )
+          ( ( e.currentTarget == e.target ) && ( e.currentTarget == overlay || e.currentTarget == close_btn ) )
         ) {
         // chiude il lighbox
         window.removeEventListener( 'resize', close );
@@ -134,9 +134,9 @@ export function Lightbox( el ) {
         }
 
         if( o.descr ) {
+          descr.style.display = 'block';
           descr.textContent = o.descr;
           descr.style.width = img.offsetWidth + 'px';
-          descr.style.display = 'block';
         }
       }
     }

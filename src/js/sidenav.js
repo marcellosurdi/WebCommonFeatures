@@ -18,14 +18,14 @@ import { Overlay } from './overlay';
  * @example
  * import './js/sidenav';
  *
- * document.getElementById( 'sidenav' ).open();
+ * document.getElementById( 'sidenav' ).__open();
  */
 function Sidenav() {
   let body = document.getElementById( 'body' );
   let sidenav = document.getElementById( 'sidenav' );
 
   document.getElementById( 'open-menu' ).addEventListener( 'click', openSidenav );
-  sidenav.open = openSidenav;
+  sidenav.__open = openSidenav;
 
   document.getElementById( 'close-menu' ).addEventListener( 'click', closeSidenav );
 

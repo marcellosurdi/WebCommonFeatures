@@ -61,7 +61,7 @@ document.querySelector( 'a#collapse' ).addEventListener( 'click', collapsible );
 // Smooth behavior
 setSmoothBehavior( document.getElementById( 'toc' ) );
 document.querySelector( 'a#_open-menu' ).addEventListener( 'click', () => {
-  document.getElementById( 'sidenav' ).open();
+  document.getElementById( 'sidenav' ).__open();
 });
 
 // LightBox

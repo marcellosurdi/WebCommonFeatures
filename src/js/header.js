@@ -32,12 +32,12 @@ export function Header( hide = true ) {
   }
 
   align();
-  window.addEventListener( 'resize', debounceEvent( align, 10 ) );
+  window.addEventListener( 'resize', debounceEvent( align, 50 ) );
 
   function scroll( e ) {
     let current_scrolltop = page.scrollTop;
 
-    // La condizione current_scrolltop == 0 è necessaria perché diversamente uno scorrimento veloce verso l'alto non farebbe riapparire l'header
+    // La condizione `current_scrolltop == 0` è necessaria perché diversamente uno scorrimento veloce verso l'alto non farebbe riapparire l'header
     if( current_scrolltop >= header.offsetHeight || current_scrolltop == 0 ) {
 
       // Se lo scorrimento è verso il basso nascondi il pannello
@@ -55,7 +55,7 @@ export function Header( hide = true ) {
         }
       }
 
-      // Sovrascrive start_scrolltop gestendo lo scrolling negativo su mobile
+      // Sovrascrive `start_scrolltop` gestendo lo scrolling negativo su mobile
       start_scrolltop = ( current_scrolltop <= 0 ) ? 0 : current_scrolltop;
     }
   }
