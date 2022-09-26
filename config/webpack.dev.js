@@ -13,6 +13,7 @@ module.exports = ( env, argv ) => {
         main: paths.src + '/dev.js',
         megamenu: paths.src + '/megamenu-dev.js',
         multilevelmenu: paths.src + '/multilevelmenu-dev.js',
+        slider: paths.src + '/slider-dev.js',
       },
 
       output: {
@@ -65,6 +66,13 @@ module.exports = ( env, argv ) => {
           title: 'multilevelmenu@' + version,
           template: paths.static + '/tpl/multilevelmenu-dev.html',
           chunks: [ 'multilevelmenu' ],
+        }),
+
+        new HtmlWebpackPlugin({
+          filename: 'slider.html',
+          title: 'slider@' + version,
+          template: paths.static + '/tpl/slider-dev.html',
+          chunks: [ 'slider' ],
         }),
       ],
 

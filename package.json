@@ -10,7 +10,7 @@
   "author": "Marcello Surdi <marcello.surdi@gmail.com> (https://www.marcellosurdi.name)",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack serve --config config/webpack.dev.js --open",
+    "dev": "webpack serve --config config/webpack.dev.js --open slider.html",
     "build": "webpack --config config/webpack.prod.js --env BUILD",
     "jsdoc": "jsdoc -r src -d docs -R README.md -c jsdoc.json"
   },
